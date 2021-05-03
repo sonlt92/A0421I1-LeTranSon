@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2021-05-03T13:18:03.274Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" etag="TKQaXew31Wf2rO_Nqm-n" version="14.6.9" type="github">
+  <diagram id="UwzIVc6JB4Aw03qsA5c4" name="Page-1">
+    <mxGraphModel dx="1422" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EmAdvTEpXKka15vgLHW7-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EmAdvTEpXKka15vgLHW7-2" target="EmAdvTEpXKka15vgLHW7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-2" value="Input A ngẫu nhiên từ 0 -9" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="240" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="EmAdvTEpXKka15vgLHW7-1" target="EmAdvTEpXKka15vgLHW7-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="440" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EmAdvTEpXKka15vgLHW7-4" target="EmAdvTEpXKka15vgLHW7-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-4" value="Input B" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="295" y="400" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EmAdvTEpXKka15vgLHW7-8" target="EmAdvTEpXKka15vgLHW7-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EmAdvTEpXKka15vgLHW7-8" target="EmAdvTEpXKka15vgLHW7-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-8" value="A==B" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="560" width="100" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EmAdvTEpXKka15vgLHW7-10" target="EmAdvTEpXKka15vgLHW7-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="720" />
+              <mxPoint x="400" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-10" value="Output: Dự doán đúng" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="575" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-12" value="Đúng" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="600" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EmAdvTEpXKka15vgLHW7-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="790" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="720" />
+              <mxPoint x="400" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-13" value="Output: Dự đoán sai" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="575" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-15" value="Sai" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="600" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmAdvTEpXKka15vgLHW7-17" value="End" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="790" width="160" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
