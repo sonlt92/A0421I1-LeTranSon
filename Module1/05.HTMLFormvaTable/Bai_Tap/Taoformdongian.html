@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>[Bài tập] Tạo form đơn giản</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<form>
-  <h1 style="background-color: orange" align="center">SỞ THÍCH CỦA BẠN</h1>
-  <p style="color: blue">Họ và tên <input type="text" name="yourname"></p>
-  <p style="color: blue">Email <input type="text" name="email"></p>
-</form>
+<style>
+    div {
+        border-style: inset;
+        border-color: deepskyblue;
+        border-width: 10px;
+    }
+</style>
+    <form>
+        <div>
+            <table>
+                <table>
+                    <tr>
+                        <td colspan="5"><h1 style="background-color: orange" align="center">SỞ THÍCH CỦA BẠN</h1></td>
+                    </tr>
+                   <tr>
+                       <td><p style="color: blue">Họ và tên</p> </td>
+                       <td colspan="3"><input type="text" name="yourname" size="30"></td>
+                   </tr>
+                    <tr>
+                        <td><p style="color: blue">Email</p> </td>
+                        <td colspan="3"><input type="text" name="email" align="left" size="25"></td>
+                    </tr>
+                    <tr>
+                        <td><p style="color: blue">Sở thích</p> </td>
+                        <td><input type="checkbox" name="hobby"><label style="color: orange"> Thể Thao</label></td>
+                        <td><input type="checkbox" name="hobby"><label style="color: orange"> Âm Nhạc</label></td>
+                        <td><input type="checkbox" name="hobby"><label style="color: orange"> Đọc Sách</label></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="hobby"><label style="color: orange"> Lướt Web</label></td>
+                        <td><input type="checkbox" name="hobby"><label style="color: orange"> Chơi Game</label></td>
+                        <td><input type="checkbox" name="hobby"><label style="color: orange"> Điện Ảnh</label></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="hobby"><label style="color: orange"> Du Lịch</label></td>
+                    </tr>
+                </table>
+                <button type="submit">Gửi thông tin</button>
+                <button type="reset">Nhập lại</button>
+                </table>
+            </table>
+        </div>
+    </form>
 </body>
 </html>
