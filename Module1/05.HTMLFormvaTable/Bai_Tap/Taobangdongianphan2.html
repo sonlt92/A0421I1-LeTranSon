@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Bài tập] Tạo bảng đơn giản</title>
+  </head>
+  <body>
+    <style>
+      body {
+        padding: 50px;
+        text-align: center;
+      }
+      p
+      {
+          color: blue;
+          text-align: left;
+      }
+      span
+      {
+        color: blue;
+        text-align: right;
+      }          
+      table 
+      {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td,th 
+      {
+        padding: 20px;
+        border: 1px solid black;
+      }
+      th 
+      {        
+        font-size: 16px;
+        font-weight: 400;        
+        text-align: center;
+        padding: 20px;
+        background-color: yellow;        
+      }
+      td 
+      {        
+        font-weight: 400;        
+        font-size: 13px;
+        padding: 20px 20px 20px 20px;        
+        text-align: center;
+      }
+      .a1
+      {
+          background-color: orange;
+      }
+      .a2
+      {
+          background-color: white;
+      }
+    </style>  
+        
+           <h2 style="color: blue;">THỜI KHOÁ BIỂU</h2>        
+            <p>Lớp: T0908I <span> Thời gian học: 13h30 - 17h30 </span></p>         
+            <p>Giáo viên: KhoaNV <span>Ngày học: Thứ 3, 5, 7</span></p>
+            <p>Phòng học: Class3/Lab3</p>
+
+    <table class="a7">
+      <tr>
+        <th class="a2" colspan="3"></th>  
+        <th class="b1">Thứ 3</th>
+        <th class="b1">Thứ 5</th>
+        <th class="b1">Thứ 7</th>
+      </tr>
+      <tr>
+        <td class="a1">Tuần</td>
+        <td class="a1">Ngày bắt đầu</td>
+        <td class="a1">Ngày kết thúc</td>
+        <td class="a1" colspan="3">Môn học</td>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>01/09/2009</td> 
+        <td>05/09/2009</td>
+        <td>CF - T1,L1</td>
+        <td>CF - T2,L2</td>
+        <td>CF - T3,L3</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>08/09/2009</td>  
+        <td>12/09/2009</td>
+        <td>CF - T4,L4</td>
+        <td>CF - Written Test</td>
+        <td>C - T1,L1</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>...</td>  
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+    </table>
+  </body>
+</html>
