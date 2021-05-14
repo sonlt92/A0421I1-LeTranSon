@@ -7,11 +7,17 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>    
 </head>
 <body>
-    <!--Hien thi ket qua ham alert-->
+    <!-- Hien thi ket qua ham alert -->
     <button type="button" onclick="showMess();">Click Me!</button>
+
+    <!-- Hien thi ket qua su dung the HTML -->
+    <div id="mess"></div>
     <script>
         function showMess() {
             alert('Xin Chao');
+            document.getElementById('mess').innerHTML = 'Xin Chao';
+            document.write('Xin Chao')
+            console.log('Xin Chao')
         }
     </script>
 </body>
