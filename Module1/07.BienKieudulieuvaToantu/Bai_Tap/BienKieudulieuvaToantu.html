@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Bài tập] Biến, kiểu dữ liệu và toán tử</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>    
+    <script>
+        //Bai 1
+        var a,b,c;
+        a = prompt("Nhap diem mon Vat Ly:");
+        b = prompt("Nhap diem mon Hoa Hoc:");
+        c = prompt("Nhap diem mon Sinh Hoc:");
+        vatly = parseInt(a);
+        hoahoc = parseInt(b);
+        sinhhoc = parseInt(c);
+        tong = vatly + hoahoc + sinhhoc;
+        trungbinh = (vatly + hoahoc + sinhhoc)/3;
+        document.write("Bai 1 <br/>");
+        document.write("Tong diem 3 mon Ly, Hoa, Sinh la: "+ tong);
+        document.write("<br/>Diem trung binh cua 3 mon Ly, Hoa, Sinh la: "+trungbinh);
+
+        //Bai 2
+        var d;
+        d = prompt("Nhap do C:");
+        nhietdo = parseFloat(d);
+        f = (nhietdo * 1.80)+32;
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write("Bai 2 <br/>");
+        document.write("Do F la: "+f);
+
+        //Bai 3
+        var g;
+        g = prompt("Nhap ban kinh hinh tron:");
+        dientich = parseInt(g);
+        s = dientich * dientich * 3.14;
+        document.write("<br/>");
+        document.write("<br/>Bai 3<br/>");
+        document.write("Dien tich hinh tron la: "+s);
+
+        //Bai 4
+        var h;
+        h = prompt("Nhap duong kinh hinh tron:")
+        chuvi = parseInt(h);
+        cvi = chuvi * 3.14;
+        document.write("<br/>");
+        document.write("<br/>Bai 4 <br/>");
+        document.write("Chu vi hinh tron la: "+cvi);
+
+    </script>
+</body>
+</html>
