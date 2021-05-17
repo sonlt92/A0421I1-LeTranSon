@@ -8,42 +8,36 @@
     
 </head>
 <body>
-    <form>
-        <table>
-            <tr>
-            <th>Amount</th>
-            <th>Form Currency</th>
-            <th>To Currency</th>
-            <th></th>
-            </tr>
-            <tr>
-                <td><input type="text" id="nhaptien"></td>
-                <td>
-                    <select id="canchuyen">
-                        <option value="vn">VNĐ</option>
-                        <option value="us">USD</option>                        
-                    </select>
-                </td>
-                <td>
-                    <select id="muonchuyen">
-                        <option value="usd">USD</option>
-                        <option value="vnd">VNĐ</option>                        
-                    </select>
-                </td>
-                <td><button type="submit" onclick="doitien()">Convert</button> </td>
-            </tr>
-            <tr>
-                <td colspan="4">Kết quả: <input type="text" style="border: 0;" id="ketqua"></td>
-            </tr>
-        </table>
-    </form>
+    <label>Amout</label>
+    <input type="text" id="nhaptien">
+    <label>From Current</label>
+    <select id="tu">
+        <option>USD</option>
+        <option>VND</option>
+    </select>
+    <label>To Current</label>
+    <select id="den">
+        <option>USD</option>
+        <option>VND</option>
+    </select>
+    <button onclick="doitien()">Convert</button>
+    <p id="ketquachuyendoi" style="color: blue"></p>
     <script>
         function doitien() {
-            var a = document.getElementById("nhaptien");
-            nhaptien = parseFloat(a);
-            if (document.getElementById("canchuyen")){
-                document.getElementById("vn") = nhaptien;                
+            var nhaptien = parseInt(document.getElementById("nhaptien").value);
+            var fromcurrent = parseInt(document.getElementById("tu").value);
+            var tocurrent = parseInt(document.getElementById("den").value);
+            var ketqua;
+            if (fromcurrent == 'USD' && tocurrent == 'VND')
+            {
+                ketqua = nhaptien * 23000;
+            } else if(fromcurrent == 'VND' && tocurrent == 'USD')
+            {
+                ketqua = nhaptien / 23000;
+            } else {
+                ketqua = "Ban chon sai menh gia";
             }
+            document.getElementById("ketquachuyendoi").innerHTML = ketqua;
         }
     </script>
 </body>
