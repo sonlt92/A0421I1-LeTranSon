@@ -8,38 +8,48 @@
     
 </head>
 <body>
-        <label>Amount</label>
-        <input type="text" id="amount">
-        <label>From currency</label>
-        <select id="fromCurrency">
-            <option>USD</option>
-            <option>VND</option>
-        </select>
-        <label>To currency</label>
-        <select id="toCurrency">
-            <option>USD</option>
-            <option>VND</option>
-        </select>
-        <button onclick="changeMoney()">Convert</button>
-        <br>
-        <p id="result"></p>
-        </body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="nhapsotien"></td>
+            <td>
+                <select id="from">
+                <option>USD</option>
+                <option>VND</option>
+                </select>
+            </td>
+            <td>
+                <select id="to">
+                    <option>USD</option>
+                    <option>VND</option>
+                </select>
+            </td>
+            <td><button onclick="doitien()">Convert</button></td>
+        </tr>        
+    </table>
+    <p id="ketqua" style="color: blue;"></p>
+        
         <script>
-            function changeMoney() {
-                let amount =parseInt(document.getElementById("amount").value);
-                let fromCurrency = document.getElementById("fromCurrency").value;
-                let toCurrency = document.getElementById("toCurrency").value;
-                let result;
-                if (fromCurrency == "USD" && toCurrency == "VND") {
-                    result = "Result: " + (amount * 23000) + " VND";
-                } else if (fromCurrency == "VND" && toCurrency == "USD") {
-                    result = "Result: " + (amount / 23000) + " USD";
+            function doitien() {
+                var nhapsotien =parseInt(document.getElementById("nhapsotien").value);
+                var from = document.getElementById("from").value;
+                var to = document.getElementById("to").value;
+                var result;
+                if (from == "USD" && to == "VND") {
+                    result = "Result: " + (nhapsotien * 23000) + " VND";
+                } else if (from == "VND" && to == "USD") {
+                    result = "Result: " + (nhapsotien / 23000) + " USD";
                 } else {
-                    result = " Bạn chọn sai loại tiền";
+                    result = " Bạn chọn sai mệnh giá tiền";
                 }
-                document.getElementById("result").innerHTML = result;// cách 1
-                // document.writeln(result) // cách 2 ( viết sang 1 trang mới)
+                document.getElementById("ketqua").innerHTML = result;
             }
         </script>
+
 </body>
 </html>

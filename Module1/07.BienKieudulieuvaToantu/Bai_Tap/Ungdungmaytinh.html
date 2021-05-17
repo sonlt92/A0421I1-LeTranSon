@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Bài tập] Ứng dụng máy tính</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <input type="text" id="so1"> <input type="text" id="so2">
+    <br>
+    <button onclick="cong()">Adition (+)</button> 
+    <button onclick="tru()">Subtraction (-)</button> 
+    <button onclick="nhan()">Multipication (*)</button> 
+    <button onclick="chia()">Devision (/)</button>
+    <p id="hienthiketqua"></p>
+    <script>
+        function cong(){            
+            var nhapso1 = parseInt(document.getElementById("so1").value);
+            var nhapso2 = parseInt(document.getElementById("so2").value);
+            var ketqua;
+            ketqua = "Result Adition: " + (nhapso1 + nhapso2);
+            document.getElementById("hienthiketqua").innerHTML = ketqua;
+        }
+        function tru(){            
+            var nhapso1 = parseInt(document.getElementById("so1").value);
+            var nhapso2 = parseInt(document.getElementById("so2").value);
+            var ketqua;
+            ketqua = "Result Subtraction: " + (nhapso1 - nhapso2);
+            document.getElementById("hienthiketqua").innerHTML = ketqua;
+        }
+        function nhan(){            
+            var nhapso1 = parseInt(document.getElementById("so1").value);
+            var nhapso2 = parseInt(document.getElementById("so2").value);
+            var ketqua;
+            ketqua = "Result Multipication: " + (nhapso1 * nhapso2);
+            document.getElementById("hienthiketqua").innerHTML = ketqua;
+        }
+        function chia(){            
+            var nhapso1 = parseInt(document.getElementById("so1").value);
+            var nhapso2 = parseInt(document.getElementById("so2").value);
+            var ketqua;
+            ketqua = "Result Division: " + (nhapso1 / nhapso2);
+            document.getElementById("hienthiketqua").innerHTML = ketqua;
+        }
+    </script>
+</body>
+</html>
