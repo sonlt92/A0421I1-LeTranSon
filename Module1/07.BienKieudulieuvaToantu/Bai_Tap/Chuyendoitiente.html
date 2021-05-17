@@ -8,37 +8,38 @@
     
 </head>
 <body>
-    <label>Amout</label>
-    <input type="text" id="nhaptien">
-    <label>From Current</label>
-    <select id="tu">
-        <option>USD</option>
-        <option>VND</option>
-    </select>
-    <label>To Current</label>
-    <select id="den">
-        <option>USD</option>
-        <option>VND</option>
-    </select>
-    <button onclick="doitien()">Convert</button>
-    <p id="ketquachuyendoi" style="color: blue"></p>
-    <script>
-        function doitien() {
-            var nhaptien = parseInt(document.getElementById("nhaptien").value);
-            var fromcurrent = parseInt(document.getElementById("tu").value);
-            var tocurrent = parseInt(document.getElementById("den").value);
-            var ketqua;
-            if (fromcurrent == 'USD' && tocurrent == 'VND')
-            {
-                ketqua = nhaptien * 23000;
-            } else if(fromcurrent == 'VND' && tocurrent == 'USD')
-            {
-                ketqua = nhaptien / 23000;
-            } else {
-                ketqua = "Ban chon sai menh gia";
+        <label>Amount</label>
+        <input type="text" id="amount">
+        <label>From currency</label>
+        <select id="fromCurrency">
+            <option>USD</option>
+            <option>VND</option>
+        </select>
+        <label>To currency</label>
+        <select id="toCurrency">
+            <option>USD</option>
+            <option>VND</option>
+        </select>
+        <button onclick="changeMoney()">Convert</button>
+        <br>
+        <p id="result"></p>
+        </body>
+        <script>
+            function changeMoney() {
+                let amount =parseInt(document.getElementById("amount").value);
+                let fromCurrency = document.getElementById("fromCurrency").value;
+                let toCurrency = document.getElementById("toCurrency").value;
+                let result;
+                if (fromCurrency == "USD" && toCurrency == "VND") {
+                    result = "Result: " + (amount * 23000) + " VND";
+                } else if (fromCurrency == "VND" && toCurrency == "USD") {
+                    result = "Result: " + (amount / 23000) + " USD";
+                } else {
+                    result = " Bạn chọn sai loại tiền";
+                }
+                document.getElementById("result").innerHTML = result;// cách 1
+                // document.writeln(result) // cách 2 ( viết sang 1 trang mới)
             }
-            document.getElementById("ketquachuyendoi").innerHTML = ketqua;
-        }
-    </script>
+        </script>
 </body>
 </html>
