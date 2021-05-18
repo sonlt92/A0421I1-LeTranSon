@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Thực hành] Kiểm tra năm nhuận</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <script>
+        var nam = parseInt(prompt("Nhap nam"));
+        var lanamnhuan = false;
+        var chiahetcho4 = nam % 4 == 0;
+        if (chiahetcho4){
+            var chiahetcho100 = nam % 100 == 0;
+            if (chiahetcho100){
+                var chiahetcho400 = nam % 400 == 0;
+                if (chiahetcho400){
+                    lanamnhuan = true;
+                }
+            }else {
+                lanamnhuan = true;
+            }
+        }
+        if (lanamnhuan){
+            alert(nam + " La Nam Nhuan");
+        }else {
+            alert(nam + " Khong Phai Nam Nhuan")
+        }
+    </script>
+</body>
+</html>
