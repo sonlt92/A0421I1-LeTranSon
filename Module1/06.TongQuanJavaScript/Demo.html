@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
+    <!-- <script>
         // CLick button will show popup
         function clickMe() {
             alert("Click button");
@@ -38,17 +38,33 @@
         /* Thông dịch: dịch từng dòng
          * Biên dịch: dịch 1 lần hết tất
          */
-    </script>
-    <!-- <script src="demojs.js"></script> -->
+    </script> -->
+    <!-- <script src="demojs.js"></script> --> 
 </head>
 <body>
-    <button onclick="testConfirm()">Click me</button>
+   <!-- <button onclick="testConfirm()">Click me</button>
     <div id="result">
     </div>
     <div id="test">
-    </div>
+    </div> -->
     <!-- <script>
         alert("Hello");
     </script> -->
+    <script>
+        let day = "Mon";
+let message = "";
+
+switch (day) {
+  case "Mon":
+    message = document.write("Ngày đầu tuần");
+
+  case "Wed":
+    message = document.write("Ngày giữa tuần");
+
+  case "Sat":
+  case "Sun":
+    message = document.write("Ngày nghỉ");
+}
+    </script>
 </body>
 </html>
