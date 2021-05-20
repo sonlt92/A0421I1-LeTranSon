@@ -7,7 +7,19 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>   
 </head>
 <body>
-    <p>Chỉ số cân nặng cơ thể</p>
+    <style>
+        p {            
+        background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-family: monospace;        
+        font-weight: bold;
+        font-size: 30px;
+    }
+    </style>
+    <p>TÍNH CHỈ SỐ CÂN NẶNG CƠ THỂ</p>
     <label>Cân nặng của bạn là(kg): </label><input id="nhapcannang"> 
     <br><label>Chiều cao của bạn là(cm):</label><input id="nhapchieucao">
     <button type="submit" onclick="check()">Check</button>
