@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Thực hành] Sự kiện bàn phím</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body onload="docReady()">
+    <img id="pokemon" src="pokemon.jpg" style="position: absolute; left: 0; top: 0; width: 300px;" height: "200" width: "100"/>
+    <script>
+        function up(){
+            var element = document.getElementById("pokemon");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+        function down(){
+            var element = document.getElementById("pokemon");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+        function left(){
+            var element = document.getElementById("pokemon");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+        function right(){
+            var element = document.getElementById("pokemon");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+
+        function move(evt){
+            switch (evt.keyCode){
+                case 37:
+                    left();
+                    break;
+                case 39: 
+                    right();
+                    break;
+                case 38:
+                    up();
+                    break;
+                case 40:
+                    down();
+                    break;           
+            }
+        }
+        function docReady(){
+            window.addEventListener('keydown', move);
+        }
+    </script>
+</body>
+</html>
