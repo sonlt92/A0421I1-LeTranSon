@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Bài tập] Tính chỉ số cân nặng của cơ thể</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>   
+</head>
+<body>
+    <p>Chỉ số cân nặng cơ thể</p>
+    <label>Cân nặng của bạn là(kg): </label><input id="nhapcannang"> 
+    <br><label>Chiều cao của bạn là(cm):</label><input id="nhapchieucao">
+    <button type="submit" onclick="check()">Check</button>
+    <br/><br/><label style="font-weight: bold; color: royalblue;">BMI của bạn là:</label> <label id="ketqua" style="color: tomato;"><label></label>
+     
+    <script>
+        function check(){
+            var cannang = parseInt(document.getElementById('nhapcannang').value);
+            var chieucao = parseInt(document.getElementById('nhapchieucao').value);
+            var BMI;            
+            BMI = (cannang) / ((chieucao * chieucao)/10000);
+            if(BMI < 18.6){                
+                document.getElementById("ketqua").innerHTML = BMI + "<p>Bạn đang bị thiếu cân</p>";                
+            } else if (BMI >= 18.6 && BMI < 24.9){
+                document.getElementById("ketqua").innerHTML = BMI + "<p>Bạn đang bình thường</p>";
+            }else{
+                document.getElementById("ketqua").innerHTML = BMI + "<p>Bạn đang bị thừa cân</p>";
+            }
+        }
+    </script>
+</body>
+</html>
