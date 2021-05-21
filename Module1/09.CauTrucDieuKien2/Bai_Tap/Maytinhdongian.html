@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>    
 </head>
 <body>
-    <style>
+  <!--  <style>
         * {
             box-sizing: border-box;
         }
@@ -25,36 +25,87 @@
         table tr:not(:first-child) td {
             height: 70px;
         }
-            
+
     </style>
     <table>
         <tr>
-            <td colspan="4"><input type="hienthi"></td>
+            <td colspan="4"><input type="text" id="hienthi"></td>
         </tr>
         <tr>
-            <td><button type="button">1</button></td>
-            <td><button type="button">2</button></td>
-            <td><button type="button">3</button></td>
-            <td><button type="button">+</button></td>
+            <td><button class="btn" type="button">1</button></td>
+            <td><button class="btn" type="button">2</button></td>
+            <td><button class="btn" type="button">3</button></td>
+            <td><button class="btn" type="button">+</button></td>
         </tr>
         <tr>
-            <td><button type="button">4</button></td>
-            <td><button type="button">5</button></td>
-            <td><button type="button">6</button></td>
-            <td><button type="button">-</button></td>
+            <td><button class="btn" type="button">4</button></td>
+            <td><button class="btn" type="button">5</button></td>
+            <td><button class="btn" type="button">6</button></td>
+            <td><button class="btn" type="button">-</button></td>
         </tr>
         <tr>
-            <td><button type="button">7</button></td>
-            <td><button type="button">8</button></td>
-            <td><button type="button">9</button></td>
-            <td><button type="button">x</button></td>
+            <td><button class="btn" type="button">7</button></td>
+            <td><button class="btn" type="button">8</button></td>
+            <td><button class="btn" type="button">9</button></td>
+            <td><button class="btn" type="button">x</button></td>
         </tr>
         <tr>
-            <td><button type="button">C</button></td>
-            <td><button type="button">0</button></td>
-            <td><button type="button">=</button></td>
-            <td><button type="button">/</button></td>
+            <td><button class="btn" type="button">C</button></td>
+            <td><button class="btn" type="button">0</button></td>
+            <td><button class="btn" type="button">=</button></td>
+            <td><button class="btn" type="button">/</button></td>
         </tr>
     </table>
+    <script>
+        const so = document.getElementsByClassName('btn');
+        const ketqua = document.getElementById("hienthi");
+
+        for (let number of so){
+            number.addEventListener('click', function () {
+                ketqua.innerHTML += this.value
+            });
+        }
+
+
+    </script> -->
+
+   <!-- <div class="maytinh">
+        <div id="ketqua"></div>
+        <div class="tinhtoan">
+            <div class="so">
+                <button class="btn" value="7">7</button>
+                <button class="btn" value="8">8</button>
+                <button class="btn" value="9">9</button>
+                <button class="btn" value="4">4</button>
+                <button class="btn" value="5">5</button>
+                <button class="btn" value="6">6</button>
+                <button class="btn" value="1">1</button>
+                <button class="btn" value="2">2</button>
+                <button class="btn" value="3">3</button>
+                <button class="btn" value="0">0</button>
+            </div>
+            <div class="pheptinh">
+                <button class="btn" value="+">+</button>
+                <button class="btn" value="-">-</button>
+                <button class="btn" value="x">x</button>
+                <button class="btn" value="/">/</button>
+                <button class="btn" value="=" onclick="bang()">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const so = document.getElementsByClassName('btn');
+        const ketqua = document.getElementById("ketqua");
+        for (let number of so){
+            number.addEventListener('click', function () {
+                ketqua.innerHTML += this.value
+            });
+        }
+        function bang() {
+            let res = ketqua.innerHTML;
+            let hienthi = eval(res);
+            ketqua.innerHTML = hienthi;
+        }
+    </script>-->
 </body>
 </html>
