@@ -7,23 +7,40 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>    
 </head>
 <body>
-  <!--  <style>
+    <style>
         * {
             box-sizing: border-box;
         }
         table {
             border-collapse: collapse;
+            margin:auto;
+            height: auto;
+            width: auto;
+
         }
         table tr, form table td {
-            border: 1px solid #eee;
+            height: 70px;
+            width: 70px;
+            border-style:solid;
+            border-color: #AAB69B;
+            border-collapse:collapse;
+
         }
         table tr:first-child input {
             height: 50px;
             padding: 0 10px;
             font-weight: 700;
+            border-width: 2px;
+            border-collapse: collapse;
+            border-style: solid;
+            border-color: #1BA39C;
         }
         table tr:not(:first-child) td {
             height: 70px;
+        }
+        button
+        {
+            padding: 15px;
         }
 
     </style>
@@ -32,42 +49,41 @@
             <td colspan="4"><input type="text" id="hienthi"></td>
         </tr>
         <tr>
-            <td><button class="btn" type="button">1</button></td>
-            <td><button class="btn" type="button">2</button></td>
-            <td><button class="btn" type="button">3</button></td>
-            <td><button class="btn" type="button">+</button></td>
+            <td><button class="btn" type="button" onclick="nhap('1')">1</button></td>
+            <td><button class="btn" type="button" onclick="nhap('2')">2</button></td>
+            <td><button class="btn" type="button" onclick="nhap('3')">3</button></td>
+            <td><button class="btn" type="button" onclick="nhap('+')">+</button></td>
         </tr>
         <tr>
-            <td><button class="btn" type="button">4</button></td>
-            <td><button class="btn" type="button">5</button></td>
-            <td><button class="btn" type="button">6</button></td>
-            <td><button class="btn" type="button">-</button></td>
+            <td><button class="btn" type="button" onclick="nhap('4')">4</button></td>
+            <td><button class="btn" type="button" onclick="nhap('5')">5</button></td>
+            <td><button class="btn" type="button" onclick="nhap('6')">6</button></td>
+            <td><button class="btn" type="button" onclick="nhap('-')">-</button></td>
         </tr>
         <tr>
-            <td><button class="btn" type="button">7</button></td>
-            <td><button class="btn" type="button">8</button></td>
-            <td><button class="btn" type="button">9</button></td>
-            <td><button class="btn" type="button">x</button></td>
+            <td><button class="btn" type="button" onclick="nhap('7')">7</button></td>
+            <td><button class="btn" type="button" onclick="nhap('8')">8</button></td>
+            <td><button class="btn" type="button" onclick="nhap('9')">9</button></td>
+            <td><button class="btn" type="button" onclick="nhap('*')">*</button></td>
         </tr>
         <tr>
-            <td><button class="btn" type="button">C</button></td>
-            <td><button class="btn" type="button">0</button></td>
-            <td><button class="btn" type="button">=</button></td>
-            <td><button class="btn" type="button">/</button></td>
+            <td><button class="btn" type="button" onclick="nhap('C')">C</button></td>
+            <td><button class="btn" type="button" onclick="nhap('0')">0</button></td>
+            <td><button class="btn" type="button" onclick="tinhtoan()">=</button></td>
+            <td><button class="btn" type="button" onclick="nhap('/')">/</button></td>
         </tr>
     </table>
     <script>
-        const so = document.getElementsByClassName('btn');
-        const ketqua = document.getElementById("hienthi");
-
-        for (let number of so){
-            number.addEventListener('click', function () {
-                ketqua.innerHTML += this.value
-            });
+        function nhap(giatri){
+            document.getElementById("hienthi").value += giatri;
+            if (giatri == "C"){
+                document.getElementById("hienthi").value = "";
+            }
         }
-
-
-    </script> -->
+        function tinhtoan(){
+            document.getElementById("hienthi").value = (eval(document.getElementById("hienthi").value));
+        }
+    </script>
 
    <!-- <div class="maytinh">
         <div id="ketqua"></div>
