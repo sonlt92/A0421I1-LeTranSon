@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[*Bài tập] Luyện tập cấu trúc điều kiện 02</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <script>
+        //Bai 1
+        var doC = Number(prompt("Nhap do C can chuyen sang do F: "));
+        var doF = doC * 9 / 5 + 32;
+        alert("Do F la: "+ doF);
+
+        //Bai 2
+        var met = Number(prompt("Nhap met can doi sang feet: "))
+        var feet = met * 3.2808;
+        alert("Bang: " + feet + " feet");
+
+        //Bai 3
+        var canhhinhvuong = parseInt(prompt("Nhap canh hinh vuong(cm): "));
+        var dientichhinhvuong = canhhinhvuong * canhhinhvuong;
+        alert("Dien tich hinh vuong la: " + dientichhinhvuong + " cm2");
+
+        //Bai 4
+        var chieudai = parseInt(prompt("Nhap chieu dai hinh chu nhat: " ));
+        var chieurong = parseInt(prompt("Nhap chieu rong hinh chu nhat: "));
+        var dientichhinhchunhat = chieudai * chieurong;
+        alert("Dien tich hinh chu nhat la: " + dientichhinhchunhat);
+
+        //Bai 5
+        var canha = Number(prompt("Nhap canh goc vuong a: "));
+        var canhb = Number(prompt("Nhap canh goc vuong b: "));
+        var dientichtamgiacvuong = (canha * canhb)/2;
+        alert("Dien tich tam giac vuong la: "+ dientichtamgiacvuong);
+
+        //Bai 6
+        alert("Giai phuong trinh bac nhat");
+        var nhapa = Number(prompt("Nhap a: "));
+        var nhapb = Number(prompt("Nhap b: "));
+        var x = -nhapb / nhapa;
+        if (nhapa == 0 && nhapb == 0){
+            alert("Phuong trinh co vo so nghiem");
+        } else if (nhapa == 0 && nhapb != 0){
+            alert("Phuong trinh vo nghiem");
+        } else {
+            alert("Phuong trinh co nghiem duy nhat la : " + x);
+        }
+
+        //Bai 7
+        alert("Giai phuong trinh bac 2");
+        var a = Number(prompt("Nhap so a: "));
+        var b = Number(prompt("Nhap so b: "));
+        var c = Number(prompt("Nhap so c: "));
+        var delta = (b*b) - (4*(a*c));         
+        if (delta == 0){
+            var nghiemkep = -b / 2 * a / 100;
+            alert("Phuong trinh co nghiem kep la: "+ nghiemkep);            
+        } else if (delta > 0){
+            var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            alert("Phuong trinh co 2 nghiem la: " + x1 + " va "+ x2);
+        } else {
+            alert("Phuong trinh vo nghiem");
+        }
+
+        //Bai 8
+        var nhaptuoi = parseInt(prompt("Nhap vao 1 so bat ky: "));
+        if (0 < nhaptuoi <= 120){
+            alert("Tuoi cua ban la: " + nhaptuoi);
+        }else {
+            alert("Khong phai la tuoi");
+        }
+
+
+    </script>
+</body>
+</html>
