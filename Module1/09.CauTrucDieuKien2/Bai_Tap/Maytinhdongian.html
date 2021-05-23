@@ -46,7 +46,7 @@
     </style>
     <table>
         <tr>
-            <td colspan="4"><input type="text" id="hienthi"></td>
+            <td colspan="4"><input type="text" id="ketqua"></td>
         </tr>
         <tr>
             <td><button class="btn" type="button" onclick="nhap('1')">1</button></td>
@@ -74,54 +74,17 @@
         </tr>
     </table>
     <script>
-        function nhap(giatri){
-            document.getElementById("hienthi").value += giatri;
-            if (giatri == "C"){
-                document.getElementById("hienthi").value = "";
+        function nhap(number){
+            document.getElementById("ketqua").value += number;
+            if (number == "C"){
+                document.getElementById("ketqua").value = "";
             }
         }
         function tinhtoan(){
-            document.getElementById("hienthi").value = (eval(document.getElementById("hienthi").value));
+            document.getElementById("ketqua").value = (eval(document.getElementById("ketqua").value));
         }
     </script>
 
-   <!-- <div class="maytinh">
-        <div id="ketqua"></div>
-        <div class="tinhtoan">
-            <div class="so">
-                <button class="btn" value="7">7</button>
-                <button class="btn" value="8">8</button>
-                <button class="btn" value="9">9</button>
-                <button class="btn" value="4">4</button>
-                <button class="btn" value="5">5</button>
-                <button class="btn" value="6">6</button>
-                <button class="btn" value="1">1</button>
-                <button class="btn" value="2">2</button>
-                <button class="btn" value="3">3</button>
-                <button class="btn" value="0">0</button>
-            </div>
-            <div class="pheptinh">
-                <button class="btn" value="+">+</button>
-                <button class="btn" value="-">-</button>
-                <button class="btn" value="x">x</button>
-                <button class="btn" value="/">/</button>
-                <button class="btn" value="=" onclick="bang()">=</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        const so = document.getElementsByClassName('btn');
-        const ketqua = document.getElementById("ketqua");
-        for (let number of so){
-            number.addEventListener('click', function () {
-                ketqua.innerHTML += this.value
-            });
-        }
-        function bang() {
-            let res = ketqua.innerHTML;
-            let hienthi = eval(res);
-            ketqua.innerHTML = hienthi;
-        }
-    </script>-->
+  
 </body>
 </html>

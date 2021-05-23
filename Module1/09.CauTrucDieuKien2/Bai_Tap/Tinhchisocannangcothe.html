@@ -33,7 +33,7 @@
             BMI = (cannang) / ((chieucao * chieucao)/10000);
             if(BMI < 18.6){                
                 document.getElementById("ketqua").innerHTML = BMI + "<p>Bạn đang bị thiếu cân</p>";                
-            } else if (BMI >= 18.6 && BMI < 24.9){
+            } else if (BMI < 24.9){
                 document.getElementById("ketqua").innerHTML = BMI + "<p>Bạn đang bình thường</p>";
             }else{
                 document.getElementById("ketqua").innerHTML = BMI + "<p>Bạn đang bị thừa cân</p>";

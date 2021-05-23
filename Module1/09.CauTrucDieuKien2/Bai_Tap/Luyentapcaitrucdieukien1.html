@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[*Bài tập] Luyện tập cấu trúc điều kiện 01</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>   
+</head>
+<body>
+    <script>
+        //Bai 1
+        var a = parseInt(prompt("Nhap a: "));
+        var b = parseInt(prompt("Nhap b: "));
+        if (a % b == 0){
+            alert("A chia het cho B");
+        }else{
+            alert("A khong chia het cho B")
+        }
+
+        //Bai 2
+        var tuoi = parseInt(prompt('Nhap tuoi: '));
+        if (tuoi >= 15){
+            alert('Du dieu kien vao lop 10');
+        } else {
+            alert('Khong du dieu kien vao lop 10');
+        }
+
+        //Bai 3
+        var songuyen = parseInt(prompt("Nhap so nguyen bat ky: "));
+        if (songuyen > 0){
+            alert("So nguyen nhap vao lon hon 0");
+        } else {
+            alert('So nguyen nhap vao nho hon 0');
+        }
+
+        //Bai 4
+        var so1 = parseInt(prompt("Nhap so thu 1: "));
+        var so2 = parseInt(prompt("Nhap so thu 2: "));
+        var so3 = parseInt(prompt("Nhap so thu 3: "));
+        if (so1 > so2){
+            if (so1 > so3){
+                alert(so1 + " La so lon nhat");
+            } else {
+                alert(so3 + " La so lon nhat");
+            }
+        } else if (so2 > so3){
+            alert(so2 + " La so lon nhat");
+        }else{
+            alert(so3 + " La so lon nhat");
+        }
+
+        //Bai 5
+        var diembaikiemtra = Number(prompt("Nhap diem bai kiem tra: "));
+        var diemthigiuaky = Number(prompt("Nhap diem thi giua ky: "));
+        var diemthicuoiky = Number(prompt("Nhap diem thi cuoi ky: "));
+        var hocluc = (diembaikiemtra + diemthicuoiky + diemthigiuaky)/3;
+        if(diembaikiemtra <=10 && diemthigiuaky <=10 && diemthicuoiky <=10){
+            if (hocluc >= 8){
+                alert("Hoc sinh gioi");
+            } else if (hocluc >= 6.5){
+                alert("Hoc sinh kha");
+            } else if (hocluc >= 4.5){
+                alert("Hoc sinh trung binh");
+            } else{
+                alert("Hoc sinh yeu");
+            }
+        } else {
+            alert("Nhap sai diem");
+        }   
+        //Bai 6
+        var doanhso = Number(prompt("Nhap doanh so: "));
+        var hoahong = doanhso * 10/100;
+        alert("Tien hoa hong la: " + hoahong + "USD");
+
+
+    </script>
+</body>
+</html>

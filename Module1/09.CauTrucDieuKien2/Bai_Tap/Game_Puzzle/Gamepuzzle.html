@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>[Bài tập] Game puzzle</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>    
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="puzzles">
-          <img id="img1" src="1.jpg"/>
-          <img id="img2" src="2.jpg"/>
-          <img id="img3" src="3.jpg"/>
-          <img id="img4" src="4.jpg"/>          
-        </div>
-      </div>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div>
+      <img id="img1" src="1.jpg" onclick="setImagesRandom()" />
+      <img id="img2" src="2.jpg" onclick="setImagesRandom()"/>
+      <img id="img3" src="3.jpg" onclick="setImagesRandom()"/>
+      <img id="img4" src="4.jpg" onclick="setImagesRandom()"/>
+    </div>
+    <script>
+      let topicImg;
+      function setImagesRandom() {
+        for (var i = 1; i <= 4; i++) {
+          let topicImg = Math.floor(Math.random() * 3);
+          replaceImage(i, topicImg);
+        }
+      }
+    </script>
+  </body>
 </html>
