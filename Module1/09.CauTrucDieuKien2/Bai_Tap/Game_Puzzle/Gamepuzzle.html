@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>[Bài tập] Game puzzle</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div>
-      <img id="img1" src="1.jpg" onclick="setImagesRandom()" />
-      <img id="img2" src="2.jpg" onclick="setImagesRandom()"/>
-      <img id="img3" src="3.jpg" onclick="setImagesRandom()"/>
-      <img id="img4" src="4.jpg" onclick="setImagesRandom()"/>
-    </div>
-    <script>
-      let topicImg;
-      function setImagesRandom() {
-        for (var i = 1; i <= 4; i++) {
-          let topicImg = Math.floor(Math.random() * 3);
-          replaceImage(i, topicImg);
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="display: flex;">
+    <div id="a" style=" width: 250px;">
+    <img src="2.jpg" onclick="changeImgA()" id="carA">
+    <img src="3.jpg" onclick="changeImgB()" id="carB" >
+    <img src="4.jpg" onclick="changeImgB()" id="carC" >
+    <img src="1.jpg" onclick="changeImgB()" id="carD" >    
+</div>
+</body>
+<script>
+    let carA = document.getElementById("carA");
+    let carB = document.getElementById("carB");
+    let carC = document.getElementById("carC");
+    let carD = document.getElementById("carD");    
+    function changeImgA() {
+        // alert(carA.src)
+        if (carA.getAttribute("src") == "1.jpg") {
+            document.getElementById("carA").src = "2.jpg"
+        } else if (carA.getAttribute("src") == "2.jpg") {
+            document.getElementById("carA").src = "3.jpg"
+        } else {
+            document.getElementById("carA").src = "1.jpg"
         }
-      }
-    </script>
-  </body>
+    }
+    function changeImgB() {
+        // alert(carA.src)
+        if (carA.getAttribute("src") == "2.jpg") {
+            document.getElementById("carA").src = "3.jpg"
+        } else if (carA.getAttribute("src") == "3.jpg") {
+            document.getElementById("carA").src = "4.jpg"
+        } else {
+            document.getElementById("carA").src = "2.jpg"
+        }
+    }
+
+</script>
 </html>
