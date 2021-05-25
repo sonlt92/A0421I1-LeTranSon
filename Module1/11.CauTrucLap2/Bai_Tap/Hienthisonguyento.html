@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>[Bài tập] Hiển thị các số nguyên tố đầu tiên</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>    
-</head>
-<body>
-    <script>
-        var numbers = parseInt(prompt("Nhap so luong so nguyen to can hien thi: "));
-        
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
+  <body>
+    <script>
+      var numbers = parseInt(prompt("Nhap so luong so nguyen to can hien thi: "));
+      var count = 2;
+      
+      for (var i = 0; i < numbers; i++) {
+        for (var x = 0; x <= i / 2; x++) {
+          if (i !== 1 && i !== 0 && i !== x) {
+            if (i % x === 0) {
+              count++;
+            }
+          }
+        }
+        if (count === 3) {
+          document.write(i + "<br/>");
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
