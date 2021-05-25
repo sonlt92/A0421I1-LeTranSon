@@ -44,12 +44,26 @@
         for (i = 2; i < 20; i++) {
                 f = f1;
                 f1 = f2;
-                f2 = f + f1;                                        
+                f2 = f + f1;
+                if (f2 % 5 == 0){
+                    document.write("So dau tien trong day Fibonacci chia het cho 5 la: " + f2);
+                    break;
+                }
             }
-            if ((f2/5) %= 0){
-                    document.write("So dau tien chia het cho 5 trong day Fibonacci là: " + f2);
-                }                
         
+        //Bai 5
+        var f = 0;
+        var f1 = f2 = 1;
+        var sum;                  
+        for (i = 2; i < 20; i++) {
+                f = f1;
+                f1 = f2;
+                f2 = f + f1;
+              for (; i < 20; i++){
+                   sum = f2;
+              }document.write("Tong 20 so dau tien la: " + sum);                
+            }
+               
     
 
 
