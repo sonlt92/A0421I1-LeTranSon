@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai05</title>
+</head>
+<body>
+<script>
+  //Bai 5
+
+  var f = 0;
+  var f1 = (f2 = 1);
+  var sum = f2;
+  for (i = 2; i < 20; i++) {
+    f = f1;
+    f1 = f2;
+    f2 = f + f1;
+    sum += f2;
+  }
+
+  document.write("Tong 20 so chan dau tien trong day Fibonacci la: " + sum);
+</script>
+</body>
+</html>

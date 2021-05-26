@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <input type="button">PLAY
     <script>
       //Bai 1:
       for (var i = 0; i < 100; i++) {
@@ -34,7 +35,7 @@
         f = f1;
         f1 = f2;
         f2 = f + f1;
-        document.write(f1 + f2 + "<br/>");
+        document.write(f2 + "<br/>");
       }
 
       //Bai 4
@@ -79,7 +80,22 @@
         sotunhien++;
       }
       document.write("Tong 30 so tu nhien chia het cho 7 la:  " + tong);
-      
+
+      //Bai 7
+      for (i = 0; i <= 100; i++){
+          if (i % 3 ==0 && i % 5 == 0){
+            document.write("Fizz Buzz" + "<br/>")
+          }else if (i % 3 == 0){
+            document.write("Fizz" + "<br/>");
+          }else if (i % 5 == 0){
+            document.write("Buzz" + "<br/>");
+          } else {
+            document.write(i + "<br/>");
+          }
+      }
+
+      //Bai 8
+
     </script>
   </body>
 </html>

@@ -9,21 +9,44 @@
 
   <body>
     <script>
-      var numbers = parseInt(prompt("Nhap so luong so nguyen to can hien thi: "));
-      var count = 2;
-      
-      for (var i = 0; i < numbers; i++) {
-        for (var x = 0; x <= i / 2; x++) {
-          if (i !== 1 && i !== 0 && i !== x) {
-            if (i % x === 0) {
+     /* var numb = parseInt(prompt("Nhap so luong so nguyen to can hien thi: "));
+      var counter = 0;
+      var songuyento = "So nguyen to la: ";
+      for(var i=2; i<=numb; ++i)
+      {
+        counter=0;
+        for(var j=2; j<=numb; ++j)
+        {
+          if(i>=j && i%j == 0)
+          {
+            ++counter;
+          }
+
+        }
+        if(counter == 1)
+        {
+          songuyento = songuyento + i + "  ";
+        }
+
+      }
+      document.write(songuyento); */
+
+
+
+      for(var i=0; i< numb; i++){
+        var count = 2;
+        for(var x=0; x<=i/2; x++){
+          if(i !== 1 && i !== 0 && i !== x){
+            if(i%x === 0){
               count++;
             }
           }
         }
-        if (count === 3) {
+        if(count === 3){
           document.write(i + "<br/>");
         }
       }
+
     </script>
   </body>
 </html>
