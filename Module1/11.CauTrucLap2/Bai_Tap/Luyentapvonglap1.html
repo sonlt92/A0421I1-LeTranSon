@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>[*Bài tập] Luyện tập vòng lặp 01</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>    
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
     <script>
-        //Bai 1:
-        for(var i = 0; i < 100; i++){
-            document.write(i + "<br/>");
-            if(i == 99){
-                alert("Da hoan thanh");
-            }                        
+      //Bai 1:
+      for (var i = 0; i < 100; i++) {
+        document.write(i + "<br/>");
+        if (i == 99) {
+          alert("Da hoan thanh");
         }
+      }
 
-        //Bai 2:        
-        var nhietdo = parseInt(prompt("Nhap nhiet do: "));       
-        while(nhietdo < 20){
-            alert("Nhiet do thap. Vui long tang nhiet do");
-            nhietdo = parseInt(prompt("Nhap lai nhiet do: "));
-            while(nhietdo > 100){
-                alert("Nhiet do cao. Vui long giam nhiet do");
-                nhietdo = parseInt(prompt("Nhap lai nhiet do: "));
-            }                        
-        } 
+      //Bai 2:
+      var nhietdo = parseInt(prompt("Nhap nhiet do: "));
+      while (nhietdo < 20) {
+        alert("Nhiet do thap. Vui long tang nhiet do");
+        nhietdo = parseInt(prompt("Nhap lai nhiet do: "));
+        while (nhietdo > 100) {
+          alert("Nhiet do cao. Vui long giam nhiet do");
+          nhietdo = parseInt(prompt("Nhap lai nhiet do: "));
+        }
+      }
 
-        
-        //Bai 3
-        var f = 0;
-        var f1 = f2 = 1;                  
-        for (i = 2; i < 20; i++) {
-                f = f1;
-                f1 = f2;
-                f2 = f + f1;
-                document.write(f2 + "<br/>");
-            }
-        
-        //Bai 4
-        var f = 0;
-        var f1 = f2 = 1;                  
-        for (i = 2; i < 20; i++) {
-                f = f1;
-                f1 = f2;
-                f2 = f + f1;
-                if (f2 % 5 == 0){
-                    document.write("So dau tien trong day Fibonacci chia het cho 5 la: " + f2);
-                    break;
-                }
-            }
-        
-        //Bai 5
-        var f = 0;
-        var f1 = f2 = 1;
-        var sum;                  
-        for (i = 2; i < 20; i++) {
-                f = f1;
-                f1 = f2;
-                f2 = f + f1;
-              for (; i < 20; i++){
-                   sum = f2;
-              }document.write("Tong 20 so dau tien la: " + sum);                
-            }
-               
-    
+      //Bai 3
+      var f = 0;
+      var f1 = (f2 = 1);
+      for (i = 2; i < 20; i++) {
+        f = f1;
+        f1 = f2;
+        f2 = f + f1;
+        document.write(f1 + f2 + "<br/>");
+      }
 
+      //Bai 4
+      var f = 0;
+      var f1 = (f2 = 1);
+      for (i = 2; i < 20; i++) {
+        f = f1;
+        f1 = f2;
+        f2 = f + f1;
+        if (f2 % 5 == 0) {
+          document.write(
+            "So dau tien trong day Fibonacci chia het cho 5 la: " + f2
+          );
+          break;
+        }
+      }
 
+      //Bai 5
 
-        
-        
+      var f = 0;
+      var f1 = (f2 = 1);
+      var sum = f2;
+      for (i = 2; i < 20; i++) {
+        f = f1;
+        f1 = f2;
+        f2 = f + f1;
+        sum += f2;
+      }
 
+      document.write("Tong 20 so chan dau tien trong day Fibonacci la: " + sum);
+
+      //Bài 6
+
+      var tong = 0;
+      var dem = 0;
+      var sotunhien = 1;
+
+      while (dem <= 30) {
+        if (sotunhien % 7 == 0) {
+          tong += sotunhien;
+        }
+        sotunhien++;
+      }
+      document.write("Tong 30 so tu nhien chia het cho 7 la:  " + tong);
+      
     </script>
-</body>
+  </body>
 </html>
