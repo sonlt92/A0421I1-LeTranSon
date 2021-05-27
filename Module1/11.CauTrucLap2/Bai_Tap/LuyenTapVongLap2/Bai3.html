@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+      Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!--Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau-->
+    <script>
+     /*   //Hinh 1
+      var chieucao = 4;
+      for (i = 0; i <= chieucao; i++) {
+        for (k = 0; k <= i; k++) {
+          document.write("*");          
+        }
+        document.write("<br/>");
+      }         
+
+      //Hinh 2
+      document.write("<br/>");
+      for (j = 0; j <= chieucao; j++) {
+        for (h = chieucao ; h >= j; h--) {
+          document.write("*");          
+        }
+        document.write("<br/>");
+      } */
+      
+      //Hinh 3
+      function draw1() {
+                    let mytable = "<table>";
+                    for (let i = 1; i < 6; i++) {
+                          mytable += "<tr>";
+                          mytable += "<td>" + "*".repeat(i) +"</td>";
+                          }
+                          mytable += "</tr>";
+                    document.write(mytable);
+              }
+              draw1()
+              function draw2() {
+                    let mytable = "<table>";
+                    for (let i = 5; i > 0; i--) {
+                          mytable += "<tr>";
+                          mytable += "<td>" + "*".repeat(i) +"</td>";
+                          }
+                          mytable += "</tr>";
+                    document.write(mytable);
+              }
+              draw2();
+              function draw3() {
+                    let mytable = "<table>";
+                    for (let i = 1; i < 6; i++) {
+                          mytable += "<tr>";
+                          mytable += "<td>" + "&nbsp;&nbsp;".repeat(5-i) + "*".repeat(i) +"</td>";
+                    }
+                    mytable += "</tr>";
+                    document.write(mytable);
+              }
+              draw3();
+               function draw4() {
+                    let mytable = "<table>";
+                    for (let i = 5; i > 0; i--) {
+                          mytable += "<tr>";
+                          mytable += "<td>"  + "&nbsp;&nbsp;".repeat(5-i) + "*".repeat(i) +"</td>";
+                    }
+                    mytable += "</tr>";
+                    document.write(mytable);
+              }
+              draw4();
+      
+
+
+    </script>    
+  </body>
+</html>

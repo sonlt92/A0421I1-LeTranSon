@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bài 2: Tính giai thừa của một số nguyên dương</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>   
+</head>
+<body>
+    <!--Bài 2: Tính giai thừa của một số nguyên dương-->
+    <script>
+        var num = parseInt(prompt("Nhap so nguyen duong: "));
+        var giaithua = 1;
+        for(i = 1; i <= num ; i++){
+            giaithua *= i;
+        }
+        document.write("Giai thua cua " + num + " la " + giaithua);
+    </script>
+</body>
+</html>

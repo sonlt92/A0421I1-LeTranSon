@@ -5,15 +5,15 @@
     <title>Bai03</title>
 </head>
 <body>
-<script>
-  //Bai 3
+  <!--Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.-->
+<script>  
   var f = 0;
-  var f1 = (f2 = 1);
+  var f1 = 1, f2 = 1;
   for (i = 2; i < 20; i++) {
-    f = f1;
-    f1 = f2;
-    f2 = f + f1;
     document.write(f2 + "<br/>");
+    f2 = f + f1;
+    f  = f1;
+    f1 = f2;    
   }
 </script>
 </body>
