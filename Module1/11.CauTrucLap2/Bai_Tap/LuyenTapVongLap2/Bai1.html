@@ -4,33 +4,33 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Bài 1: In dãy Finonaci</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>  
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
-  <!--Bài 1: In dãy Finonaci-->
-    <script>
-        //Bai 1
-         /*var n = parseInt(prompt("Nhap so lon nhat: "))
-        var f = 0;
-        var f1 = f2 = 1;
-        document.write(f);
-        document.write(f1);
-        for (i = 2; i < n; i++) {
-          f = f1;
-          f1 = f2;
-          f2 = f + f1;
-          document.write(f2 + "<br/>");
-        } */
-        var num = parseInt(prompt("Nhap so lon nhat: "));
-        var a = 1,b = 0,temp;
-        while(num >= 0){
-            temp = a;
-            a = a + b;
-            b = temp;
-            num--;
-            document.write(b + "<br/>");
-        }
-            
-      </script>
+<!--Bài 1: In dãy Finonaci-->
+<script>
+    //Bai 1
+    /*var n = parseInt(prompt("Nhap so lon nhat: "))
+   var f = 0;
+   var f1 = f2 = 1;
+   document.write(f);
+   document.write(f1);
+   for (i = 2; i < n; i++) {
+     f = f1;
+     f1 = f2;
+     f2 = f + f1;
+     document.write(f2 + "<br/>");
+   } */
+    var num = parseInt(prompt("Nhap so lon nhat: "));
+    var a = 1, b = 0, temp;
+    while (num >= 0) {
+        temp = a;
+        a = a + b;
+        b = temp;
+        num--;
+        document.write(b + "<br/>");
+    }
+
+</script>
 </body>
 </html>
