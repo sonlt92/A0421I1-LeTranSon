@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Bài 5: Viết chương trình tính lãi ngân hàng</title>
-</head>
-<body>
-      <!--Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng. -->
-      <script>
-          var sotien = parseInt(prompt("Nhap so tien tinh lai: "));
-          var laisuat = 0;
-
-      </script>
-</body>
+  </head>
+  <body>
+    <!--Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng. -->
+    <script>
+      var sotien = parseInt(prompt("Nhap so tien ban muon vay: "));
+      var sothang = parseInt(prompt("Nhap so thang ban muon vay"));      
+      var laisuathangthang, lai;
+      var sotienhangthang;
+      for(i = 0; i < sothang; i++) 
+    {
+        sotienhangthang = sotien / sothang;
+        lai = sotien * 0.12 / sothang;
+    }
+    laisuathangthang = sotienhangthang + lai;
+    document.write("Lai suat ban phai tra hang thang la: " + Math.floor(laisuathangthang));
+     
+    </script>
+  </body>
 </html>
