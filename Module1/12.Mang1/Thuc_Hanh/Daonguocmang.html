@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Thực hành] Đảo ngược các phần tử trong mảng</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        var number = [-3, 5, 1, 3, 2, 10];
+        var first = 0;
+        let last = number.length - 1;
+        document.write(number);
+        while (first < last) {
+            var b = number[first];
+            number[first] = number[last];
+            number[last] = b;
+            first++;
+            last--;
+        }
+        document.write("<br/>"+ number);
+    </script>
+</body>
+
+</html>
