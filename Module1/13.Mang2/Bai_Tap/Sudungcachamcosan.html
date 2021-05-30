@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Bài tập] Sử dụng các hàm có sẵn của mảng</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+
+        //Bai 1
+        var myColor = ["Red", "Green", "White", "Black"];
+        document.write(myColor.toString());
+
+        document.write("<br/>");
+        //Bai 2
+        var temp = window.prompt();
+        var numb = temp.toString();
+        var result = [numb[0]];
+        for (x = 1; x < numb.length; x++) {
+            if (numb[x - 1] % 2 === 0 && numb[x] % 2 === 0) {
+                result.push('-', numb[x]);
+            } else {
+                result.push(numb[x]);
+            }
+        }
+        document.write(result.join(''));
+
+        document.write("<br/>");
+
+        //Bai 3
+
+        var str = window.prompt();
+        var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        var results = [];
+        for (var x = 0; x < str.length; x++) {
+            if (UPPER.indexOf(str[x]) !== -1) {
+                results.push(str[x].toLowerCase());
+            }
+            else if (LOWER.indexOf(str[x]) !== -1) {
+                results.push(str[x].toUpperCase());
+            }
+            else {
+                results.push(str[x]);
+            }
+        }
+        document.write(results.join(''));
+
+    </script>
+</body>
+
+</html>
