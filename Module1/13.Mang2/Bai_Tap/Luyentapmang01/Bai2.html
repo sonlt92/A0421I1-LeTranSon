@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+    <!--Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó. -->
+    <script>
+        let numbers = [-10,20,45,65,32,6,325,96,67,23];
+        let max = numbers[0];
+        let index = 0;
+        for (i = 0; i < numbers.length; i++)
+            if (numbers[i] > max){
+                max = numbers[i];
+                index = i;
+            }
+        document.write("Gia tri lon nhat cua mang la: " + max + "<br/> Nam o vi tri la: " + index);
+
+    </script>
+</body>
+</html>

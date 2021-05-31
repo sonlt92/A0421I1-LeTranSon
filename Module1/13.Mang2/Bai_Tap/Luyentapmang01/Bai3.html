@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <!-- Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó.
+    In ra giá trị trung bình của các phần tử trong mảng. -->
+    <script>
+      let numbers = [23,34,12,56,65,45,77];
+      let max = numbers[0];
+      let index = 0;
+      let sum = 0
+      let average;
+      for (i = 0; i < numbers.length; i++){
+        if (numbers[i] > max){
+          max = numbers[i];
+        }
+          sum += numbers[index++];
+          average = sum/numbers.length;
+      }
+        document.write("Tong gia tri trong mang la: " + sum + "<br/> Gia tri trung binh cua mang la: " + average );
+    </script>
+</body>
+</html>

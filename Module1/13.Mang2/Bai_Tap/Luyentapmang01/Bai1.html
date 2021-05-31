@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 01</title>
+</head>
+<body>
+    <!-- Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+    Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10. -->
+
+    <script>
+      let numbers = [1,2,3,4,5,6,7,8,9,10];
+      let max = numbers[0];
+      let index = 0;
+      for (let i = 1; i < numbers.length; i++) {
+          if (numbers[i] > max) {
+              max = numbers[i];
+              index = i;
+          }
+      }
+      document.write("So nguyen lon nhat trong mang la: " + max);
+
+
+    </script>
+</body>
+</html>
