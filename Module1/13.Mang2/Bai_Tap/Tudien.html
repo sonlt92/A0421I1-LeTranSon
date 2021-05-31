@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Từ điển</title>
+</head>
+<body>
+<input type="text" id="input">
+<input type="submit" value="Search" onclick="search()">
+<p id="result"></p>
+      <script>
+        let eng = ["dictionary","hello","cat","pen","phone","rose","table","pig","duck","eat","drink"];
+        let vietnam = ["Từ điển","Xin chào","Con mèo","Cây viết","Điện thoại","Hoa hồng","Cái bàn","Con lợn","Con vịt","Ăn","Uống"];
+        let flag = false;
+        function search() {
+            let input = document.getElementById("input").value;
+            for (let i = 0; i < eng.length; i++) {
+                if (eng[i] == input) {
+                    flag = true;
+                    document.getElementById("result").innerHTML = vietnam[i];
+
+                }
+            }
+            if (!flag){
+                document.getElementById("result").innerHTML = "No result";
+            }
+        }
+      </script>
+</body>
+</html>
