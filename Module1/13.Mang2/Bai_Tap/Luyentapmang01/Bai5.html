@@ -9,10 +9,19 @@
     <script>
         let array = [];
         let num;
+        var count = 0;
         do{
-
+            num = parseInt(prompt("Nhap vao so luong phan tu cua mang"));
+        }while(num <=0 || isNaN(num));
+        for(i = 0; i <= num; i++){
+            array[i] = parseInt(prompt("Moi ban nhap phan tu thu: " + i));
         }
-
+        for(i = 0; i < array.length; i++){
+            if (array[i] < 0){
+                count++;
+            }
+        } 
+        document.write("So luong phan tu la so nguyen am la: " + count);
     </script>
 </body>
 </html>

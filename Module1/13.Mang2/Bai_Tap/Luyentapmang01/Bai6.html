@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bai 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <!-- Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. 
+        Chương trình tìm xem V có nằm trong mảng số nguyên không? 
+        Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".-->
+    <script>
+      let array = [];      
+      let index;   
+      for (i = 0; i <= 10; i++) {          
+        array[i] = parseInt(prompt("Moi ban nhap phan tu thu " + i));
+      }
+      index = parseInt(prompt("Nhap phan tu ban muon kiem tra xem co trong mang khong: "));
+      if (typeof array[index] === "undefined") {
+            document.write("V is not in the array");
+      } else {
+        document.write("V is in the array");
+      }
+    </script>
+  </body>
+</html>

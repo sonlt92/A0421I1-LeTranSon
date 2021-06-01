@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bai 7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <!-- Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. 
+        Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng 
+        (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)-->
+    <script>
+      let array = [];
+      let index;
+      for (i = 0; i <= 10; i++) {
+        array[i] = parseInt(prompt("Moi ban nhap phan tu thu " + i));
+      }
+
+      index = parseInt(prompt("Moi ban nhap phan tu can kiem tra: "));
+      if (typeof array[index] === "undefined") {
+        document.write("V is not in the array");
+      } else {
+        var j = array.indexOf(index);
+        if (j != -1) {
+          array.splice(j,1);
+          array.push("0");
+        }
+        document.write(array);
+      }
+    </script>
+  </body>
+</html>
