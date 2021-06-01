@@ -7,16 +7,16 @@
 <body>
     <!-- Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó. -->
     <script>
-      let arr = [];
+      let array = [];
       let numb;
       do {
         numb = parseInt(prompt("Nhap so luong phan tu cua mang: "));
       } while (numb <= 0 || isNaN(numb));
-      for (i = 0; i < numb.length; i++){
-        numb[i] = parseInt(prompt("Moi ban nhap phan tu thu" + i));
+      for (i = 0; i < numb; i++){
+        array[i] = parseInt(prompt("Moi ban nhap phan tu thu " + i));
       }
-
-
+      var newarray = array.slice().reverse();
+      document.write("Phan tu cua mang sau khi dao nguoc la: " + newarray);
 
     </script>
 
