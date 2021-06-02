@@ -10,5 +10,20 @@
     <!--Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. 
         Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. 
         Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.-->
+        <script>
+            let arr1 = new Array(10);
+            let arr2 = new Array(10);
+            let arr3 = new Array(20);
+            for (i = 0; i < 10; i++){
+                arr1[i] = parseInt(prompt("Nhap phan tu thu: " + i + " cua mang thu nhat"));
+            }
+
+            for (j = 0; j < 10; j++){
+                arr2[j] = parseInt(prompt("Nhap phan tu thu: " + j + " cua mang thu hai"));
+            }
+            arr3 = arr1.concat(arr2);
+            document.write(arr3);
+
+        </script>
 </body>
 </html>

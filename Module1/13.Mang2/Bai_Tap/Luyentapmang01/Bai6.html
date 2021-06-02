@@ -12,9 +12,9 @@
         Chương trình tìm xem V có nằm trong mảng số nguyên không? 
         Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".-->
     <script>
-      let array = [];      
+      let array = new Array(10);
       let index;   
-      for (i = 0; i <= 10; i++) {          
+      for (i = 0; i < 10; i++) {
         array[i] = parseInt(prompt("Moi ban nhap phan tu thu " + i));
       }
       index = parseInt(prompt("Nhap phan tu ban muon kiem tra xem co trong mang khong: "));
