@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+ <!--Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+ Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc" -->
+    <script>
+        let array = [];
+        let num;
+        do {
+            num = parseInt(prompt("Nhap vao so luong phan tu cua mang: "));
+        } while (num <= 0 || isNaN(num))
+        for (i = 0; i < num; i++ ){
+            array[i] = prompt("Moi nhap vao phan tu thu: " + i + " cua mang:");
+        }
+        var newarray = array.reverse();
+        document.write("Mang sau khi dao nguoc la: " + newarray.join(''));
+
+
+        
+
+    </script>
+</body>
+</html>
