@@ -9,13 +9,19 @@
         <script>
             let array = [];
             let num;
+            let count =0;
             do {
                 num = parseInt(prompt("Nhap vao so luong phan tu cua mang: "));
             } while (num <= 0 || isNaN(num));
-            for ( i = 0; i < num; i++){
-                array[i] = parseInt(prompt("Nhap vao phan tu nhu "))
+            for (let i = 0; i < num; i++){
+                array[i] = prompt("Nhap vao phan tu thu " + i + " cua mang")
             }
-
+            for (let j = 0; j < array.length; j++){
+                if (!isNaN(array[j])){
+                    count++;
+                }
+            }
+            document.write("So ky tu so trong mang la: " + count);
         </script>
 </body>
 </html>
