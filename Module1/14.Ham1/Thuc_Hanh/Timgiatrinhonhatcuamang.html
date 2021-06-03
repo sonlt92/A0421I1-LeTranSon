@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>[Thực hành] Tìm giá trị nhỏ nhất của mảng</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <script>
+        function minArray(arr) {
+    if(arr.length == 0)
+        return -1;
+    let min = arr[0];
+
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i] < min){
+            min = arr[i];
+        }
+    }
+    return min;
+}
+    </script>
+</body>
+</html>
