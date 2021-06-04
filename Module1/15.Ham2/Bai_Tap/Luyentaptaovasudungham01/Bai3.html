@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<!--Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.
+            Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số. -->
+    <script>
+      function parameter(a,b){
+        a = parseInt(prompt("Nhap vao 1 so a bat ky: "));
+        b = parseInt(prompt("Nhap vao 1 so b bat ky: "));
+        var sum;
+        if (a > b){
+          alert(a + " > " + b);
+        } else if (a <= b){
+            sum = a + b;
+            alert(sum);
+        }
+      }
+      parameter();
+    </script>
+</body>
+</html>

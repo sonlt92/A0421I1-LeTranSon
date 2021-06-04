@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        number = parseInt(prompt(("Nhap vao 1 so can kiem tra co phai la so nguyen to hay khong: ")));
+        var flag = true;
+        if (number < 2) {
+            flag = false;
+        } else {
+            for (var i = 2; i < number - 1; i++) {
+                if (number % i == 0) {
+                    flag = true;
+                    break
+                }
+            }
+        }
+        if (flag == true) {
+            document.write(number + " la so nguyen to.");
+        } else {
+            document.write(number + " khong phai la so nguyen to.");
+        }
+    }
+
+    isPrime();
+</script>
+</body>
+</html>
