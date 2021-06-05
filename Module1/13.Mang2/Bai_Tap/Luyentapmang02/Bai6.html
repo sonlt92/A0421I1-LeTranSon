@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6</title>
+</head>
+<body>
+<!--Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ ) -->
+    <script>
+      let arr = [];
+      let num;
+      do {
+        num = parseInt(prompt("Nhap vao so luong ky tu trong mang: "));
+      } while (num <= 0 || isNaN(num))
+      for (let i = 0; i < num; i++ ){
+          arr[i] = prompt("Moi nhap vao phan tu thu: " + i + " cua mang:");
+      }
+      document.write("Mang truoc khi thay the ky tu la: " + arr);
+      for (j = 0; j <= arr.length; j++){
+          if (arr[j] == "-"){
+              arr[j] = "_";
+          }
+      }
+     document.write("<br/>" + "Mang sau khi thay the la: " + arr);
+
+    </script>
+</body>
+</html>
