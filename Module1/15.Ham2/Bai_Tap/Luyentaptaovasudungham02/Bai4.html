@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bai 4</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <!--Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. 
+        Nếu là ký tự số hàm trả về true, ngược lại trả về false.-->
+    <script>
+        function checknumber(){
+            input = prompt("Nhap vao ky tu ngau nhien: ");
+            if (input >= "0" && input <= "9"){
+                return true;
+                alert("Ky tu ban nhap vao la so.");
+            }else {
+                return false;
+                alert("Ky tu ban nhap vao la chu.");
+            }
+        }
+        checknumber();
+    </script>
+</body>
+</html>
