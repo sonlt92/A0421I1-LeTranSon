@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bai 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!--Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.-->
+    <script>
+      function factorial() {
+        var factorial = 1;
+        number = parseInt(prompt("Nhap vao so can tinh giai thua: "));
+        if (number != 0) {
+          for (i = 1; i <= number; i++) {
+            factorial = factorial * i;
+          }
+          alert("Giai thua cua " + number + " la: " + factorial);
+        } else {
+          alert("Giai thua cua " + number + " la: " + 1);
+        }
+      }
+      factorial();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bai 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+    <script>
+        number = parseFloat(prompt("Nhap ban kinh hinh tron: "));
+        function areaofcircle(){            
+            var areaofcircle = number * number * 3.14;
+            alert("Dien tich hinh tron la: " + areaofcircle);            
+        }
+
+        function circlecircumference(){
+            var circlecircumference = number * 2 * 3.14;
+            alert("Chu vi hinh tron la: " + circlecircumference);
+        }
+        areaofcircle();
+        circlecircumference();
+    </script>
+</body>
+</html>
