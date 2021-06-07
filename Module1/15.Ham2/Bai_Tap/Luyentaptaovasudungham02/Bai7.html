@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+<!-- Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó. -->
+<script>
+    function reverse(){
+        let array = new Array(1);
+        for (i = 1; i < 3; i++ ){
+            array[i] = prompt("Moi nhap vao so nguyen bat ky thu " + i);
+        }
+        let temp = array.reverse();
+        document.write("2 so nguyen bat ky sau khi doi cho la: " + temp.join('  '));
+    }
+    reverse();
+</script>
+</body>
+</html>

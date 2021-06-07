@@ -12,11 +12,9 @@
     <script>
         function checknumber(){
             input = prompt("Nhap vao ky tu ngau nhien: ");
-            if (input >= "0" && input <= "9"){
-                return true;
+            if (!isNaN(input)) {
                 alert("Ky tu ban nhap vao la so.");
-            }else {
-                return false;
+            } else {
                 alert("Ky tu ban nhap vao la chu.");
             }
         }
