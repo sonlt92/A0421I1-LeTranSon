@@ -8,7 +8,24 @@
 <!-- Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
 Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. -->
 <script>
+    function checkarray() {
+        let array = ["a", "b", "c", "d", "d", "d", "e", "f", "g", "h", "m", "n"];
+        let count = 0;
+        let inputstring = prompt("Nhap vao ky tu bat ky: ");
+        for (let i = 0; i <= array.length; i++) {
+            if (array[i] == inputstring) {
+                count++;
+            }
+        }
+        if (count == 0){
+            alert("-1")
+        }else {
+            alert("Co "+ count + " chu " + inputstring);
+        }
 
+    }
+
+    checkarray();
 </script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>product management application using the function</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h3>Add New product</h3>-->
+<!--<input type="text" id="add" placeholder="New Product">-->
+<!--<input type="button" id="button" value="Add" onclick="addProduct(product)">-->
+<!--<h3>Display All Product</h3>-->
+<!--<h4>Product name</h4>-->
+<!--<p id="list"></p>-->
+<!--<input type="button" id="delete" value="Delete" onclick="deleteProduct(product)"/>-->
+<!--<input type="button" id="edit" value="Edit" onclick="editProduct(product)">-->
+<!--<script>-->
+<!--  var product = ["sony xperia","Samsung Galaxy","Nokia 6"];-->
+<!--  function displayProduct(product) {-->
+<!--    let index = "";-->
+<!--    for (i = 0; i <product.length; i++) {-->
+<!--      index += i + " . " + product[i] + "<br>";-->
+<!--    }-->
+<!--    return index;-->
+<!--  }-->
+<!--  function addProduct(product) {-->
+<!--    let newProduct = document.getElementById("add").value;-->
+<!--    product.push(newProduct);-->
+<!--    document.getElementById("list").innerHTML = displayProduct(product);-->
+<!--  }-->
+<!--  function deleteProduct(product) {-->
+<!--    let index = prompt("enter index you want delete: ");-->
+<!--    product.splice(index,1);-->
+<!--    document.getElementById("list").innerHTML = displayProduct(product);-->
+<!--  }-->
+<!--  function editProduct(product) {-->
+<!--    let index = prompt("enter index you want edit: ");-->
+<!--    let newProduct = prompt("enter product you want changer: ");-->
+<!--    product[index] = newProduct;-->
+<!--    document.getElementById("list").innerHTML = displayProduct(product);-->
+<!--  }-->
+<!--  document.getElementById("list").innerHTML = displayProduct(product);-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
