@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bai 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      let arrayNumber = [];
+      let num;
+
+      do {
+        num = parseInt(prompt("Nhap vao so luong phan tu cua mang: "));
+      } while (num <= 0 || isNaN(num));
+      for (let i = 0; i < num; i++) {
+        arrayNumber[i] = parseInt(
+          prompt("Nhap vao phan tu thu " + i + " cua mang")
+        );
+      }
+
+      //Cach 1
+      let sum = arrayNumber.reduce(function (total, number) {
+        return total + number;
+      }, 0);
+
+      console.log(sum);
+
+      //Cach 2
+      let sum1 = 0;
+      for (j = 0; j < arrayNumber.length; j++) {
+        sum1 += arrayNumber[j];
+      }
+      console.log(sum1);
+
+      //Kiem tra so nguyen to
+      let count = 0;
+      for (n = 0; n < arrayNumber.length; n++) {
+        for (m = 2; m < arrayNumber.length; m++)
+          if (arrayNumber[n] > 2 && arrayNumber[n] % m == 0) {
+            count++;
+          }
+      }
+      console.log("So nguyen to co trong mang la: " + count);
+
+      //Kiem tra so am
+      var flag = false;
+      for (t = 0; t < arrayNumber.length; t++) {
+        if (arrayNumber[t] < 0) {
+          flag = true;
+        }
+        if (flag == true) {
+          console.log("True");
+        } else {
+          console.log("False");
+        }
+      }
+    </script>
+  </body>
+</html>
