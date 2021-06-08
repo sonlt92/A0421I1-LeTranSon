@@ -6,11 +6,15 @@
 </head>
 <body>
 <script>
-    function isPalindrome(s, i) {
-        return (i = i || 0) < 0 || i >= s.length >> 1 || s[i] === s[s.length - 1 - i] && isPalindrome(s, ++i);
+    // function isPalindrome(s, i) {
+    //     return (i = i || 0) < 0 || i >= s.length >> 1 || s[i] === s[s.length - 1 - i] && isPalindrome(s, ++i);
+    // }
+
+    function isPalindrome(s) {
+        return s == s.split("").reverse().join("");
     }
 
-    document.write(isPalindrome(prompt("Nhap tu can kiem tra:")));
+    alert(isPalindrome(prompt("Nhap tu can kiem tra:")));
 </script>
 </body>
 </html>
