@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>[*Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <style type="text/css">
+        table {
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 0px;
+            border-color: #3A3A3A;
+            border-collapse: collapse;
+        }
+        table td {
+            cursor: pointer;
+        }
+        table tr:nth-child(even) td{
+            background-color: #848c90;
+        }
+        table td {
+            width: 100px;
+            border-width: 0px;
+            padding: 10px;
+            border-style: solid;
+            border-color: #FFA6A6;
+            background-color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-<style>
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 10px;
-    }
-    table#alter tr:nth-child(even) {
-        background-color: #eee;
-    }
-    table#alter tr:nth-child(odd) {
-        background-color: #fff;
-    }
-    table#alter th {
-        color: white;
-        background-color: gray;
-    }
-</style>
+
 <script>
     let arrProduct = ["Apple", "Sony", "Xiaomi", "Sam Sung", "Vivo"];
 
