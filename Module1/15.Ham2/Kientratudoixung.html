@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    function isPalindrome(s, i) {
+        return (i = i || 0) < 0 || i >= s.length >> 1 || s[i] === s[s.length - 1 - i] && isPalindrome(s, ++i);
+    }
+
+    document.write(isPalindrome(prompt("Nhap tu can kiem tra:")));
+</script>
+</body>
+</html>
