@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    function sumInput(){
+      let array = [];
+      let num;
+      let sum = 0;
+      do {
+        num = parseInt(prompt("Nhap vao so luong phan tu cua mang: "));
+      } while (num <= 0 || isNaN(num));
+      for (let i = 0; i < num; i++) {
+          array[i] = parseInt(prompt("Moi nhap vao phan tu thu " + i + " cua mang"));
+              if (isNaN(array[i])) {
+                  alert("Ban nhap khong phai so.");
+                  break;
+              }
+            sum += array[i];
+          }
+        console.log(sum);
+      }
+
+
+    sumInput();
+</script>
+</body>
+</html>
