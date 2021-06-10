@@ -6,8 +6,50 @@
 </head>
 <body>
 <script>
+    class MyDate {
+        constructor(day, month, year) {
+            this._day = day;
+            this._month = month;
+            this._year = year;
+        }
 
+        setDay(day) {
+            this._day = day;
+        }
 
+        setMonth(month) {
+            this._month = month;
+        }
+
+        setYear(year) {
+            this._year = year;
+        }
+
+        getDay(){
+            return this._day;
+        }
+
+        getMonth(){
+            return this._month;
+        }
+
+        getYear(){
+            return this._year;
+        }
+
+        //toString
+        getAll(){
+            console.log(this.getDay(), this.getMonth(), this.getYear());
+        }
+    }
+
+    let date = new MyDate(20, 5, 2021);
+    date.getAll();
+
+    date.setDay(29);
+    date.setMonth(6);
+    date.setYear(2021);
+    date.getAll();
 </script>
 </body>
 </html>

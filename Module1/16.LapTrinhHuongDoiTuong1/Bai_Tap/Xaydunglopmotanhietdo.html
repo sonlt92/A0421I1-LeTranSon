@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+  class Temperature {
+    constructor(tempC) {
+      this.tempC = tempC;
+    }
+    getCtoF(){
+      return this.tempC * 1.8 + 32;
+    }
+    getCtoK(){
+      return this.tempC + 273.15;
+    }
+  }
+  let temperature = new Temperature(25);
+  let fTemp = temperature.getCtoF();
+  let kTemp = temperature.getCtoK();
+  document.write("C to F: " + fTemp + "<br/>" + "C to K: " + kTemp);
+</script>
+</body>
+</html>
