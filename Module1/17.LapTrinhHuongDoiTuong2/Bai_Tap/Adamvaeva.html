@@ -6,54 +6,85 @@
 </head>
 <body>
 <script>
-  class Apple {
-    constructor(weight) {
-      this.weight = weight;
-    }
-    getWeight(){
-        this.weight = 10;
-        return this.weight;
-    }
-    isEmpty(){
-        if (this.weight == 0){
-            return true;
-        } else {
-            return false;
+    class Apple {
+        constructor(weight) {
+            this.weight = 10;
         }
-    }
-    decrease(){
-        if (this.weight > 0){
+
+        getWeight() {
+            return this.weight;
+        }
+
+        isEmpty() {
+            if (this.weight === 0) {
+                console.log("Tao da het");
+            }
+        }
+
+        decrease() {
             this.weight--;
-        } else {
-            return this.isEmpty();
         }
     }
-  }
-  class Human {
-    constructor(name, gender, weight) {
-      this.name = name;
-      this.gender = gender;
-      this.weight = weight;
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+        say(talk){
+            talk = prompt("Nhap loi noi:");
+        }
+        eatApple(apple){
+            if (!apple.isEmpty()){
+                apple.decrease();
+                this.weight++;
+            }
+            return this.weight;
+        }
+        checkApple(apple){
+            if (apple.getWeight() > 0){
+                console.log("Tao con: " + apple.weight + " dv");
+            } else {
+                apple.isEmpty();
+            }
+        }
     }
-    setName(name){
-        this.name = name;
-    }
-    setWeight(weight){
-        this.weight = weight;
-    }
-    setGender(gender){
-        this.gender = gender;
-    }
-    getName(){
-        return this.name;
-    }
-    getWeight(){
-        return this.weight;
-    }
-    getGender(){
-        return this.gender
-    }
-  }
+    let apple = new Apple();
+    let adam = new Human("Adam", "Boy", 60);
+    let eva = new  Human("Eva", "Girl", 50);
+    adam.say("Adam");
+    eva.say("Eva");
+    adam.eatApple(apple);
+    console.log("Khoi luong Adam sau khi an " + adam.getWeight());
+    adam.checkApple(apple);
+    eva.eatApple(apple);
+    console.log("Khoi luong Eva sau khi an " + eva.getWeight());
+    eva.checkApple(apple);
 </script>
 </body>
 </html>
