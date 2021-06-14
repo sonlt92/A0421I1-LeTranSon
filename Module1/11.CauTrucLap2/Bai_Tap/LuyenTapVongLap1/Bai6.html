@@ -7,17 +7,17 @@
 <body>
   <!--Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.-->
 <script> 
-  var tong = 0;
-  var dem = 0;
-  var sotunhien = 1;
+  var sum = 0;
+  var count = 0;
+  var naturalNumber = 1;
 
-  while (dem <= 30) {
-    if (sotunhien % 7 == 0) {
-      tong += sotunhien;
+  while (count <= 30) {
+    if (naturalNumber % 7 == 0) {
+      sum += naturalNumber;
     }
-    sotunhien++;
+      naturalNumber++;
   }
-  document.write("Tong 30 so tu nhien chia het cho 7 la:  " + tong);
+  document.write("Tong 30 so tu nhien chia het cho 7 la:  " + sum);
 </script>
 </body>
 </html>

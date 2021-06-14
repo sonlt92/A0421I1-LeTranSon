@@ -56,35 +56,41 @@
         getGender() {
             return this.gender;
         }
-        say(talk){
-            talk = prompt("Nhap loi noi:");
+
+        say(talk) {
+            talk = prompt("Nhap loi noi: ");
         }
-        eatApple(apple){
-            if (!apple.isEmpty()){
+
+        eatApple(apple) {
+            if (!apple.isEmpty()) {
                 apple.decrease();
                 this.weight++;
             }
             return this.weight;
         }
-        checkApple(apple){
-            if (apple.getWeight() > 0){
+
+        checkApple(apple) {
+            if (apple.getWeight() > 0) {
                 console.log("Tao con: " + apple.weight + " dv");
             } else {
                 apple.isEmpty();
             }
         }
     }
+
     let apple = new Apple();
     let adam = new Human("Adam", "Boy", 60);
-    let eva = new  Human("Eva", "Girl", 50);
+    let eva = new Human("Eva", "Girl", 50);
     adam.say("Adam");
     eva.say("Eva");
     adam.eatApple(apple);
-    console.log("Khoi luong Adam sau khi an " + adam.getWeight());
+    alert("Khoi luong Adam sau khi an " + adam.getWeight());
     adam.checkApple(apple);
+    alert("Khoi luong tao con: " + apple.getWeight());
     eva.eatApple(apple);
-    console.log("Khoi luong Eva sau khi an " + eva.getWeight());
+    alert("Khoi luong Eva sau khi an " + eva.getWeight());
     eva.checkApple(apple);
+    alert("Khoi luong tao con: " + apple.getWeight());
 </script>
 </body>
 </html>
