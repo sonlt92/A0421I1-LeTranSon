@@ -2,23 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
+    <title>Công tắc và bóng đèn</title>
 </head>
 <body>
 <script>
-    class ElectricLamp {
-        constructor(status) {
-            this.status = status;
+    class congTac {
+        constructor() {
+            this.trangthaiTac = false;
+        }
+        getTrangThaiTac(){
+            return this.trangthaiTac;
+        }
+        batCongTac(){
+            this.trangthaiTac = !this.trangthaiTac;
         }
     }
 
-    class SwitchButton {
-        constructor(status, lamp) {
-            this.status = status;
-            this.lamp = lamp;
+    class den{
+        constructor(congTac) {
+            this.trangThaiDen = false;
+            this.congTac = congTac;
         }
-
+        getTrangThaiDen() {
+            return this.trangThaiDen;
+        }
+        batTatDen(){
+            if (this.congTac.getTrangThaiTac()== true) {
+                this.trangThaiDen = !this.trangThaiDen;
+            }
+        }
     }
+
+    let congtac1 = new congTac();
+    let den1 = new den(congtac1);
+
+    congtac1.batCongTac();
+    // alert(congtac1.trangthaiTac);
+    den1.batTatDen();
+    alert(den1.getTrangThaiDen());
+    den1.batTatDen();
+    alert(den1.getTrangThaiDen());
 </script>
 </body>
 </html>
