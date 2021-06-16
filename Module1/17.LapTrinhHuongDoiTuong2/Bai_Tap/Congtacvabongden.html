@@ -6,42 +6,48 @@
 </head>
 <body>
 <script>
-    class congTac {
+    class SwitchButton {
         constructor() {
-            this.trangthaiTac = false;
+            this.status = false;
         }
-        getTrangThaiTac(){
-            return this.trangthaiTac;
+
+        connectToLamp(lamp) {
+            this.lamp = lamp;
         }
-        batCongTac(){
-            this.trangthaiTac = !this.trangthaiTac;
+
+        switchOff() {
+            this.status = false;
+            this.lamp.status = false;
+        }
+
+        switchOn() {
+            this.status = true;
+            this.lamp.status = true
         }
     }
 
-    class den{
-        constructor(congTac) {
-            this.trangThaiDen = false;
-            this.congTac = congTac;
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
         }
-        getTrangThaiDen() {
-            return this.trangThaiDen;
+
+        turnOff() {
+            return this.status = true;
         }
-        batTatDen(){
-            if (this.congTac.getTrangThaiTac()== true) {
-                this.trangThaiDen = !this.trangThaiDen;
-            }
+
+        turnOn() {
+            return this.status = false;
         }
     }
 
-    let congtac1 = new congTac();
-    let den1 = new den(congtac1);
-
-    congtac1.batCongTac();
-    // alert(congtac1.trangthaiTac);
-    den1.batTatDen();
-    alert(den1.getTrangThaiDen());
-    den1.batTatDen();
-    alert(den1.getTrangThaiDen());
+    let electricLamp = new ElectricLamp();
+    let switchButton = new SwitchButton();
+    switchButton.connectToLamp(electricLamp);
+    alert("Trang thai cong tac: " + switchButton.status)
+    alert("Trang thai den: " + electricLamp.status)
+    switchButton.switchOn();
+    alert("Trang thai cong tac: " + switchButton.status)
+    alert("Trang thai den: " + electricLamp.status)
 </script>
 </body>
 </html>

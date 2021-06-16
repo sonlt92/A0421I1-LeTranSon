@@ -65,5 +65,51 @@
     flashLamp.light();
 
 </script>
+
+<script>
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+        }
+
+        connectToLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        switchOff() {
+            this.status = false;
+            this.lamp.status = false;
+        }
+
+        switchOn() {
+            this.status = true;
+            this.lamp.status = true
+        }
+    }
+
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+        }
+
+        turnOff() {
+            return this.status = true;
+        }
+
+        turnOn() {
+            return this.status = false;
+        }
+    }
+
+    let electricLamp = new ElectricLamp();
+    let switchButton = new SwitchButton();
+    switchButton.connectToLamp(electricLamp);
+    alert("Trang thai cong tac: " + switchButton.status)
+    alert("Trang thai den: " + electricLamp.status)
+    switchButton.switchOn();
+    alert("Trang thai cong tac: " + switchButton.status)
+    alert("Trang thai den: " + electricLamp.status)
+
+</script>
 </body>
 </html>
