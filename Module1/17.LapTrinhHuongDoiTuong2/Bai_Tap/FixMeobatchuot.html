@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meo bat chuot</title>
+</head>
+<body>
+<script>
+  class rat {
+    constructor(speedRat) {
+      this.name = "jerry";
+      this.weight = 50;
+      this.speed = speedRat;
+      this.status = true;
+      this.behavior = "chit...chit";
+    }
+
+    setSpeedRat(speedRat){
+      this.speed = speedRat;
+    }
+
+    getSpeedRat(){
+        return this.speed;
+    }
+  }
+
+  class cat{
+    constructor(rat, speedCat) {
+      this.name = "tom";
+      this.weight = 50;
+      this.speed = speedCat;
+      this.behavior = "meo";
+      this.rat = rat;
+    }
+
+    setSpeedCat(speedCat){
+      this.speed = speedCat;
+    }
+
+    getSpeed(){
+      return this.speed;
+    }
+
+    test(){
+      console.log(this.rat.getSpeedRat());
+    }
+  }
+  let chuot = new rat();
+  let meo = new cat(chuot);
+  chuot.setSpeedRat(50);
+  meo.setSpeedCat(60)
+
+  console.log(chuot.getSpeedRat());
+  // console.log(meo.getSpeed());
+  meo.test();
+</script>
+</body>
+</html>

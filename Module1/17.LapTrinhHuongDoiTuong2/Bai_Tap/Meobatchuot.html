@@ -6,7 +6,129 @@
 </head>
 <body>
 <script>
+    class Rat {
+        constructor(name,weight,speed,status,behavior) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = true;
+            this.behavior = behavior;
+        }
 
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+
+        setSpeed(speed) {
+            this.speed = speed;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getBehavior() {
+            return this.behavior;
+        }
+
+        setBehavior(behavior) {
+            this.behavior = behavior;
+        }
+    }
+    
+    class Cat {
+        constructor(name,weight,speed,behavior,rat) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.behavior = behavior;
+            this.Rat = rat;
+        }
+
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+
+        setSpeed(speed) {
+            this.speed = speed;
+        }
+
+        getBehavior() {
+            return this.behavior;
+        }
+
+        setBehavior(behavior) {
+            this.behavior = behavior;
+        }
+
+        getBatChuot(){
+            if (this.speed > this.Rat.getSpeed()){
+                console.log("meo da bat duoc chuot")
+            }else {
+                console.log("chuot chay thoat")
+            }
+        }
+
+        getAnChuot(){
+            if (this.Rat.getStatus() === true){
+                console.log("meo da an chuot, kho luong cua meo la "+ (this.weight+this.Rat.getWeight()));
+            }else {
+                console.log("chuot chet roi, khong an duoc");
+            }
+        }
+
+        test(){
+            console.log(this.Rat.getStatus());
+        }
+
+    }
+
+    let rat = new Rat("Jerry",50,60,true,"Chitchit");
+    let cat = new Cat("Tom",80,70,"Meomeo", rat);
+    console.log(rat);
+    console.log(cat);
+    // console.log(cat.test());
+
+    console.log(cat.getBatChuot());
+    console.log(cat.getAnChuot());
 
 </script>
 </body>
