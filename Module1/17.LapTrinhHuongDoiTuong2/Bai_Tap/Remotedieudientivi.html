@@ -6,45 +6,55 @@
 </head>
 <body>
 <script>
-    class Tivi {
-        constructor(channels,volume,status) {
-            this.channels = channels;
-            this.volume = volume;
-            this.status = false;
+    class TiVi {
+        constructor() {
+            this.status = 'VTV3';
+            this.volume = 50;
+            this.onOff = true;
         }
-        setChangeChannel(channels){
-            this.status = channels;
+
+        setChageChannel(channel) {
+            this.status = channel;
         }
-        setVolume(volume){
-            this.volume =+ volume;
+
+        setVolume(unit) {
+            this.volume += unit;
         }
     }
 
-   class Remote {
-       constructor(code, tivi) {
-           this.code = code;
-           this.Tivi = tivi;
-       }
+    class Remote {
+        constructor() {
+        }
 
-       setChange(code) {
-           this.Tivi.status = code;
-       }
+        setChange(tivi, channel) {
+            tivi.status = channel;
+        }
 
-       setVolumes() {
-           this.Tivi.volume += volume;
-       }
+        setVolume(tivi, volume) {
+            tivi.amLuong += volume;
+        }
 
-       setOn() {
-           this.Tivi.setOff = true;
-       }
-       setOff(){
-           this.Tivi.setOff = false;
-       }
-   }
+        setOn(tivi) {
+            tivi.onOff = true;
+        }
 
-   let tv = new Tivi();
-   let remote = new Remote();
+        setOff(tivi) {
+            tivi.onOff = false;
+        }
+    }
 
+    let television = new TiVi();
+    let remote = new Remote();
+    remote.setOn(television);
+    console.log('Status Tivi: ' + television.onOff);
+    television.setChageChannel('vtv1');
+    console.log('Channel: ' + television.status);
+    remote.setChange(television, 'vtv2');
+    console.log('Channel status: ' + television.status);
+    remote.setVolume(television, 2);
+    console.log('Volume Up:' + television.volume);
+    remote.setOff(television);
+    console.log('Status Tivi: ' + television.onOff);
 
 
 </script>
