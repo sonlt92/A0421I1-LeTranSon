@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<!-- Bài 3: Vẽ tam giác cân đặc có chiều cao h.  -->
+<script>
+  let high = parseInt(prompt("Input high: "));
+  for(let i=1; i<=high; i++)
+  {
+      for(let j=1; j<=high+1-i; j++)
+          document.write("&nbsp;&nbsp;");
+      for(let j=1; j<=2*i-1; j++)
+          document.write("*");
+      document.write("<br/>");
+  }
+</script>
+</body>
+</html>
