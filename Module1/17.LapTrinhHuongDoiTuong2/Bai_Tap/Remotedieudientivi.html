@@ -21,11 +21,30 @@
     }
 
    class Remote {
-      constructor(code) {
-        this.code = code;
-      }
-      set
+       constructor(code, tivi) {
+           this.code = code;
+           this.Tivi = tivi;
+       }
+
+       setChange(code) {
+           this.Tivi.status = code;
+       }
+
+       setVolumes() {
+           this.Tivi.volume += volume;
+       }
+
+       setOn() {
+           this.Tivi.setOff = true;
+       }
+       setOff(){
+           this.Tivi.setOff = false;
+       }
    }
+
+   let tv = new Tivi();
+   let remote = new Remote();
+
 
 
 </script>
