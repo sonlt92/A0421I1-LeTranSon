@@ -7,18 +7,21 @@
 <body>
 <!-- Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây. -->
 <script>
-    let width = parseInt(prompt("Nhap chieu rong: "));
-    let length = parseInt(prompt("Nhap chieu dai: "));
-    for (let i = 1; i <= width; i++) {
-        for (let k = 1; k <= length; k++) {
-            if (i == 1 || k == 1 || i == width || k == length) {
-                document.write("*");
-            } else {
-                document.write("&nbsp;&nbsp;");
+    function rectangle() {
+        let width = parseInt(prompt("Nhap chieu rong: "));
+        let length = parseInt(prompt("Nhap chieu dai: "));
+        for (let i = 1; i <= width; i++) {
+            for (let k = 1; k <= length; k++) {
+                if (i == 1 || k == 1 || i == width || k == length) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp;&nbsp;");
+                }
             }
+            document.write("<br/>");
         }
-        document.write("<br/>");
     }
+    rectangle();
 </script>
 </body>
 </html>

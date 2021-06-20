@@ -11,6 +11,22 @@ Với các thông số giả sử như sau (không theo luật lương, chỉ l�
 20% thuế thu nhập nếu lương là 15 triệu.
 10% thuế thu nhập nếu lương từ 7 đến 15 triệu.
 5% thuế thu nhập nếu lương dưới 7 triệu -->
-
+<script>
+    function personalIncomeTax() {
+        let inputsalary = parseInt(prompt("Input salary: "));
+    let incomeTax;
+        if (inputsalary == 15000000) {
+            incomeTax = inputsalary * 20 / 100;
+            alert("Income Tax: " + incomeTax);
+        } else if (7000000 <= inputsalary < 15000000) {
+            incomeTax = inputsalary * 10 / 100;
+            alert("Income Tax: " + incomeTax);
+        } else if (inputsalary < 7000000) {
+            incomeTax = inputsalary * 5 / 100;
+            alert("Income Tax: " + incomeTax);
+        }
+    }
+    personalIncomeTax();
+</script>
 </body>
 </html>

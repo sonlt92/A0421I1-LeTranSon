@@ -7,15 +7,17 @@
 <body>
 <!-- Bài 3: Vẽ tam giác cân đặc có chiều cao h.  -->
 <script>
-  let high = parseInt(prompt("Input high: "));
-  for(let i=1; i<=high; i++)
-  {
-      for(let j=1; j<=high+1-i; j++)
-          document.write("&nbsp;&nbsp;");
-      for(let j=1; j<=2*i-1; j++)
-          document.write("*");
-      document.write("<br/>");
-  }
+    function isoscelesTriangle() {
+        let high = parseInt(prompt("Input high: "));
+        for (let i = 1; i <= high; i++) {
+            for (let j = 1; j <= high + 1 - i; j++)
+                document.write("&nbsp;&nbsp;");
+            for (let j = 1; j <= 2 * i - 1; j++)
+                document.write("*");
+            document.write("<br/>");
+        }
+    }
+    isoscelesTriangle();
 </script>
 </body>
 </html>

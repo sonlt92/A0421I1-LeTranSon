@@ -7,17 +7,20 @@
 <body>
 <!-- Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h. -->
 <script>
-    let height = parseInt(prompt("Nhap chieu cao tam giac"));
-    for (let i = 1; i <= height; i++) {
-        for (let j = 1; j <= i; j++) {
-            if (j == 1 || j == i || i == height) {
-                document.write("* ");
-            } else {
-                document.write("&nbsp;&nbsp;&nbsp;")
+    function triangleRightAngle() {
+        let height = parseInt(prompt("Nhap chieu cao tam giac"));
+        for (let i = 1; i <= height; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (j == 1 || j == i || i == height) {
+                    document.write("* ");
+                } else {
+                    document.write("&nbsp;&nbsp;&nbsp;")
+                }
             }
+            document.write("<br/>")
         }
-        document.write("<br/>")
     }
+    triangleRightAngle();
 
 </script>
 </body>

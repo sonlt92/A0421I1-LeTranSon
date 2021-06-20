@@ -7,21 +7,22 @@
 <body>
 <!-- Bài 4: Vẽ tam giác cân rỗng có chiều cao h -->
 <script>
-  let high = parseInt(prompt("Input high: "));
-  let m = n = high;
-  for (let i = 1; i <= high; i++)
-  {
-    for (let j = 1; j <= 2 * high - 1; j++)
-    {
-      if (j == m || j == n || i== high)
-        document.write("*");
-      else
-        document.write("&nbsp;&nbsp;");
+    function emptyIsoscelesTriangle() {
+        let high = parseInt(prompt("Input high: "));
+        let m = n = high;
+        for (let i = 1; i <= high; i++) {
+            for (let j = 1; j <= 2 * high - 1; j++) {
+                if (j == m || j == n || i == high)
+                    document.write("*");
+                else
+                    document.write("&nbsp;&nbsp;");
+            }
+            m--;
+            n++;
+            document.write("<br/>");
+        }
     }
-    m--;
-    n++;
-    document.write("<br/>");
-  }
+    emptyIsoscelesTriangle();
 </script>
 </body>
 </html>
