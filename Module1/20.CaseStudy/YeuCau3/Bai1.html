@@ -16,7 +16,25 @@ với n là độ dài của mảng a.
 Ví dụ: Cho a = [1, 2, 3], thì kết quả prefixSums(a) = [1, 3, 6].
 Mảng b được tạo ra: [1, 1 + 2, 1 + 2 + 3] = [1, 3, 6] -->
 <script>
+    function prefixSums() {
+        let prefixArray = [];
+        let prefixSums = [];
+        let inputNum;
+        inputNum = parseInt(prompt("Enter the number of array elements: "));
+        for (let i = 0; i < inputNum; i++) {
+            prefixArray[i] = parseInt(prompt("Please enter element " + i + " of the array"));
+        }
+        for (let j = 0; j < inputNum; j++) {
+            prefixSums[j] = prefixArray[j];
+            if (j > 0) {
+                prefixSums[j] = prefixSums[j - 1] + prefixArray[j];
+            }
+        }
 
+        alert("Prefix Sums " + prefixSums);
+    }
+
+    prefixSums();
 </script>
 </body>
 </html>
