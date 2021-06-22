@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<!-- Bài 4: Viết một chường trình nhập một số từ bàn phím và in ra màn hình bằng chữ. Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn. -->
+<script>
+    function numbersIntoLetters() {
+        let numberstr = [" không ", " một ", " hai ", " ba ", " bốn ", " năm ", " sáu ", " bảy ", " tám ", " chín "];
+        let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        let inputnum = parseInt(prompt("Input number: "));
+        for (let i of inputnum) {
+            for (let j = 0; j < numbers.length; j++) {
+                if (i === numbers[j]) {
+                    alert(numberstr[i]);
+                } else {
+                    continue;
+                }
+            }
+        }
+    }
+
+    numbersIntoLetters();
+
+
+</script>
+</body>
+</html>

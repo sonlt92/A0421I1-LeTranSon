@@ -11,8 +11,62 @@ Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
 Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6] -->
 <script>
     function missingValue() {
-        
+        let arr1 = [7,2,5,3,5,3];
+        let arr2 = [7,2,5,4,6,3,5,3];
+        // let count = 0;
+        let missValue = [];
+
+        for (let i=0; i<arr2.length; i++){
+            let flag = true;
+            let temp2 = arr2[i];
+            for (let j=0; j<arr1.length; j++){
+                let temp1 = arr1[j];
+                if (temp1 == temp2){
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag == true){
+                missValue.push(temp2);
+            }
+        }
+        alert(missValue);
+
+
+
+
+
+        // for (let i=0;i<arr1.length;i++){
+        //     let count = 0 ;
+        //     for (let j=0;j<arr2.length;j++){
+        //         if (arr1[i]==arr2[j]){
+        //             count++;
+        //         }
+        //     }
+        //     if (count==0){
+        //         missValue.push(arr1[i]);
+        //     }
+        //
+        // }
+        // for (let i=0;i<arr2.length;i++){
+        //     let count = 0 ;
+        //     for (let j=0;j<arr1.length;j++){
+        //         if (arr2[i]==arr1[j]){
+        //             count++;
+        //         }
+        //     }
+        //     if (count==0){
+        //         missValue.push(arr2[i]);
+        //     }
+        //
+        // }
+
+
     }
+    missingValue();
+
+
+
 </script>
 </body>
 </html>
