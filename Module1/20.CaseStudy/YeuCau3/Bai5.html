@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<!-- Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:
+Cafe
+Cam vắt
+Nước ép cà rốt
+Nước ép cà chua
+Nước lọc
+Nước dừa
+Viết một chương trình gọi thức uống đơn giản.
+Gợi ý: Trước tiên in ra màn hinh danh sách các loại thức uống cho người dùng chọn lựa
+Đánh dấu theo thứ tự 1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)
+Khi người dùng lựa chọn 1 trong số các thức uống, chương trình sẽ hiện đơn giá của thức uống đó và cho phép người dùng nhập số lượng. Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.
+Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức uống, kết thúc quá trình đặt thức uống khi người nhấn số 7 -->
+<script>
+      document.write("<h2 style='color: red'>------ Menu ------</h2>");
+      document.write("<h5 style='color: #03a9f4'>1. Cafe </h5>");
+      document.write("<h5 style='color: #03a9f4'>2. Nuoc Cam </h5>");
+      document.write("<h5 style='color: #03a9f4'>3. Nuoc Ep Carot </h5>");
+      document.write("<h5 style='color: #03a9f4'>4. Nuoc Ep Ca Chua </h5>");
+      document.write("<h5 style='color: #03a9f4'>5. Nuoc Loc </h5>");
+      document.write("<h5 style='color: #03a9f4'>6. Nuoc Dua </h5>");
+      document.write("<h2 style='color: red'>--------------------</h2>");
+      document.write("<form>")
+      document.write("<br/><br/> Moi ban chon thuc uong: <input id='input' style='border: white' oninput='cafeCodegym(this.value)' onchange='cafeCodegym(this.value)'>");
+      document.write("<p id='output'> </p>");
+      document.write("</form>")
+
+      function cafeCodegym(inputNumber) {
+          inputNumber = parseInt(inputNumber);
+          if (inputNumber > 0) {
+              switch (inputNumber) {
+                  case 1:
+                      document.getElementById("output").innerHTML = "Ban da chon Cafe";
+                      break;
+                    case 2:
+                        document.getElementById("output").innerHTML = "Ban da chon Nuoc Cam";
+                      break;
+                    case 3:
+                        document.getElementById("output").innerHTML = "Ban da chon Nuoc Ep Carot";
+                      break;
+                    case 4:
+                        document.getElementById("output").innerHTML = "Ban da chon Nuoc Ep Ca Chua";
+                      break;
+                    case 5:
+                        document.getElementById("output").innerHTML = "Ban da chon Nuoc Loc";
+                      break;
+                    case 6:
+                        document.getElementById("output").innerHTML = "Ban da chon Nuoc Dua";
+                      break;
+                    case 7:
+                        document.getElementById("output").innerHTML = "Cam on ban da. Hen gap lai";
+                      break;
+                    default:
+                        document.getElementById("output").innerHTML = "Vui long chon tu 1-7";
+                  }
+              }
+      }
+</script>
+</body>
+</html>

@@ -22,8 +22,8 @@
       if (typeof array[index] === "undefined") {
         document.write("V is not in the array");
       } else {
-        var j = array.indexOf(index);
-        if (j != -1) {
+        let j = array.indexOf(index);
+        if (j !== -1) {
           array.splice(j,1);
           array.push("0");
         }

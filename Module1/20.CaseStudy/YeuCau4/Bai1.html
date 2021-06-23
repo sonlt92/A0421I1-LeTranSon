@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<!-- Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau và
+bắt đầu mỗi từ phải in hoa. Ví dụ tRuong    TaN   HAI => Truong Tan Hai. Và một hàm tìm từ dài nhất trong 1 xâu ký tự.
+Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó. -->
+<script>
+    function convertstr() {
+        // let inputstr = "tRuong  TaN  HAI";
+        // newStr = "";
+        // document.write(inputstr);
+        // let temp = inputstr.split(' ');
+        // document.write("<br/>" + temp);
+
+        let str = 'tRuong  TaN  HAI';
+        let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        let result = [];
+
+        for(let x=0; x<str.length; x++)
+        {
+            if(LOWER.indexOf(str[x]) !== -1)
+            {
+                result.push(str[x].toUpperCase());
+            }
+            else if(UPPER.indexOf(str[x]) !== -1)
+            {
+                result.push(str[x].toUpperCase());
+            }
+            else
+            {
+                result.push(str[x]);
+            }
+        }
+        console.log(result.join(''));
+
+        // for (let i = 0; i < temp.length; i++) {
+        //     if (temp[i] === " ") {
+        //         newStr += temp[i].toLowerCase();
+        //     } else {
+        //         newStr += temp[i].toUpperCase();
+        //
+        //         document.write("<br/>" + newStr);
+        //     }
+        // }
+    }
+    convertstr();
+
+</script>
+</body>
+</html>
