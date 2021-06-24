@@ -10,19 +10,28 @@ bắt đầu mỗi từ phải in hoa. Ví dụ tRuong    TaN   HAI  => Truong T
 Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó. -->
 <script>
 
-    function convertstr() {
-        let inputstr = prompt("Input String: ");
-        let firstChar = inputstr.charAt(0);
-        let lastChar = inputstr.slice(1, inputstr.length);
+    //Tạo hàm chuyển chữ cái đầu tiên của một từ thành in hoa
+    function  convertString(word) {
+        let firstChar = word.charAt(0);
+        let lastChar = word.slice(1, word.length).toLowerCase();
         return firstChar.toUpperCase().concat(lastChar);
+    }
 
-        let arrWord = inputstr.split(' ');
-        let newArrWord = arrWord.map(convertstr);
+    function run() {
+        let inputstring = prompt("Input String: ")
+        /* Mỗi từ cách nhau 1 khoảng trắng, dùng split với tham số là khoảng trắng ' '
+        để tách từng từ ra và xếp vào mảng mới tạo arrWord */
+        let arrWord = inputstring.split(' ');
+        /* Sử dụng hàm convertString đã tạo ở trên để in hoa chữ cái đầu tiên của các
+        từ có trong mảng arrWord, sau đó xếp vào mảng mới tạo newArrWord */
+        let newArrWord = arrWord.map(convertString);
+        /* Dùng hàm join với tham số là khoảng trắng ' ' để gộp các phần tử trong
+        mảng newArrWord thành chuỗi và in ra màn hình */
         let result = newArrWord.join(' ');
         alert(result);
     }
 
-    convertstr();
+    run();
 
 
 </script>

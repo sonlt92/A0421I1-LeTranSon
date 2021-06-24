@@ -12,6 +12,9 @@ Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
   function differentSymbolsNaive() {
     let inputstr = prompt("Input String: ");
 
+    //Ham Set dung de tra ve so phan tu trong string.
+    let different = [...new Set(inputstr)];
+    alert(different.length);
   }
   differentSymbolsNaive();
 </script>
