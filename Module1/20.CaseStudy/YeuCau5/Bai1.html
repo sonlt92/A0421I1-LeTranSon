@@ -8,22 +8,38 @@
 <!-- Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím. -->
 <script>
     function sumMatrix() {
-      let inputArr1 = [];
-      let inputArr2 = [];
-      let num;
-      do {
-        num = parseInt(prompt("Input length array 1 & 2: "));
-      } while (num <=0 || isNaN(num));
-      for (let i=0;i<num;i++){
-          inputArr1[i] = parseInt(prompt("Array 1: Element " + i ));
-      }
-      for (let j=0;j<num;j++){
-          inputArr2[j] = parseInt(prompt("Array 2: Element " + j));
-      }
+        alert("Creating Matrix");
+        let inputMatrix = parseInt(prompt("Input number of array elements: "));
+        let inputRow = parseInt(prompt("Input array row: "));
+        let arrMatrix = new Array(inputMatrix);
 
-      console.log(inputArr1);
-      console.log(inputArr2);
+        for (let i = 0; i < arrMatrix.length; i++) {
+            arrMatrix[i] = [];
+            for (let j = 0; j <= inputRow; j++) {
+                let inputCol = parseInt(prompt("Input array column: " + j));
+                arrMatrix[i].push(inputCol);
+            }
+        }
+        console.log(arrMatrix)
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = 0; j < arr[i].length; j++) {
+        //         console.log(arr[i][j]);
+        //     }
+        // }
+
+        let sum = 0;
+        for (let i = 0; i < arrMatrix.length; i++) {
+            for (let j = 0; j < arrMatrix[i].length; j++) {
+                let elements = arrMatrix[i][j];
+                if (elements % 2 === 0) {
+                    sum += elements;
+                }
+
+            }
+        }
+        alert("Sum of even numbered elements in Matrix: " + sum);
     }
+
     sumMatrix();
 </script>
 </body>

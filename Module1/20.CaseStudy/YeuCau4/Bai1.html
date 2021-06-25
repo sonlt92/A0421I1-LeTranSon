@@ -21,7 +21,7 @@ Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
         let inputstring = prompt("Input String: ")
         /* Mỗi từ cách nhau 1 khoảng trắng, dùng split với tham số là khoảng trắng ' '
         để tách từng từ ra và xếp vào mảng mới tạo arrWord */
-        let arrWord = inputstring.split(' ');
+        let arrWord = inputstring.split('   ');
         /* Sử dụng hàm convertString đã tạo ở trên để in hoa chữ cái đầu tiên của các
         từ có trong mảng arrWord, sau đó xếp vào mảng mới tạo newArrWord */
         let newArrWord = arrWord.map(convertString);
