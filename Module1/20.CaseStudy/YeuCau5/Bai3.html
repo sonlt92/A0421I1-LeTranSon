@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<!-- Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều -->
+<script>
+    function minMax() {
+        alert("Creating 2D Array");
+        let input2dArray = parseInt(prompt("Input number of array elements: "));
+        let inputCol = parseInt(prompt("Input array of a column: "));
+
+        let arr2dArray = new Array(input2dArray);
+
+        for (let i = 0; i < arr2dArray.length; i++) {
+            arr2dArray[i] = [];
+            for (let j = 0; j < inputCol; j++) {
+                let inputRow = parseInt(prompt("The input element of an array: " + j));
+                arr2dArray[i].push(inputRow);
+            }
+        }
+        // console.log(arr2dArray);
+
+        let max = 0;
+        let min = arr2dArray[0][0];
+        for (let i = 0; i < arr2dArray.length; i++) {
+            for (let j = 0; j < arr2dArray[i].length; j++) {
+                if (arr2dArray[i][j] > max) {
+                    max = arr2dArray[i][j];
+                } else if (arr2dArray[i][j] < min) {
+                    min = arr2dArray[i][j];
+                }
+
+                // let elements = arr2dArray[i][j];
+                // for (let n = 0; n < elements.length; n++) {
+                //   if (elements > max) {
+                //     max = elements;
+                //   } else if (elements < min){
+                //     min = elements;
+                //
+                //   }
+                // }
+            }
+
+        }
+        console.log("The maximum value is: " + max + " The minimum value is: " + min);
+    }
+
+    minMax();
+</script>
+</body>
+</html>

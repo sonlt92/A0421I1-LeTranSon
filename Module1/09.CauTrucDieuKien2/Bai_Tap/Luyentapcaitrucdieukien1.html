@@ -26,8 +26,8 @@
         }
 
         //Bai 3
-        var songuyen = parseInt(prompt("Nhap so nguyen bat ky: "));
-        if (songuyen > 0){
+        var soNguyen = parseInt(prompt("Nhap so nguyen bat ky: "));
+        if (soNguyen > 0){
             alert("So nguyen nhap vao lon hon 0");
         } else {
             alert('So nguyen nhap vao nho hon 0');
@@ -50,11 +50,11 @@
         }
 
         //Bai 5
-        var diembaikiemtra = Number(prompt("Nhap diem bai kiem tra: "));
-        var diemthigiuaky = Number(prompt("Nhap diem thi giua ky: "));
-        var diemthicuoiky = Number(prompt("Nhap diem thi cuoi ky: "));
-        var hocluc = (diembaikiemtra + diemthicuoiky + diemthigiuaky)/3;
-        if(diembaikiemtra <=10 && diemthigiuaky <=10 && diemthicuoiky <=10){
+        var diemBaiKiemTra = Number(prompt("Nhap diem bai kiem tra: "));
+        var diemThiGiuaKy = Number(prompt("Nhap diem thi giua ky: "));
+        var diemThiCuoiKy = Number(prompt("Nhap diem thi cuoi ky: "));
+        var hocluc = (diemBaiKiemTra + diemThiCuoiKy + diemThiGiuaKy)/3;
+        if(diemBaiKiemTra <=10 && diemThiGiuaKy <=10 && diemThiCuoiKy <=10){
             if (hocluc >= 8){
                 alert("Hoc sinh gioi");
             } else if (hocluc >= 6.5){
