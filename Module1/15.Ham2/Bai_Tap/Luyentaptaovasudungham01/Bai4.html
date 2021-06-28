@@ -17,16 +17,12 @@ function addNumbers() {
 result = 0;
 result = addNumbers(); -->
       <script>
-        function addNumbers() {
-          firstNum = 4;
-          secondNum = 8;
+        function addNumbers(firstNum,secondNum) {
           result = firstNum + secondNum;
           return result;
         }
-        result = 0;
-        alert(result);
-        result = addNumbers();
-        alert(result);
+        alert(addNumbers(4,8));
+
       </script>
 </body>
 </html>

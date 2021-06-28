@@ -10,14 +10,14 @@
     function sumMatrix() {
         alert("Creating Matrix");
         let inputMatrix = parseInt(prompt("Input number of array elements: "));
-        let inputRow = parseInt(prompt("Input array row: "));
+        let inputCol = parseInt(prompt("Input array of a column: "));
         let arrMatrix = new Array(inputMatrix);
 
         for (let i = 0; i < arrMatrix.length; i++) {
             arrMatrix[i] = [];
-            for (let j = 0; j <= inputRow; j++) {
-                let inputCol = parseInt(prompt("Input array column: " + j));
-                arrMatrix[i].push(inputCol);
+            for (let j = 0; j < inputCol; j++) {
+                let inputRow = parseInt(prompt("The input element of an array: " + j));
+                arrMatrix[i].push(inputRow);
             }
         }
         console.log(arrMatrix)
@@ -37,7 +37,7 @@
 
             }
         }
-        alert("Sum of even numbered elements in Matrix: " + sum);
+        alert("Sum of even-numbered elements in Matrix: " + sum);
     }
 
     sumMatrix();

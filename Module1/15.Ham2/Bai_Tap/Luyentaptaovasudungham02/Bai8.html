@@ -7,19 +7,19 @@
 <body>
 <!--Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó. -->
 <script>
-  function reversearray(){
+  function reverseArray(){
     let array = [];
     let num;
     do {
       num = parseInt(prompt("Nhap vao so luong phan tu cua mang so nguyen: "));
     } while (num <= 0 || isNaN(num))
-    for (i = 0; i < num; i++ ){
+    for (let i = 0; i < num; i++ ){
       array[i] = prompt("Moi nhap vao phan tu so nguyen thu: " + i + " cua mang:");
     }
     let temp = array.reverse();
     document.write("Mang so nguyen sau khi dao nguoc la: " + temp.join());
   }
-  reversearray();
+  reverseArray();
 </script>
 </body>
 </html>

@@ -26,14 +26,14 @@ Chú ý: Người dùng chỉ được lựa chọn tối đa ba lần-->
     <input type="button" value="CHƠI" onclick="play()"/>
     <script>
       function play() {
-        var nhapso = parseInt(prompt("Nhap vao khoang so ma ban muon doan: "));        
-        var random = Math.round(Math.random()*nhapso);
-        for(count = 0; count <= random; count++){                         
+        let nhapSo = parseInt(prompt("Nhap vao khoang so ma ban muon doan: "));
+        let random = Math.round(Math.random()*nhapSo);
+        for(let count = 0; count <= random; count++){
             while (count < 3) {
-              doanso = parseInt(prompt("Nhap so ma ban doan:"));
-              if(doanso > random){
+              let doanSo = parseInt(prompt("Nhap so ma ban doan:"));
+              if(doanSo > random){
                 alert("So ban nhap vao lon hon. Vui long nhap lai.");
-              } else if (doanso < random){
+              } else if (doanSo < random){
                 alert("So ban nhap vao nho hon. Vui long nhap lai.");
               }else{
                 alert("Chuc mung ban da doan dung");                

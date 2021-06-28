@@ -37,9 +37,9 @@
       ];
       let flag = false;
       function search() {
-        let inputstar = document.getElementById("inputstar").value;
+        let inputStar = document.getElementById("inputstar").value;
         for (i = 0; i <= star.length; i++) {
-          if (star[i] == inputstar) {
+          if (star[i] === inputStar) {
             flag = true;
             document.getElementById("result").innerHTML = constellation[i];
           } else if (!flag) {

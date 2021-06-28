@@ -9,13 +9,13 @@
     Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. 
     Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.-->
 <script>  
-  var temperature = parseInt(prompt("Nhap nhiet do: "));
-  while (temperature < 20) {
+  let nhietDo = parseInt(prompt("Nhap nhiet do: "));
+  while (nhietDo < 20) {
     alert("Nhiet do thap. Vui long tang nhiet do");
-      temperature = parseInt(prompt("Nhap lai nhiet do: "));
-    while (temperature > 100) {
+      nhietDo = parseInt(prompt("Nhap lai nhiet do: "));
+    while (nhietDo > 100) {
       alert("Nhiet do cao. Vui long giam nhiet do");
-        temperature = parseInt(prompt("Nhap lai nhiet do: "));
+        nhietDo = parseInt(prompt("Nhap lai nhiet do: "));
     }
   }
 </script>

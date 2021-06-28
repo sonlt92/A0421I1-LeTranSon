@@ -10,15 +10,14 @@
     <!--Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. 
         Nếu là ký tự số hàm trả về true, ngược lại trả về false.-->
     <script>
-        function checknumber(){
-            input = prompt("Nhap vao ky tu ngau nhien: ");
-            if (!isNaN(input)) {
+        function checkNumber(number){
+            if (!isNaN(number)) {
                 alert("Ky tu ban nhap vao la so.");
             } else {
                 alert("Ky tu ban nhap vao la chu.");
             }
         }
-        checknumber();
+        checkNumber(20);
     </script>
 </body>
 </html>

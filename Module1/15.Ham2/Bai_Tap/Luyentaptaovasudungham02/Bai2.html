@@ -9,18 +9,18 @@
 <body>
     <!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
     <script>
-        number = parseFloat(prompt("Nhap ban kinh hinh tron: "));
-        function areaofcircle(){            
-            var areaofcircle = number * number * 3.14;
-            alert("Dien tich hinh tron la: " + areaofcircle);            
+
+        function areaOfCircle(number){
+            let areaOfCircle = number * number * 3.14;
+            alert("Dien tich hinh tron la: " + areaOfCircle);
         }
 
-        function circlecircumference(){
-            var circlecircumference = number * 2 * 3.14;
-            alert("Chu vi hinh tron la: " + circlecircumference);
+        function circleCircumFerence(number){
+            let circleCircumFerence = number * 2 * 3.14;
+            alert("Chu vi hinh tron la: " + circleCircumFerence);
         }
-        areaofcircle();
-        circlecircumference();
+        areaOfCircle(20);
+        circleCircumFerence(20);
     </script>
 </body>
 </html>

@@ -7,12 +7,12 @@
 <body>
   <!--Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.-->
 <script> 
-  var sum = 0;
-  var count = 0;
-  var naturalNumber = 1;
+  let sum = 0;
+  let count = 0;
+  let naturalNumber = 1;
 
   while (count <= 30) {
-    if (naturalNumber % 7 == 0) {
+    if (naturalNumber % 7 === 0) {
       sum += naturalNumber;
     }
       naturalNumber++;

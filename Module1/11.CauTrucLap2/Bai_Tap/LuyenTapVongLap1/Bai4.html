@@ -7,13 +7,13 @@
 <body>
   <!--Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.-->
 <script>  
-  var f = 0;
-  var f1 = (f2 = 1);
+  let f = 0;
+  let f1 = f2 = 1;
   for (let i = 2; i < 20; i++) {
     f = f1;
     f1 = f2;
     f2 = f + f1;
-    if (f2 % 5 == 0) {
+    if (f2 % 5 === 0) {
       document.write(
               "So dau tien trong day Fibonacci chia het cho 5 la: " + f2
       );

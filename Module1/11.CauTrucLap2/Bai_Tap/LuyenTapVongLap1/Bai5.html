@@ -7,17 +7,17 @@
 <body>
   <!--Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.-->
 <script>  
-  var f = 0;
-  var f1 = (f2 = 1);
-  var sum = f2;
-  for (i = 2; i < 20; i++) {
+  let f = 0;
+  let f1 = (f2 = 1);
+  let sumFibonacci = f2;
+  for (let i = 2; i < 20; i++) {
     f = f1;
     f1 = f2;
     f2 = f + f1;
-    sum += f2;
+      sumFibonacci += f2;
   }
 
-  document.write("Tong 20 so chan dau tien trong day Fibonacci la: " + sum);
+  document.write("Tong 20 so chan dau tien trong day Fibonacci la: " + sumFibonacci);
 </script>
 </body>
 </html>

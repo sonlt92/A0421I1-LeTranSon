@@ -7,10 +7,7 @@
 <body>
 <!--Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất. -->
  <script>
-   function bignumber() {
-     var num1 = parseInt(prompt("Nhap vao so nguyen thu 1: "));
-     var num2 = parseInt(prompt("Nhap vao so nguyen thu 2: "));
-     var num3 = parseInt(prompt("Nhap vao so nguyen thu 3: "));
+   function bigNumber(num1,num2,num3) {
      if (num1 > num2 && num1 > num3){
        alert(num1 + " la so lon nhat.");
      } else if (num1 < num2 && num3 < num2){
@@ -19,7 +16,7 @@
        alert(num3 + " la so lon nhat.")
      }
    }
-   bignumber();
+   bigNumber(20,10,30);
  </script>
 </body>
 </html>
