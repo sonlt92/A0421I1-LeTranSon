@@ -20,17 +20,20 @@ Mảng b được tạo ra: [1, 1 + 2, 1 + 2 + 3] = [1, 3, 6] -->
         let prefixArray = [];
         let prefixSums = [];
         let inputNum;
+        //Khởi tạo mảng.
         inputNum = parseInt(prompt("Enter the number of array elements: "));
         for (let i = 0; i < inputNum; i++) {
             prefixArray[i] = parseInt(prompt("Please enter element " + i + " of the array"));
         }
+        //Sao chép giá trị trong mảng
         for (let j = 0; j < inputNum; j++) {
             prefixSums[j] = prefixArray[j];
+        //Tính tổng của từng giá trị trong mảng
             if (j > 0) {
                 prefixSums[j] = prefixSums[j - 1] + prefixArray[j];
             }
         }
-
+        //Trả về kết quả
         alert("Prefix Sums " + prefixSums);
     }
 

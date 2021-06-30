@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<!-- <input type="text" id="" size="4">
+<input type="button" value="mua ve so" onclick="muaVeSo()">
+<input type="button" value="xem ket qua"> -->
+<script>
+  class soCuaBan{
+    constructor(soMot,soHai,soBa,soBon,soNam,soSau){
+      this.soMot=soMot
+      this.soHai=soHai
+      this.soBa=soBa
+      this.soBon=soBon
+      this.soNam=soNam
+      this.soSau=soSau
+    }
+  }
+  var arr=[]
+  function hienThiLuaChon(){
+    document.body.innerHTML=''
+    var result=`<input type="button" value="mua ve so" onclick="muaVeSo()">`
+    result+=`<input type="button" value="xem ket qua" onclick='xemKetQua()'>`
+    result+=`<br>`
+    for(i=0;i<arr.length;i++){
+      result+=`<input type="text" id="1" size="4" value='${arr[i].soMot}'>
+                    <input type="text" id="2" size="4" value='${arr[i].soHai}'>
+                    <input type="text" id="3" size="4" value='${arr[i].soBa}'>
+                    <input type="text" id="4" size="4" value='${arr[i].soBon}'>
+                    <input type="text" id="5" size="4" value='${arr[i].soNam}'>
+                    <input type="text" id="6" size="4" value='${arr[i].soSau}'><br>`
+    }
+    document.write(result)
+  }
+  hienThiLuaChon()
+  function muaVeSo(){
+    if(arr.length>=6){
+      alert('chi mua 6 to');
+      return;
+    }
+    document.body.innerHTML=''
+    var luaChonSo=parseInt(prompt("Nhan 1 de random so, 2 de ban chon so"))
+    if(luaChonSo==2){
+      var result=`<input type="text" id="1" size="4">
+                <input type="text" id="2" size="4">
+                <input type="text" id="3" size="4">
+                <input type="text" id="4" size="4">
+                <input type="text" id="5" size="4">
+                <input type="text" id="6" size="4">
+                <input type="button" value="Xac nhan" onclick='xacNhan()'>`
+      document.write(result)
+    }else if(luaChonSo==1){
+      var result=`<input type="text" id="1" size="4" value='${Math.floor(Math.random()*100)+1}'>
+                <input type="text" id="2" size="4" value='${Math.floor(Math.random()*100)+1}'>
+                <input type="text" id="3" size="4" value='${Math.floor(Math.random()*100)+1}'>
+                <input type="text" id="4" size="4" value='${Math.floor(Math.random()*100)+1}'>
+                <input type="text" id="5" size="4" value='${Math.floor(Math.random()*100)+1}'>
+                <input type="text" id="6" size="4" value='${Math.floor(Math.random()*100)+1}'>
+                <input type="button" value="Xac nhan" onclick='xacNhan()'>`
+      document.write(result)
+    }
+  }
+  function xacNhan(){
+    var soMot=document.getElementById('1').value
+    var soHai=document.getElementById('2').value
+    var soBa=document.getElementById('3').value
+    var soBon=document.getElementById('4').value
+    var soNam=document.getElementById('5').value
+    var soSau=document.getElementById('6').value
+    var soMoi=new soCuaBan(soMot,soHai,soBa,soBon,soNam,soSau)
+    arr.push(soMoi)
+    console.log(arr)
+    hienThiLuaChon()
+  }
+  function xemKetQua(){
+    var soMot=Math.floor(Math.random()*100)+1
+    var soHai=Math.floor(Math.random()*100)+1
+    var soBa=Math.floor(Math.random()*100)+1
+    var soBon=Math.floor(Math.random()*100)+1
+    var soNam=Math.floor(Math.random()*100)+1
+    var soSau=Math.floor(Math.random()*100)+1
+    var ketQuaXoSo=new soCuaBan(soMot,soHai,soBa,soBon,soNam,soSau)
+    var flagGiaiNhat=false
+    var flagGiaiNhi=false
+    var flagGiaiBa=false
+    for(i=0;i<arr.length;i++){
+      isSoMot=arr[i].soMot==ketQuaXoSo.soMot
+      isSoHai=arr[i].soHai==ketQuaXoSo.soHai
+      isSoBa=arr[i].soBa==ketQuaXoSo.soBa
+      isSoBon=arr[i].soBon==ketQuaXoSo.soBon
+      isSoNam=arr[i].soNam==ketQuaXoSo.soNam
+      isSoSau=arr[i].soSau==ketQuaXoSo.soSau
+      isGiaiNhat=isSoMot&&isSoHai&&isSoBa&&isSoBon&&isSoNam&&isSoSau
+      isGiaiNhi=isSoHai&&isSoBa&&isSoBon&&isSoNam&&isSoSau
+      isKhuyenKhich=isSoBon&&isSoNam&&isSoSau
+      if(isGiaiNhat){
+        flagGiaiNhat=true
+      }else if(isGiaiNhi){
+        flagGiaiNhi=true
+      }else if(isKhuyenKhich){
+        flagGiaiBa=true
+      }
+    }
+    if(flagGiaiNhat){
+      alert('ban duoc giai nhat')
+    }else if(flagGiaiNhi){
+      alert('ban duoc giai nhi')
+    }else if(flagGiaiBa){
+      alert('ban duoc giai khuyen khich')
+    }else{
+      alert('Ban nen mua them 6 to')
+    }
+    console.log("Ket qua so so la   "+ ketQuaXoSo.soMot+'   '+ketQuaXoSo.soHai+'   '+ketQuaXoSo.soBa+'   '+
+            ketQuaXoSo.soBon+'   '+ketQuaXoSo.soNam+'   '+ketQuaXoSo.soSau)
+  }
+</script>
+</body>
+</html>
