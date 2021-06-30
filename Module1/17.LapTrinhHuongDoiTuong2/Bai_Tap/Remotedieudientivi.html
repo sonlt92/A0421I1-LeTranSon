@@ -5,56 +5,104 @@
     <title>Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
 </head>
 <body>
+<input id="status" placeholder="TV Status" style="width: 60px">
+<input id="channel" placeholder="Channel" style="width: 100px">
+<input id="vol" placeholder="Volume" style="width: 50px">
+<table>
+    <tr>
+        <td rowspan="4"><input type="button" value="On(True) / Off(False)" onclick="onOffTv()"></td>
+        <td><input type="button" value="Vol(+)" onclick="changeVolume('up')"></td>
+        <td><input type="button" value="Channel(VTV1)" onclick="changeChannel('VTV1')"></td>
+        <td><input type="button" value="Channel(VTV2)" onclick="changeChannel('VTV2')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Vol(-)" onclick="changeVolume('down')"></td>
+        <td><input type="button" value="Channel(VTV3)" onclick="changeChannel('VTV3')"></td>
+        <td><input type="button" value="Channel(VTV4)" onclick="changeChannel('VTV4')"></td>
+    </tr>
+</table>
 <script>
     class TiVi {
         constructor() {
-            this.status = 'VTV3';
-            this.volume = 50;
-            this.onOff = true;
+            this.channel = 0;
+            this.volume = 0;
+            this.status = false;
         }
-
-        setChageChannel(channel) {
-            this.status = channel;
+        getVolumeTv(){
+            return this.volume;
         }
-
-        setVolume(unit) {
-            this.volume += unit;
+        getChannelTv(){
+            return this.channel;
+        }
+        getStatusTv(){
+            return this.status;
+        }
+        onOffTv(){
+            this.status = !this.status;
+        }
+        changeChannelTv(channel){
+            this.channel = channel;
+        }
+        volumeUpTv(){
+            if (this.status){
+                this.volume++;
+            }
+        }
+        volumeDownTv(){
+            if (this.status){
+                this.volume--;
+            }
         }
     }
 
     class Remote {
-        constructor() {
+        constructor(tivi) {
+            this.tivi = tivi;
         }
-
-        setChange(tivi, channel) {
-            tivi.status = channel;
+        onOffRemote(){
+            this.tivi.onOffTv();
         }
-
-        setVolume(tivi, volume) {
-            tivi.amLuong += volume;
+        changeChannelRemote(channel){
+            this.tivi.changeChannelTv(channel);
         }
-
-        setOn(tivi) {
-            tivi.onOff = true;
+        volumeUpRemote(){
+            this.tivi.volumeUpTv();
         }
-
-        setOff(tivi) {
-            tivi.onOff = false;
+        volumeDownRemote(){
+            this.tivi.volumeDownTv();
         }
     }
 
     let television = new TiVi();
-    let remote = new Remote();
-    remote.setOn(television);
-    console.log('Status Tivi: ' + television.onOff);
-    television.setChageChannel('vtv1');
-    console.log('Channel: ' + television.status);
-    remote.setChange(television, 'vtv2');
-    console.log('Channel status: ' + television.status);
-    remote.setVolume(television, 2);
-    console.log('Volume Up:' + television.volume);
-    remote.setOff(television);
-    console.log('Status Tivi: ' + television.onOff);
+    let remote = new Remote(television);
+    function onOffTv() {
+        remote.onOffRemote();
+        document.getElementById("status").value = television.getStatusTv();
+    }
+    function changeVolume(upDown) {
+        if (upDown === 'down'){
+            remote.volumeDownRemote();
+            document.getElementById("vol").value = television.getVolumeTv();
+        } else {
+            remote.volumeUpRemote();
+            document.getElementById("vol").value = television.getVolumeTv();
+        }
+    }
+    function changeChannel(channel) {
+        remote.changeChannelRemote(channel);
+        document.getElementById("channel").value = television.getChannelTv();
+    }
+
+    // remote.setOn(television);
+    // console.log('Status Tivi: ' + television.onOff);
+    // television.setChangeChannel('vtv1');
+    // console.log('Channel: ' + television.status);
+    // remote.setChange(television, 'vtv2');
+    // console.log('Channel status: ' + television.status);
+    // remote.setVolume(television, 2);
+    // console.log('Volume Up:' + television.volume);
+    // remote.setOff(television);
+    // console.log('Status Tivi: ' + television.onOff);
 
 
 </script>
