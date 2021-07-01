@@ -32,10 +32,10 @@
           document.write(result);
       } else if (chooseLotteryTicket == "2"){
           let ticket = [];
-          for (let i=0;i<6;i++){
+          for (let i=0;i<=6;i++){
               ticket[i] = Math.floor(Math.random()*99);
           }
-         lotteryTicket.push(new newTicket(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]));
+         lotteryTicket.push(new VietLot(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]));
           display();
       }else {
           alert("You chose the wrong one. Please choose again.");
@@ -49,7 +49,7 @@
       let num4 = parseInt(document.getElementById('num4').value);
       let num5 = parseInt(document.getElementById('num5').value);
       let num6 = parseInt(document.getElementById('num6').value);
-      lotteryTicket.push(new newTicket(num1,num2,num3,num4,num5,num6));
+      lotteryTicket.push(new VietLot(num1,num2,num3,num4,num5,num6));
       display();
   }
   
@@ -73,13 +73,21 @@
 
   function viewResults() {
       let ticket = [];
-      for (let i=0;i<6;i++){
+      for (let i=0;i<=6;i++){
           ticket[i] = Math.floor(Math.random()*99);
       }
-      let specialPrize = new newTicket(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]);
+      let specialPrize = new VietLot(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]);
       for (let i=0;i<lotteryTicket.length;i++){
-
+          if(specialPrize.num1==lotteryTicket[i].num1&&specialPrize.num2==lotteryTicket[i].num2&&specialPrize.num3==lotteryTicket[i].num3&&specialPrize.num4==lotteryTicket[i].num4&&specialPrize.num5==lotteryTicket[i].num5&&specialPrize.num6==lotteryTicket[i].num6) {
+              alert("Congratulations on "+ i +" winning the first prize lottery ticket.");
+          } else if(specialPrize.num2==lotteryTicket[i].num2&&specialPrize.num3==lotteryTicket[i].num3&&specialPrize.num4==lotteryTicket[i].num4&&specialPrize.num5==lotteryTicket[i].num5&&specialPrize.num6==lotteryTicket[i].num6) {
+              alert("Congratulations on "+ i +" winning the second prize lottery ticket.");
+          } else if(specialPrize.num4==lotteryTicket[i].num4&&specialPrize.num5==lotteryTicket[i].num5&&specialPrize.num6==lotteryTicket[i].num6) {
+              alert("Congratulations on "+ i +" winning the third prize lottery ticket.");
+          }
       }
+      document.write("Special Prize: "+specialPrize.num1+" "+specialPrize.num2+" "+specialPrize.num3+" "+specialPrize.num4+" "+specialPrize.num5+" "+specialPrize.num6+" ");
+
 
   }
   buylotteryTicket();
