@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Xo So Codegym</title>
+
 </head>
 <body>
+<h1>CodeGym Lottery</h1>
 <script>
-  class VietLot {
+  class CodeGymLot {
     constructor(num1,num2,num3,num4,num5,num6) {
       this.num1 = num1;
       this.num2 = num2;
@@ -22,20 +24,28 @@
           "1. Manually enter the number." + "\n" +
           "2. Random number");
       if (chooseLotteryTicket == "1"){
-          let result = "Nummber 1: <input id='num1'>";
-          result += "Nummber 2: <input id='num2'>";
-          result += "Nummber 3: <input id='num3'>";
-          result += "Nummber 4: <input id='num4'>";
-          result += "Nummber 5: <input id='num5'>";
-          result += "Nummber 6: <input id='num6'>";
-          result += "<button onclick='boughtTickets()'>Confirm</button>";
-          document.write(result);
+          if (lotteryTicket.length > 4){
+              alert("You can only buy up to 4 tickets.");
+          } else {
+              let result = "<br>Nummber 1: <input id='num1'>";
+              result += "<br/>Nummber 2: <input id='num2'>";
+              result += "<br/>Nummber 3: <input id='num3'>";
+              result += "<br/>Nummber 4: <input id='num4'>";
+              result += "<br/>Nummber 5: <input id='num5'>";
+              result += "<br/>Nummber 6: <input id='num6'>";
+              result += "<br/><button onclick='boughtTickets()'>Confirm</button>";
+              document.write(result);
+          }
       } else if (chooseLotteryTicket == "2"){
           let ticket = [];
           for (let i=0;i<=6;i++){
               ticket[i] = Math.floor(Math.random()*99);
           }
-         lotteryTicket.push(new VietLot(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]));
+         lotteryTicket.push(new CodeGymLot(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]));
+          if (lotteryTicket.length > 4){
+              alert("You can only buy up to 4 tickets.");
+              return;
+          }
           display();
       }else {
           alert("You chose the wrong one. Please choose again.");
@@ -49,14 +59,15 @@
       let num4 = parseInt(document.getElementById('num4').value);
       let num5 = parseInt(document.getElementById('num5').value);
       let num6 = parseInt(document.getElementById('num6').value);
-      lotteryTicket.push(new VietLot(num1,num2,num3,num4,num5,num6));
+      lotteryTicket.push(new CodeGymLot(num1,num2,num3,num4,num5,num6));
       display();
   }
   
   function display() {
       document.body.innerHTML  = "";
-      let result = "<button onclick='boughtTickets()'>Confirm</button>" +
-      "<button onclick='viewResults()'>View results</button> <table>";
+      document.write("<h1 style='color: #4876FF'>CodeGym Lottery </h1> <br/>");
+      let result = "<button onclick='buylotteryTicket()'>Buy Lottery Ticket</button>"+
+          "<button onclick='viewResults()'>View results</button><table style='width: 200px;background: #2BD2FF'>";
       for (let i=0;i<lotteryTicket.length;i++){
           result += "<tr>";
           result += "<td>" + lotteryTicket[i].num1 + "</td>";
@@ -76,7 +87,7 @@
       for (let i=0;i<=6;i++){
           ticket[i] = Math.floor(Math.random()*99);
       }
-      let specialPrize = new VietLot(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]);
+      let specialPrize = new CodeGymLot(ticket[1],ticket[2],ticket[3],ticket[4],ticket[5],ticket[6]);
       for (let i=0;i<lotteryTicket.length;i++){
           if(specialPrize.num1==lotteryTicket[i].num1&&specialPrize.num2==lotteryTicket[i].num2&&specialPrize.num3==lotteryTicket[i].num3&&specialPrize.num4==lotteryTicket[i].num4&&specialPrize.num5==lotteryTicket[i].num5&&specialPrize.num6==lotteryTicket[i].num6) {
               alert("Congratulations on "+ i +" winning the first prize lottery ticket.");
@@ -84,13 +95,13 @@
               alert("Congratulations on "+ i +" winning the second prize lottery ticket.");
           } else if(specialPrize.num4==lotteryTicket[i].num4&&specialPrize.num5==lotteryTicket[i].num5&&specialPrize.num6==lotteryTicket[i].num6) {
               alert("Congratulations on "+ i +" winning the third prize lottery ticket.");
+          }else {
+              alert("Wish you luck next time.");
           }
       }
-      document.write("Special Prize: "+specialPrize.num1+" "+specialPrize.num2+" "+specialPrize.num3+" "+specialPrize.num4+" "+specialPrize.num5+" "+specialPrize.num6+" ");
-
-
+      document.write("<br/>"+"<p style='color: #d61b06; font-weight: bold'>Special Prize: </p>"+specialPrize.num1+" "+specialPrize.num2+" "+specialPrize.num3+" "+specialPrize.num4+" "+specialPrize.num5+" "+specialPrize.num6+" ");
   }
-  buylotteryTicket();
+  display();
 </script>
 </body>
 </html>
