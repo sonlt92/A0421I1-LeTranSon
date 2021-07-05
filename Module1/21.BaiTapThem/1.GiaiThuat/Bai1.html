@@ -13,7 +13,15 @@
 *****
 *****  -->
 <script>
-
+    let width = parseInt(prompt("Enter width: "));
+    let height = parseInt(prompt("Enter height: "));
+    for (let i = 0; i < height; i++) {
+        document.write("");
+        for (let j = 0; j < width; j++) {
+            document.write("*");
+        }
+        document.writeln("<br/>");
+    }
 </script>
 </body>
 </html>
