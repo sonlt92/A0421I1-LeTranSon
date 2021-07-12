@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+    class HocSinh {
+        constructor(soThuTu, hoVaTen, ngaySinh, diemTrungBinh) {
+            this.soThuTu = soThuTu;
+            this.hoVaTen = hoVaTen;
+            this.ngaySinh = ngaySinh;
+            this.diemTrungBinh = diemTrungBinh;
+        }
+    }
+
+    var mangDanhSach = [];
+    mangDanhSach.push(new HocSinh(1, "Hoang Nam Vuong", "1/1/1111", Number("5")));
+
+    function hienThiDanhSach() {
+        document.body.innerHTML = "";
+        let result = "<button onclick='taoDoiTuong()'>Them Danh Sach</button>"
+        result += "<table border='1'>";
+        for (let i = 0; i < mangDanhSach.length; i++) {
+            result += "<tr>";
+            result += "<td>" + mangDanhSach[i].soThuTu + "</td>";
+            result += "<td>" + mangDanhSach[i].hoVaTen + "</td>";
+            result += "<td>" + mangDanhSach[i].ngaySinh + "</td>";
+            result += "<td>" + mangDanhSach[i].diemTrungBinh + "</td>";
+            result += "<td><button onclick='kiemTraHocLuc(" + i + ")'>kiem tra</button></td>";
+            result += "</tr>";
+        }
+        result += "</table>";
+        document.write(result);
+    }
+
+    function taoDoiTuong() {
+        document.body.innerHTML = "";
+        let result = "soThuTu: <input id='soThuTu'><br>"
+        result += "hoVaTen: <input id='hoVaTen'><br>"
+        result += "ngaySinh: <input id='ngaySinh'><br>"
+        result += "diemTrungBinh: <input id='diemTrungBinh'><br>"
+        result += "<button onclick='themDoiTuong()'>them</button>"
+        document.write(result)
+    }
+
+    function themDoiTuong() {
+        let soThuTu = document.getElementById("soThuTu").value;
+        let hoVaTen = document.getElementById("hoVaTen").value;
+        let ngaySinh = document.getElementById("ngaySinh").value;
+        let diemTrungBinh = document.getElementById("diemTrungBinh").value;
+        mangDanhSach.push(new HocSinh(soThuTu, hoVaTen, ngaySinh, diemTrungBinh));
+        hienThiDanhSach();
+    }
+
+    function kiemTraHocLuc(index) {
+        if (this.diemTrungBinh > 8 && this.diemTrungBinh <= 10) {
+            document.write("gioi");
+        } else if (this.diemTrungBinh >= 6.5) {
+            document.write("kha");
+        } else if (this.diemTrungBinh >= 5) {
+            document.write("trung binh");
+        } else if (this.diemTrungBinh >= 3.5) {
+            document.write("yeu");
+        } else {
+            document.write("kem");
+        }
+    }
+
+    hienThiDanhSach();
+</script>
+</body>
+</html>

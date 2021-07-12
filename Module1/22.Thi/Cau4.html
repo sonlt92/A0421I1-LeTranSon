@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau4</title>
+</head>
+<body>
+<!-- Câu 4: Viết chương trình kiểm tra học lực của học sinh.
+Tạo một lớp có tên là HocSinh bao gồm các thuộc tính như sau: Số thứ tự, Họ và tên, Ngày sinh, Điểm trung bình.
+Yêu cầu:
+-	Viết hàm hiển thị thông tin học sinh với đầy đủ các thuộc tính
+-	Viết hàm kiểm tra học lực của học sinh
+o	>8 là học sinh GIỎI
+o	>= 6.5 là học sinh KHÁ
+o	>=5 là học sinh TRUNG BÌNH
+o	>= 3.5 là học sinh YẾU
+o	Còn lại là học sinh KÉM
+Áp dụng được phương thức.
+*Dữ liệu học sinh thì học viên tự cho trước.  -->
+<script>
+    class HocSinh {
+        constructor(soThuTu, hoTen, ngaySinh, diemTrungBinh) {
+            this.soThuTu = soThuTu;
+            this.hoTen = hoTen;
+            this.ngaySinh = ngaySinh;
+            this.diemTrungBinh = diemTrungBinh;
+        }
+
+        hienThiThongTinHocSinh() {
+            document.write("So thu tu: " + this.soThuTu +
+                "<br/>" + "Ho va ten: " + this.hoTen +
+                "<br/>" + "Ngay sinh: " + this.ngaySinh +
+                "<br/>" + "Diem trung binh: " + this.diemTrungBinh);
+        }
+
+        hocLuc() {
+            if (this.diemTrungBinh > 8 && this.diemTrungBinh <= 10) {
+                document.write("<br/>" + "Hoc Sinh Gioi");
+            } else if (this.diemTrungBinh >= 6.5) {
+                document.write("<br/>" + "Hoc Sinh Kha");
+            } else if (this.diemTrungBinh >= 5) {
+                document.write("<br/>" + "Hoc Sinh Trung Binh");
+            } else if (this.diemTrungBinh >= 3.5) {
+                document.write("<br/>" + "Hoc Sinh Yeu");
+            } else {
+                document.write("<br/>" + "Hoc Sinh Kem");
+            }
+        }
+    }
+
+    let hocSinh = new HocSinh("1", "Le Tran Son", "29-06-1992", 8.5);
+    hocSinh.hienThiThongTinHocSinh();
+    hocSinh.hocLuc();
+</script>
+</body>
+</html>

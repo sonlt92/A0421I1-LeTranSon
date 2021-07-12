@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau 1</title>
+</head>
+<body>
+<!-- Câu 1: Tạo một mảng rỗng, nhận 5 giá trị thuộc kiểu số nguyên được nhập bàn phím.
+ Yêu cầu hiển thị mảng đã được sắp xếp theo thứ tự tăng dần ra màn hình. -->
+<script>
+    let inputArrayLength = parseInt(prompt("Input number of array elements: "));
+    let array = [];
+    for (let i = 0; i < inputArrayLength;i++) {
+        array[i] = prompt("Enter the number " + i + " element of the array.");
+    }
+    document.write("Input array: " + array);
+    document.write("<br/>" + "The array after sorting is: " + array.sort());
+</script>
+</body>
+</html>

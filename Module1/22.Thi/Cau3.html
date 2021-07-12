@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau 3</title>
+</head>
+<body>
+<!-- Câu 3: Cho một mảng lưu trữ danh sách điểm thi. Hãy viết hàm findMaxScore() với đầu vào là mảng điểm,
+đầu ra là điểm số cao nhất được tìm thấy trong mảng đó và vị trí của điểm số cao nhất xuất hiện trong mảng.
+Nếu có hai số trở lên là điểm cao nhất trong mảng thì phải in ra được vị trí cuối cùng của điểm số cao nhất được tìm thấy. -->
+<script>
+    function findMaxScore() {
+        let arrayScore = [10, 5, 2, 8, -1, 6, 10];
+        let max = arrayScore[0];
+        let maxIndex = 0;
+        for (let j = 1; j < arrayScore.length; j++) {
+            if (arrayScore[j] >= max) {
+                maxIndex = j;
+                max = arrayScore[j];
+            }
+            // } else if (max === arrayScore[j]) {
+            //     maxIndex = j;
+            // }
+        }
+        document.write("Max score: " + max);
+        document.write("<br/>" + "Index of: " + maxIndex);
+
+    }
+
+    findMaxScore();
+</script>
+</body>
+</html>
