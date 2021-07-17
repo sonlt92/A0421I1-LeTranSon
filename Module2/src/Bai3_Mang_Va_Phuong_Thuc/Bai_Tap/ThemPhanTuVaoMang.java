@@ -4,53 +4,66 @@ import java.util.Scanner;
 
 public class ThemPhanTuVaoMang {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         //Khoi tao mang va nhap so phan tu vao mang
         int size;
-        int[] array;
-        Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("Enter a size: ");
+            System.out.print("Enter a size: ");
             size = scanner.nextInt();
             if (size > 20) {
                 System.out.print("Size should not exceed 20");
             }
         } while (size > 20);
-        array = new int[size];
-        int i = 0;
-        while (i < array.length) {
-            System.out.print("Enter element " + (i + 1) + " : ");
-            array[i] = scanner.nextInt();
-            i++;
+
+        int[] arr = new int[size];
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter element " + i + " : ");
+            arr[i] = scanner.nextInt();
         }
 
         //Hien thi mang
         System.out.print("Property list: ");
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + "\t");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
         }
 
         //Nhap so can chen va vi tri can chen
-
         System.out.print("\nEnter the element to insert: ");
         int inputElement = scanner.nextInt();
         System.out.print("Enter the location to insert: ");
         int location = scanner.nextInt();
-        // Neu so luong phan tu lon hon hoac bang suc chua cua mang thi khong the them
-        if (i >= size) {
-            System.out.println("Error");
-        }
-        // vi tri them phan tu phai thuoc khoang[0, i]
-        if (location < 0 || location > i) {
-            for (int j = i; j > location; j--) {
-                array[j] = array[j - 1];
+        int [] arrNew = ThemPhanTuVaoMang.insert(arr, inputElement, location);
+        ThemPhanTuVaoMang.show(arrNew);
+
+    }
+
+
+    public static int[] insert(int[] arr, int input, int location) {
+        int arrIndex = arr.length - 1;
+        int tempIndex = arr.length;
+        int[] tempArr = new int[tempIndex + 1];
+        boolean inserted = false;
+
+        for (int i = tempIndex; i >= 0; i--) {
+            if (arrIndex > -1 && arr[arrIndex] > location) {
+                tempArr[i] = arr[arrIndex--];
+            } else {
+                if (!inserted) {
+                    tempArr[i] = input;
+                    inserted = true;
+                } else {
+                    tempArr[i] = arr[arrIndex--];
+                }
             }
-            array[location] = inputElement;
-            System.out.println("Test: " + array[i + 1]);
+        }
+        return tempArr;
+    }
+
+    public static void show (int [] arr){
+        for (int i=0; i<arr.length; i++){
+            System.out.println(arr[i]);
         }
     }
 }
-
-
-
-
