@@ -31,6 +31,26 @@ public class ThemPhanTuVaoMang {
         }
 
         //Nhap so can chen va vi tri can chen
-        System.out.print(": ");
+
+        System.out.print("\nEnter the element to insert: ");
+        int inputElement = scanner.nextInt();
+        System.out.print("Enter the location to insert: ");
+        int location = scanner.nextInt();
+        // Neu so luong phan tu lon hon hoac bang suc chua cua mang thi khong the them
+        if (i >= size) {
+            System.out.println("Error");
+        }
+        // vi tri them phan tu phai thuoc khoang[0, i]
+        if (location < 0 || location > i) {
+            for (int j = i; j > location; j--) {
+                array[j] = array[j - 1];
+            }
+            array[location] = inputElement;
+            System.out.println("Test: " + array[i + 1]);
+        }
     }
 }
+
+
+
+
