@@ -34,12 +34,12 @@ public class ThemPhanTuVaoMang {
         int inputElement = scanner.nextInt();
         System.out.print("Enter the location to insert: ");
         int location = scanner.nextInt();
-        int [] arrNew = ThemPhanTuVaoMang.insert(arr, inputElement, location);
+        int[] arrNew = ThemPhanTuVaoMang.insert(arr, inputElement, location);
         ThemPhanTuVaoMang.show(arrNew);
 
     }
 
-
+    //Phuong thuc chen
     public static int[] insert(int[] arr, int input, int location) {
         int arrIndex = arr.length - 1;
         int tempIndex = arr.length;
@@ -61,9 +61,11 @@ public class ThemPhanTuVaoMang {
         return tempArr;
     }
 
-    public static void show (int [] arr){
-        for (int i=0; i<arr.length; i++){
-            System.out.println(arr[i]);
+    //Phuong thuc hien thi
+    public static void show(int[] arr) {
+        System.out.print("New property list: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
         }
     }
 }
