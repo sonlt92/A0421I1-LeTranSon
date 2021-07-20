@@ -39,9 +39,9 @@ public class TongCacSoOMotCot {
         elementCol = scanner.nextInt();
         for (int i = 0; i < row; i++) {
             for (int j = elementCol; j < col; j++) {
-//                if (j == elementCol){
+                if (j == elementCol){
                 sumCol += Arr[i][j];
-//                }
+               }
             }
         }
         System.out.println("Sum column " + elementCol + " is: " + sumCol);
