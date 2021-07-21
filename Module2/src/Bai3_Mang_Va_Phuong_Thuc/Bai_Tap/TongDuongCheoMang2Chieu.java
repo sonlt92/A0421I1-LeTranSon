@@ -2,16 +2,16 @@ package Bai3_Mang_Va_Phuong_Thuc.Bai_Tap;
 
 import java.util.Scanner;
 
-public class TongCacSoOMotCot {
+public class TongDuongCheoMang2Chieu {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        //Khai bao so dong va cot cua mang 2 chieu
+        //Khai bao dong,cot mang 2 chieu
         int row, col;
         System.out.print("Input row of Array: ");
-        row = scanner.nextInt();
+        row = input.nextInt();
         System.out.print("Input column of Array: ");
-        col = scanner.nextInt();
+        col = input.nextInt();
 
         //Khai bao mang 2 chieu
         int[][] Arr = new int[row][col];
@@ -20,7 +20,7 @@ public class TongCacSoOMotCot {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 System.out.print("\nArr[" + i + "][" + j + "] = ");
-                Arr[i][j] = scanner.nextInt();
+                Arr[i][j] = input.nextInt();
             }
         }
 
@@ -33,19 +33,17 @@ public class TongCacSoOMotCot {
             System.out.println("\n");
         }
 
-        int elementCol;
-        int sumCol = 0;
-        System.out.print("Enter column to calculate the total: ");
-        elementCol = scanner.nextInt();
+        //Ting tong duong cheo
+        int sum = 0;
         for (int i = 0; i < row; i++) {
-            for (int j = elementCol; j < col; j++) {
-                if (j == elementCol){
-                sumCol += Arr[i][j];
-               }
+            for (int j = 0; j < col; j++) {
+                // kiểm tra nếu i == j thì mới tính tổng
+                if (i == j) {
+                    sum += Arr[i][j];
+                }
             }
         }
-        System.out.println("Sum column " + elementCol + " is: " + sumCol);
+        System.out.print("The sum of elements lying on the diagonal: " + sum);
     }
-
 
 }
