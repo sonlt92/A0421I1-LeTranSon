@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Module2/src/bai3_mang_va_phuong_thuc/bai_tap/bai_tap_them/Bai1.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="bai3_mang_va_phuong_thuc.bai_tap.bai_tap_them.Bai1"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Module2"/>
+</launchConfiguration>

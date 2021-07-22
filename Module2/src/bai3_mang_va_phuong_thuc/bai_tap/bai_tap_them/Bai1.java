@@ -10,12 +10,7 @@ public class Bai1 {
     //d.	Sắp sếp mảng a theo thứ tự tăng dần.
     //e.	Chèn một số p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần.
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-    }
-
-    public static int InputArray() {
-        Scanner input = new Scanner(System.in);
+    	Scanner input = new Scanner(System.in);
         int size;
         do {
             System.out.print("Enter size array: ");
@@ -37,6 +32,17 @@ public class Bai1 {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + "\t");
         }
-        return InputArray();
-    }
+        
+        System.out.print("\nSum Odd: " + SumOdd(arr));        
+    }    
+    
+    public static int SumOdd(int[] arr) {
+		int sum = 0;
+		for (int i=0;i<arr.length;i++){
+			if (i % 2 != 0) {
+				sum += arr[i];
+			}
+		}		
+		return sum;
+	}
 }
