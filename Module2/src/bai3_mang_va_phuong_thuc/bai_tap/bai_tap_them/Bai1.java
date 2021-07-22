@@ -3,9 +3,15 @@ package bai3_mang_va_phuong_thuc.bai_tap.bai_tap_them;
 import java.util.Scanner;
 
 public class Bai1 {
+    //1.	Viết chương trình thực hiện các công việc như sau :
+    //a.	Nhập một mảng a gồm n phần tử kiểu nguyên int
+    //b.	Tính tổng số dương lẻ của mảng a
+    //c.	Nhập vào phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra các vị trí của k trong mảng.
+    //d.	Sắp sếp mảng a theo thứ tự tăng dần.
+    //e.	Chèn một số p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần.
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        InputArray();
+
     }
 
     public static int InputArray() {
