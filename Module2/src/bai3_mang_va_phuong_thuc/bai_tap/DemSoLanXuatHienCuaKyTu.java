@@ -6,7 +6,7 @@ public class DemSoLanXuatHienCuaKyTu {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        //Tao chuot
+        //Tao chuoi
         String inputString;
         char characters;
         int count = 0;

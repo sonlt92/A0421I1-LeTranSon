@@ -46,4 +46,5 @@ public class Bai1 {
         }
         return sum;
     }
+
 }
