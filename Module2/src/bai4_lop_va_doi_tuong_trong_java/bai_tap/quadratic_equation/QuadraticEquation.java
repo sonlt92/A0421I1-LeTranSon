@@ -13,5 +13,11 @@ public class QuadraticEquation {
         double delta = b*b - 4*a*c;
     }
 
+    public double getRoot1(double delta){
+        return (-b + Math.sqrt(delta))/(2*a);
+    }
 
+    public double getRoot2(double delta){
+        return (-b - Math.sqrt(delta))/(2*a);
+    }
 }
