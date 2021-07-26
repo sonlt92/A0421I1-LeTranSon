@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class GopMang {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int sizeArr1, sizeArr2;
+        int sizeArr1;
+        int sizeArr2;
 
         //Khoi tao mang thu 1 va nhap gia tri
         do {
