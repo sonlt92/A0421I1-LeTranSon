@@ -25,13 +25,24 @@ public class Point2D {
         this.y = y;
     }
 
-    get
+    public float[] getXY(){
+        float[] arr = new float[2];
+        arr[0] = x;
+        arr[1] = y;
+        return arr;
+    }
 
     public Point2D(){
 
     }
 
     public Point2D(float x, float y){
+        this.x = x;
+        this.y = y;
+    }
 
+    @Override
+    public String toString(){
+        return "{ " + x + ", " + y + " }";
     }
 }
