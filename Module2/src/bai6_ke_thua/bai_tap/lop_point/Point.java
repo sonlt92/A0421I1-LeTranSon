@@ -34,17 +34,14 @@ public class Point {
         this.y = y;
     }
      public float[] getXY(){
-        float[] arr = new float[2];
-        arr[0] = x;
-        arr[1] = y;
-        return arr;
+         return new float[]{x, y};
      }
 
     @Override
     public String toString() {
         return "Point{" +
-                "x=" + getX() +
-                ", y=" + getY() +
+                "x=" + x +
+                ", y=" + y +
                 '}';
     }
 }
