@@ -2,7 +2,6 @@ package bai7_abstract_class_and_interface.bai_tap.trien_khai_interface_resizeabl
 
 public class ResizeableTest {
     public static void main(String[] args) {
-//        Shape[] shapes = new Shape[5];
         Shape[] shape = new Shape[5];
         for (int i = 0; i < 5; i++) {
             shape[i] = getRandomShape();
