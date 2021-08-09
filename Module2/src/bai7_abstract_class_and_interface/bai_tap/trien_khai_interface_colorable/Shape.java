@@ -1,18 +1,13 @@
-package bai7_abstract_class_and_interface.bai_tap.trien_khai_interface_resizeable;
+package bai7_abstract_class_and_interface.bai_tap.trien_khai_interface_colorable;
 
-public class Square extends Rectangle implements Resizeable{
-    private String color = "black";
-    private boolean filled = false;
+public class Shape {
+    private String color = "green";
+    private boolean filled = true;
 
-    public Square(){
-
+    public Shape() {
     }
 
-    public Square(double i) {
-
-    }
-
-    public void setShape(String color, boolean filled) {
+    public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
@@ -39,11 +34,5 @@ public class Square extends Rectangle implements Resizeable{
                 + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
-    }
-
-    public static void printShape(Shape[] shape) {
-        for (Shape x : shape) {
-            System.out.println(x.toString());
-        }
     }
 }

@@ -1,6 +1,6 @@
-package bai7_abstract_class_and_interface.bai_tap.trien_khai_interface_resizeable;
+package bai7_abstract_class_and_interface.bai_tap.trien_khai_interface_colorable;
 
-public class Rectangle extends Shape implements Resizeable{
+public class Rectangle extends Shape{
     private double width = 1.0;
     private double length = 1.0;
 
@@ -13,12 +13,9 @@ public class Rectangle extends Shape implements Resizeable{
     }
 
     public Rectangle(double width, double length, String color, boolean filled) {
-        setShape(color, filled);
+        super(color, filled);
         this.width = width;
         this.length = length;
-    }
-
-    private void setShape(String color, boolean filled) {
     }
 
     public double getWidth() {
@@ -47,17 +44,6 @@ public class Rectangle extends Shape implements Resizeable{
 
     @Override
     public String toString() {
-        return "A Rectangle with width="
-                + getWidth()
-                + " and length="
-                + getLength()
-                + ", which is a subclass of "
-                + super.toString();
-    }
-
-    @Override
-    public void resize(double percent) {
-        this.setLength(this.getLength() + this.getLength() * percent/100);
-        this.setWidth(this.getWidth() + this.getWidth() * percent/100);
+        return "The area of the rectangle is: " + getArea();
     }
 }

@@ -1,6 +1,6 @@
-package bai7_abstract_class_and_interface.bai_tap.trien_khai_interface_resizeable;
+package bai7_abstract_class_and_interface.bai_tap.trien_khai_interface_colorable;
 
-public class Circle extends Shape implements Resizeable{
+public class Circle extends Shape{
     private double radius = 1.0;
 
     public Circle() {
@@ -11,11 +11,8 @@ public class Circle extends Shape implements Resizeable{
     }
 
     public Circle(double radius, String color, boolean filled) {
-        setShape(color, filled);
+        super(color, filled);
         this.radius = radius;
-    }
-
-    private void setShape(String color, boolean filled) {
     }
 
     public double getRadius() {
@@ -36,15 +33,7 @@ public class Circle extends Shape implements Resizeable{
 
     @Override
     public String toString() {
-        return "A Circle with radius="
-                + getRadius()
-                + ", which is a subclass of "
-                + super.toString();
-    }
+        return "The area of the circle is: " + getArea();
 
-
-    @Override
-    public void resize(double percent) {
-        this.setRadius(this.getRadius() + this.getRadius() * percent/100);
     }
 }
