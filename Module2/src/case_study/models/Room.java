@@ -1,4 +1,4 @@
 package case_study.models;
 
-public class Room {
+public class Room extends Facility{
 }

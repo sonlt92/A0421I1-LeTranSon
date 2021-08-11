@@ -1,4 +1,4 @@
 package case_study.models;
 
-public class Villa {
+public class Villa extends Facility{
 }
