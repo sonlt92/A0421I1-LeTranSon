@@ -7,13 +7,13 @@ public class Main {
         fan1.setRadius(10);
         fan1.setColor("Yellow");
         fan1.setOn(false);
-        System.out.print(fan1.toString());
+        System.out.print(fan1);
 
         Fan fan2 = new Fan();
         fan2.setSpeed(fan2.medium);
         fan2.setRadius(5);
         fan2.setColor("Blue");
         fan2.setOn(true);
-        System.out.print(fan2.toString());
+        System.out.print(fan2);
     }
 }
