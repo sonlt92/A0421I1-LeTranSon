@@ -1,4 +1,4 @@
-package bai8_clean_code.thuc_hanh.refactoring;
+package bai8_clean_code.thuc_hanh.tach_hang;
 
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;

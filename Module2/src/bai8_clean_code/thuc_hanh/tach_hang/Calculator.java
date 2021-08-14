@@ -1,4 +1,4 @@
-package bai8_clean_code.thuc_hanh.refactoring;
+package bai8_clean_code.thuc_hanh.tach_hang;
 
 public class Calculator {
 
