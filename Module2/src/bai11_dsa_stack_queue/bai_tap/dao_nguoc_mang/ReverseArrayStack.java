@@ -11,8 +11,8 @@ public class ReverseArrayStack {
         }
     }
     public static int[] arrayInteger() {
-        int[] arrayInteger = {1,2,3,4,5,6,7,8,9,10};
-        return arrayInteger;
+        int[] arrayNumber = {1,2,3,4,5,6,7,8,9,10};
+        return arrayNumber;
     }
 
     public static void reverseArray(int[] arrayInteger) {
