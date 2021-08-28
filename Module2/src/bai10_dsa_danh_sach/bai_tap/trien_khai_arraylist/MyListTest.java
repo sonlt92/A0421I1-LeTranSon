@@ -34,7 +34,7 @@ public class MyListTest {
         MyList<Student> newStudentMyList = new MyList<>();
         newStudentMyList = studentMyList.clone();
         newStudentMyList.remove(3);
-        for (int i=0;i<newStudentMyList.size();i++){
+        for (int i = 0; i < newStudentMyList.size(); i++) {
             System.out.println(newStudentMyList.get(i).getName());
         }
 
