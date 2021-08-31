@@ -19,6 +19,6 @@ public class Main {
         productManager.addProduct(product1);
         productManager.displayProduct(0);
         CompareTest compareTest = new CompareTest();
-        Collections.sort(productManager,compareTest);
+//        Collections.sort(productManager,compareTest);
     }
 }
