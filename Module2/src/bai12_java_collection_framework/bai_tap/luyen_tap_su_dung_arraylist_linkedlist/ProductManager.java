@@ -32,8 +32,8 @@ public class ProductManager {
         }
     }
 
-    public void sortProduct(){
-        Collections.sort(products);
-    }
+//    public void sortProduct(){
+//        Collections.sort(products);
+//    }
 
 }

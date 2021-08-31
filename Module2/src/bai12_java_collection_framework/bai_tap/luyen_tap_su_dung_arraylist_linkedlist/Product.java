@@ -1,8 +1,9 @@
 package bai12_java_collection_framework.bai_tap.luyen_tap_su_dung_arraylist_linkedlist;
 
 
+import java.util.List;
 
-public class Product implements Comparable<Product> {
+public class Product implements Comparable<Product>{
     private int id;
     private int price;
     private String name;
@@ -46,7 +47,7 @@ public class Product implements Comparable<Product> {
 
 
     @Override
-    public int compareTo(Product product) {
+    public int compareTo(Product o) {
         return 0;
     }
 }
