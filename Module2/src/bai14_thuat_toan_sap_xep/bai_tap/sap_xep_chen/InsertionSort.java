@@ -1,7 +1,7 @@
 package bai14_thuat_toan_sap_xep.bai_tap.sap_xep_chen;
 
 public class InsertionSort {
-    public static void insertionSort(int array[]) {
+    public static void insertionSort(int[] array) {
         int length = array.length;
         for (int j = 1; j < length; j++) {
             int key = array[j];
@@ -14,7 +14,7 @@ public class InsertionSort {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         int[] arr1 = {9, 14, 3, 2, 43, 11, 58, 22};
         System.out.println("Before Insertion Sort");
         for (int i : arr1) {
