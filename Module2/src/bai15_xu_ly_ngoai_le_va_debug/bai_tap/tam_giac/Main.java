@@ -5,7 +5,7 @@ public class Main {
         Triangle triangle;
         try {
             triangle = new Triangle(10, 10, 100);
-        } catch (Triangle.IllegalTriangleException e) {
+        } catch (IllegalTriangleException e) {
             e.printStackTrace();
         }
     }
