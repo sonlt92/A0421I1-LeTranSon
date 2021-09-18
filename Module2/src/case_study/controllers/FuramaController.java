@@ -25,8 +25,25 @@ public class FuramaController {
                     break;
                 }
                 case 2: {
-
+                    displayCustomerManagement();
+                    break;
                 }
+                case 3: {
+                    displayFacilityManagement();
+                    break;
+                }
+                case 4: {
+                    displayBookingManagerment();
+                    break;
+                }
+                case 5: {
+                    displayPromotionManagement();
+                    break;
+                }
+                case 6:
+                    System.exit(6);
+                default:
+                    System.out.println("No choice!");
             }
         }
     }
@@ -39,12 +56,104 @@ public class FuramaController {
             System.out.print("\n2.Add new employee");
             System.out.print("\n3.Edit employee");
             System.out.print("\n4.Return main menu");
+            System.out.print("\n5.Exit");
+            System.out.print("\n===========================");
             Scanner input = new Scanner(System.in);
+            System.out.print("\nEnter your choice: ");
+            switch (input.nextInt()) {
+                case 5:
+                    System.exit(5);
+                default:
+                    System.out.println("No choice!");
+            }
+        }
+    }
+
+    public static void displayCustomerManagement() {
+
+        boolean choice = true;
+        while (choice) {
+            System.out.print("1.Display list customers");
+            System.out.print("\n2.Add new customer");
+            System.out.print("\n3.Edit customer");
+            System.out.print("\n4.Return main menu");
+            System.out.print("\n5.Exit");
+            System.out.print("\n===========================");
+            Scanner input = new Scanner(System.in);
+            System.out.print("\nEnter your choice: ");
 
             switch (input.nextInt()) {
-                case 1: {
+                case 5:
+                    System.exit(5);
+                default:
+                    System.out.println("No choice!");
+            }
+        }
+    }
 
-                }
+    public static void displayFacilityManagement() {
+
+        boolean choice = true;
+        while (choice) {
+            System.out.print("1.Display list facility");
+            System.out.print("\n2.Add new facility");
+            System.out.print("\n3.Edit facility maintenance");
+            System.out.print("\n4.Return main menu");
+            System.out.print("\n5.Exit");
+            System.out.print("\n===========================");
+            Scanner input = new Scanner(System.in);
+            System.out.print("\nEnter your choice: ");
+
+            switch (input.nextInt()) {
+                case 5:
+                    System.exit(5);
+                default:
+                    System.out.println("No choice!");
+            }
+        }
+    }
+
+    public static void displayBookingManagerment() {
+
+        boolean choice = true;
+        while (choice) {
+            System.out.print("1.Add new booking");
+            System.out.print("\n2.Display list booking");
+            System.out.print("\n3.Create new constracts");
+            System.out.print("\n4.Display list contracts");
+            System.out.print("\n5.Edit contracts");
+            System.out.print("\n6.Return main menu");
+            System.out.print("\n7.Exit");
+            System.out.print("\n===========================");
+            Scanner input = new Scanner(System.in);
+            System.out.print("\nEnter your choice: ");
+
+            switch (input.nextInt()) {
+                case 7:
+                    System.exit(7);
+                default:
+                    System.out.println("No choice!");
+            }
+        }
+    }
+
+    public static void displayPromotionManagement() {
+
+        boolean choice = true;
+        while (choice) {
+            System.out.print("1.Display list customers use service");
+            System.out.print("\n2.Display list customers get voucher");
+            System.out.print("\n3.Return main menu");
+            System.out.print("\n4.Exit");
+            System.out.print("\n===========================");
+            Scanner input = new Scanner(System.in);
+            System.out.print("\nEnter your choice: ");
+
+            switch (input.nextInt()) {
+                case 4:
+                    System.exit(4);
+                default:
+                    System.out.println("No choice!");
             }
         }
     }
