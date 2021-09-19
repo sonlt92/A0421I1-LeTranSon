@@ -1,5 +1,7 @@
 package case_study.controllers;
 
+import case_study.services.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
@@ -49,7 +51,7 @@ public class FuramaController {
     }
 
     public static void displayEmployeeManagement() {
-
+        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         boolean choice = true;
         while (choice) {
             System.out.print("1.Display list employees");
@@ -61,6 +63,15 @@ public class FuramaController {
             Scanner input = new Scanner(System.in);
             System.out.print("\nEnter your choice: ");
             switch (input.nextInt()) {
+                case 1:
+                    employeeService.display();
+                    break;
+                case 2:
+                    employeeService.addNew();
+                    break;
+                case 3:
+                    employeeService.edit();
+                    break;
                 case 5:
                     System.exit(5);
                 default:
