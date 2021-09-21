@@ -14,9 +14,8 @@ public class FacilityServiceImpl implements FacilityService {
     private Scanner input = new Scanner(System.in);
     @Override
     public void display() {
-        for (Map.Entry<Facility, Integer> :
-             ) {
-            
+        for (Map.Entry<Facility, Integer> element : facilityIntegerMap.entrySet()){
+            System.out.print("Service " + element.getKey() + "Number of times rented: " + element.getValue());
         }
     }
 

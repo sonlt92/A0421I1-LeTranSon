@@ -1,7 +1,9 @@
 package case_study.controllers;
 
+import case_study.services.FacilityService;
 import case_study.services.impl.CustomerServiceImpl;
 import case_study.services.impl.EmployeeServiceImpl;
+import case_study.services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -110,7 +112,7 @@ public class FuramaController {
     }
 
     public static void displayFacilityManagement() {
-
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         boolean choice = true;
         while (choice) {
             System.out.print("1.Display list facility");
@@ -123,6 +125,12 @@ public class FuramaController {
             System.out.print("\nEnter your choice: ");
 
             switch (input.nextInt()) {
+                case 1:
+                    facilityService.display();
+                    break;
+                case 2:
+                    facilityService.addNewVilla();
+                    break;
                 case 5:
                     System.exit(5);
                 default:
