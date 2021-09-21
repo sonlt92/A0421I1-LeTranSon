@@ -15,7 +15,7 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public void display() {
         for (Map.Entry<Facility, Integer> element : facilityIntegerMap.entrySet()){
-            System.out.print("Service " + element.getKey() + "Number of times rented: " + element.getValue());
+            System.out.print("Service " + element.getKey() + "Number of times rented: " + element.getValue() + "\n");
         }
     }
 
