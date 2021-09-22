@@ -75,6 +75,9 @@ public class FuramaController {
                 case 3:
                     employeeService.edit();
                     break;
+                case 4:
+                    displayMainMenu();
+                    break;
                 case 5:
                     System.exit(5);
                 default:
@@ -102,6 +105,12 @@ public class FuramaController {
                     break;
                 case 2:
                     customerService.addNew();
+                    break;
+                case 3:
+                    customerService.edit();
+                    break;
+                case 4:
+                    displayMainMenu();
                     break;
                 case 5:
                     System.exit(5);
@@ -131,6 +140,12 @@ public class FuramaController {
                 case 2:
                     facilityService.addNewVilla();
                     break;
+                case 3:
+                    facilityService.edit();
+                    break;
+                case 4:
+                    displayMainMenu();
+                    break;
                 case 5:
                     System.exit(5);
                 default:
@@ -155,6 +170,9 @@ public class FuramaController {
             System.out.print("\nEnter your choice: ");
 
             switch (input.nextInt()) {
+                case 6:
+                    displayMainMenu();
+                    break;
                 case 7:
                     System.exit(7);
                 default:
@@ -176,6 +194,9 @@ public class FuramaController {
             System.out.print("\nEnter your choice: ");
 
             switch (input.nextInt()) {
+                case 3:
+                    displayMainMenu();
+                    break;
                 case 4:
                     System.exit(4);
                 default:
