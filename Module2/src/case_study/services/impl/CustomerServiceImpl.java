@@ -23,6 +23,21 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public void addBooking() {
+
+    }
+
+    @Override
+    public void displayListBooking() {
+
+    }
+
+    @Override
+    public void createNewContact() {
+
+    }
+
+    @Override
     public void addNew() {
         System.out.print("Input ID: ");
         int id = Integer.parseInt(input.nextLine());
