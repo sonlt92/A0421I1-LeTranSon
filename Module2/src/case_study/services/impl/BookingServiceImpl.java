@@ -30,6 +30,9 @@ public class BookingServiceImpl implements BookingService {
 
     }
 
+    public Set<Booking> sendBooking(){
+        return bookingSet;
+    }
 
     @Override
     public void addBooking() {
@@ -59,6 +62,11 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void createNewContact() {
+
+    }
+
+    @Override
+    public void displayListContact() {
 
     }
 
