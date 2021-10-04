@@ -12,6 +12,26 @@ public class EmployeeServiceImpl implements EmployeeService {
     static Scanner input = new Scanner(System.in);
 
     @Override
+    public void addBooking() {
+
+    }
+
+    @Override
+    public void displayListBooking() {
+
+    }
+
+    @Override
+    public void createNewContact() {
+
+    }
+
+    @Override
+    public void displayListContact() {
+
+    }
+
+    @Override
     public void display() {
         for (Employee employee : employeeList) {
             System.out.println(employee.toString());

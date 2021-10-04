@@ -38,6 +38,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public void displayListContact() {
+
+    }
+
+    @Override
     public void addNew() {
         System.out.print("Input ID: ");
         int id = Integer.parseInt(input.nextLine());

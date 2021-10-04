@@ -12,6 +12,27 @@ import java.util.Scanner;
 public class FacilityServiceImpl implements FacilityService {
     private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
     private Scanner input = new Scanner(System.in);
+
+    @Override
+    public void addBooking() {
+
+    }
+
+    @Override
+    public void displayListBooking() {
+
+    }
+
+    @Override
+    public void createNewContact() {
+
+    }
+
+    @Override
+    public void displayListContact() {
+
+    }
+
     @Override
     public void display() {
         for (Map.Entry<Facility, Integer> element : facilityIntegerMap.entrySet()){
