@@ -45,6 +45,7 @@ ten_bo_phan varchar(30)
 
 create table nhan_vien(
 id_nhan_vien int primary key,
+ho_va_ten varchar(45),
 id_vi_tri int,
 id_trinh_do int,
 id_bo_phan int,
@@ -106,3 +107,147 @@ so_luong int,
 foreign key (id_hop_dong) references hop_dong(id_hop_dong) on delete cascade,
 foreign key (id_dich_vu_di_kem) references dich_vu_di_kem(id_dich_vu_di_kem)
 );
+
+-- them moi vi tri nhan vien 
+
+insert into vi_tri
+values('1','Lễ tân'),
+('2','Phục vụ'),
+('3','Chuyên viên'),
+('4','Giám sát'),
+('5','Quản lý'),
+('6','Giám đốc');
+
+-- them moi bo phan nhan vien-- 
+
+insert into bo_phan
+values('1','Sale-Marketing'),
+('2','Hành chính'),
+('3','Phục vụ'),
+('4','Quản lý');
+
+-- them moi trinh do nhan vien
+
+insert into trinh_do
+values('1','Trung cấp'),
+('2','Cao đẳng'),
+('3','Đại học'),
+('4','Sau đại học');
+
+-- Thêm mới thông tin nhân viên
+
+insert into nhan_vien
+values('1','1','1','1','1992-06-29','12345689','700000','0916309250','letranson1992@gmail.com','Quảng bình','Lê Trần Sơn'),
+('2','2','2','2','1998-03-07','12345689','700000','0916309250','nguyen@gmail.com','Quảng bình','nguyễn đỗ khôi nguyên'),
+('3','3','3','3','1999-03-08','12345689','700000','0916309250','thu@gmail.com','Đăk-Lăk','Ngô thị hoài thu'),
+('4','4','4','4','1999-03-09','12345689','700000','0916309250','trang@gmail.com','Long an','Lê thị thùy trang'),
+('5','4','4','4','1999-03-09','12345689','700000','0916309250','hai@gmail.com','Quảng Ngãi','TRương Quang Hai'),
+('6','4','4','4','1999-03-09','12345689','700000','0916309250','trang@gmail.com','Quảng nam','Trần thị huệ'),
+('7','6','4','4','1999-03-20','12345689','700000','0916309250','ha@gmail.com','Quảng ngãi','Trương Thị Thúy Hạ'),
+('8','1','1','1','1999-03-11','12345689','700000','0916309250','nhan2@gmail.com','đà nẵng','Khánh'),
+('9','2','2','2','1998-03-07','12345689','700000','0916309250','nguyen@gmail.com','Quảng bình','Hồng');
+
+-- Thêm mới loại khách hàng
+
+insert into loai_khach
+values('1','Diamond'),
+('2','Platinium'),
+('3','Gold'),
+('4','Silver'),
+('5','Member');
+
+-- Thêm mới thông tin khach hàng
+
+insert into Khach_hang
+values('1','1','Nguyễn thị thanh','1997-03-15','123456789','0916309250','thanh@gnail.com','Đà nẵng'),
+('2','4','Nguyễn văn thịnh','1999-03-15','123456789','0916309250','thinh@gnail.com','Quảng ngãi'),
+('3','2','Hoàng hồng','2001-08-15','123456789','0916309250','hong@gnail.com','Quảng bình'),
+('4','3','Ngô thị mỹ duyên','1998-03-15','123456789','0916309250','duyen@gnail.com','Quảng bình'),
+('5','1','Nguyễn thị thu thủy','1985-11-15','123456789','0916309250','thuy@gnail.com','Đà nẵng'),
+('6','1','Hồng','1997-03-15','123456789','0916309250','thanh@gnail.com','Đà nẵng'),
+('7','4','Khánh','1999-03-15','123456789','0916309250','thinh@gnail.com','Quảng ngãi'),
+('8','4','Thu','1999-03-15','123456789','0916309250','thinh@gnail.com','Quảng ngãi'),
+('9','2','Hồng','1999-03-15','325545','5454545','tanh@gnail.com','Quang binh'),
+('10','1','Nguyễn thị thanh','1997-03-15','123456789','0916309250','thanh@gnail.com','Vinh'),
+('11','1','Nguyễn văn thịnh','1999-03-15','123456789','0916309250','thinh@gnail.com','Quảng ngãi'),
+('12','1','Hoàng hồng','2001-08-15','123456789','0916309250','hong@gnail.com','Quảng ngãi');
+
+-- thêm mới loại dịch vụ
+
+insert into Loai_dich_vu
+values('1','Villa'),
+('2','House'),
+('3','Room');
+
+-- thêm mới kiêu thuê
+
+insert into kieu_thue
+values('1','Năm','500000'),
+('2','Tháng','200000'),
+('3','Ngày','10000'),
+('4','Giờ','500');
+
+-- thêm mới dịch vụ
+
+insert into dich_vu
+values('1','Villa 1','500','2','6','50000','1','2','còn phòng'),
+('2','house1','500','2','6','50000','2','3','còn phòng'),
+('3','Villa 2','500','2','6','50000','1','2','còn phòng'),
+('4','Room1','500','2','6','50000','3','3','còn phòng'),
+('5','house 2','500','2','6','50000','2','2','còn phòng'),
+('6','Villa 3','500','2','6','50000','1','2','còn phòng');
+
+-- thêm dịch vụ đi kèm
+
+insert into dich_vu_di_kem
+values('1','Massage','người','200','còn trống'),
+('2','Karaoke','giờ','50','còn trống'),
+('3','Thức ăn','Phần','70','còn'),
+('4','Nước uống','ly','15','còn'),
+('5','Tham quan','người','200','còn trống');
+
+-- thêm mới hợp đồng
+
+insert into	hop_dong
+values('1','1','1','1','2021-11-02','2021-11-07','5005','700000'),
+('2','4','4','3','2021-11-02','2021-11-07','5005','700000'),
+('3','2','2','2','2021-11-02','2021-11-07','5005','700000'),
+('4','5','3','1','2021-11-02','2021-11-07','5005','700000');
+
+insert into	hop_dong
+values('5','1','1','1','2021-11-02','2021-11-07','5005','700000'),
+('6','1','4','3','2021-11-02','2021-11-07','5005','700000'),
+('7','2','2','1','2021-11-02','2021-11-07','5005','700000'),
+('8','5','3','1','2021-11-02','2021-11-07','5005','700000');
+
+insert into	hop_dong
+values('9','1','6','1','2021-11-02','2021-11-07','5005','700000'),
+('10','1','6','3','2021-11-02','2021-11-07','5005','700000'),
+('11','2','6','1','2021-11-02','2021-11-07','5005','700000');
+
+insert into	hop_dong
+values('12','1','6','1','2018-11-02','2021-11-07','5005','700000'),
+('13','1','6','3','2018-11-02','2021-11-07','5005','700000');
+
+insert into	hop_dong
+values('14','4','1','1','2019-11-02','2021-11-07','5005','700000'),
+('15','3','2','3','2019-11-02','2021-11-07','5005','700000');
+
+insert into	hop_dong
+values('16','4','10','1','2019-11-02','2021-11-07','5005','700000'),
+('17','3','11','3','2019-11-02','2021-11-07','5005','700000'),
+('18','3','12','3','2019-11-02','2021-11-07','5005','700000');
+
+-- thêm mới hợp đồng chi tiết
+
+insert into hop_dong_chi_tiet
+values('1','1','2','3'),
+('2','2','3','3'),
+('3','3','1','5'),
+('4','4','4','4');
+
+insert into hop_dong_chi_tiet
+values('5','16','2','3'),
+('6','17','3','3'),
+('7','18','1','5'),
+('8','16','4','4');
