@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo trang đọc truyện ngắn</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="mucLuc">
+    <h1>Muc luc</h1>
+    <div id="danhSach">
+        <h5 onclick="display(1)">Phan 1</h5>
+        <h5 onclick="display(2)">Phan 2</h5>
+        <h5 onclick="display(3)">Phan 3</h5>
+        <h5 onclick="display(4)">Phan 4</h5>
+    </div>
+</div>
+<div id="phan1" style="display: none">
+    <img src="1.png"/>
+    <h5 onclick="home()">Home</h5>
+</div>
+<div id="phan2" style="display: none">
+    <img src="2.png"/>
+    <h5 onclick="home()">Home</h5>
+</div>
+<div id="phan3" style="display: none">
+    <img src="3.png"/>
+    <h5 onclick="home()">Home</h5>
+</div>
+<div id="phan4" style="display: none">
+    <img src="4.png"/>
+    <h5 onclick="home()">Home</h5>
+</div>
+<script>
+    function display(value) {
+        document.getElementById("mucLuc").style.display = 'none';
+        switch (value) {
+            case 1:
+                document.getElementById("phan1").style.display = 'block';
+                break;
+            case 2:
+                document.getElementById("phan2").style.display = 'block';
+                break;
+            case 3:
+                document.getElementById("phan3").style.display = 'block';
+                break;
+            case 4:
+                document.getElementById("phan4").style.display = 'block';
+                break;
+        }
+    }
+    function home() {
+        document.getElementById("mucLuc").style.display = 'block';
+        document.getElementById("phan1").style.display = 'none';
+        document.getElementById("phan2").style.display = 'none';
+        document.getElementById("phan3").style.display = 'none';
+        document.getElementById("phan4").style.display = 'none';
+    }
+</script>
+</body>
+</html>

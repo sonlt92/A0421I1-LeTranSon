@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.paragraph{
+    width: 80%;
+    height: auto;
+}
+.paragraph p{
+    text-align: justify;
+    text-decoration-style: solid;
+    text-indent: 50px;
+    word-spacing: 5px;
+    word-break: break-word;
+    line-height: 20px;
+}
