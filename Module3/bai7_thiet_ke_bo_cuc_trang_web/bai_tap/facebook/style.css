@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 10px;
+}
+
+.header {
+    background-color: rgba(50, 48, 48, 0.98);
+    width: 100%;
+    height: 80px;
+    top: 0;
+    position: fixed;
+}
+
+body {
+    background-color: black;
+}
+
+.banner {
+    width: 100%;
+    height: 80px;
+}
+
+.icon-search {
+    color: white;
+    font-size: 20px;
+}
+
+.formSearch {
+    width: 300px;
+}
+
+.formSearch #search {
+    font-size: 15px;
+    border: 1px solid white;
+    height: 30px;
+    text-indent: 15px;
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+}
+
+.btnSearch {
+    background: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    outline: none;
+}
+
+/*icon mid*/
+.icon-mid i {
+    font-size: 30px;
+    color: darkgray;
+}
+
+
+.icon-mid a {
+    padding: 25px;
+}
+
+.icon-mid div :hover {
+    background-color: dodgerblue;
+    border-radius: 5px;
+}
+
+.icon-mid div:hover i {
+    color: white;
+}
+
+/*icon right*/
+.icon-right i {
+    font-size: 18px;
+    padding: 10px;
+    color: white;
+    background-color: #636161;
+    border-radius: 50%;
+}
+
+.icon-right i:hover {
+    color: white;
+    background-color: #bdbaba;
+}
+
+.left-content a {
+    color: white;
+}
+/*    box caption*/
+.box-caption{
+    height: 123px;
+    background-color: #3d3b3b;
+    border-radius: 10px;
+    margin-bottom: 3%;
+}
+
+#text-cap{
+    width: 90%;
+    font-size: 15px;
+    border: 1px solid white;
+    height: 40px;
+    text-indent: 15px;
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.row2-cap div:hover{
+    background: #636161;
+    border-radius: 10px;
+}
+/*    meeting box*/
+.box-meeting-room{
+    background: #3d3b3b;
+    border-radius: 10px;
+    height: 72px;
+    margin-bottom: 3%;
+}
+
+.border-meeting{
+    border: 1px solid dodgerblue;
+    border-radius: 20px;
+}
+.border-meeting:hover{
+    background-color: #5f5b5b;
+}
+
+.news{
+    height: 579px;
+    background-color: #3d3b3b ;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}

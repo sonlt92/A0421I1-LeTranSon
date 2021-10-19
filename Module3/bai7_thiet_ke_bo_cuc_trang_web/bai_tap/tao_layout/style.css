@@ -1,0 +1,31 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+}
+
+header,footer{
+    padding: 10px;
+    color: peru;
+    background-color: paleturquoise;
+}
+
+section{
+    margin: 5px;
+    padding: 10px;
+    background: lightpink;
+}
+
+article{
+    margin: 5px;
+    padding: 10px;
+    background-color: moccasin;
+}
+
+nav ul{
+    padding: 0;
+}
+
+nav ul li{
+    display: inline;
+    margin: 5px;
+}
