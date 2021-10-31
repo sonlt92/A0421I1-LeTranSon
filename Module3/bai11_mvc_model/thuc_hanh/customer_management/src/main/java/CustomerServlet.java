@@ -26,7 +26,7 @@ public class CustomerServlet extends HttpServlet {
                 updateCustomer(request, response);
                 break;
             case "delete":
-                deleteCustomer(request, response):
+                deleteCustomer(request, response);
                 break;
             default:
                 break;
@@ -49,7 +49,7 @@ public class CustomerServlet extends HttpServlet {
                 showDeleteForm(request, response);
                 break;
             case "view":
-                viewCustomer(request, response):
+                viewCustomer(request, response);
                 break;
             default:
                 listCustomers(request, response);
