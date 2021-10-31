@@ -1,3 +1,5 @@
+package com.codegym.controller;
+
 import com.codegym.model.Customer;
 import com.codegym.service.CustomerService;
 import com.codegym.service.CustomerServiceImpl;
