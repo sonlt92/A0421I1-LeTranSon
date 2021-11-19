@@ -10,7 +10,7 @@ import java.util.List;
 
 
 public class UsersRepositoryImpl implements UsersRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/user_manager?useSSL=false";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/demo?useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "123456";
 
