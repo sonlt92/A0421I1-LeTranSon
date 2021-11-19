@@ -7,8 +7,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class EmployeeRepositoryImpl implements EmployeeRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/furama-resort?useSSL=false";
+
+    private String jdbcURL = "jdbc:mysql://localhost:3306/database_furama?useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "123456";
 

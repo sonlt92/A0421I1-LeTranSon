@@ -14,15 +14,15 @@ public class Service {
     public Service() {
     }
 
-    public Service(int idService, String name, int areaUsed, int numOfFloors, int maxPeoples, int rentalCosts, String rentalType, String typeOfService, String linkImg) {
+    public Service(int idService, String name, int areaUsed, int numOfFloors, int maxPeoples, int rentalCosts, String RentalType, String TypeOfService, String linkImg) {
         this.idService = idService;
         this.name = name;
         this.areaUsed = areaUsed;
         this.numOfFloors = numOfFloors;
         this.maxPeoples = maxPeoples;
         this.rentalCosts = rentalCosts;
-        this.rentalType = rentalType;
-        this.typeOfService = typeOfService;
+        this.rentalType = RentalType;
+        this.typeOfService = TypeOfService;
         this.linkImg = linkImg;
     }
 

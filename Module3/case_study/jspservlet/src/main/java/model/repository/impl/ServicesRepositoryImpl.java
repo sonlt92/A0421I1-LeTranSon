@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServicesRepositoryImpl implements ServicesRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/furama-resort?useSSL=false";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/database_furama?useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "123456";
 
@@ -75,7 +75,7 @@ public class ServicesRepositoryImpl implements ServicesRepository {
     @Override
     public void addNewService(Service service) throws SQLException {
         try(Connection connection = getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SERVICE)){
+        PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SERVICE)){
             preparedStatement.setInt(1,service.getIdService());
             preparedStatement.setString(2,service.getName());
             preparedStatement.setInt(3,service.getAreaUsed());
@@ -129,7 +129,7 @@ public class ServicesRepositoryImpl implements ServicesRepository {
     public Service showServiceByID(int id) {
         Service service = null;
         try(Connection connection = getConnection();
-            PreparedStatement preparedStatement = getConnection().prepareStatement(SELECT_BY_ID)){
+        PreparedStatement preparedStatement = getConnection().prepareStatement(SELECT_BY_ID)){
             preparedStatement.setInt(1,id);
             System.out.println(preparedStatement);
 

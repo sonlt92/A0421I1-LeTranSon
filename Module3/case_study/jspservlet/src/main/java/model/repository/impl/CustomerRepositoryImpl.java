@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepositoryImpl implements CustomerRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/furama-resort?useSSL=false";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/database_furama?useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "123456";
 
@@ -49,7 +49,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public void addNewCus(Customer customer) throws SQLException {
         System.out.println(INSERT_CUS);
 
-        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUS)) {
+        try (Connection connection = getConnection() ;PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUS)) {
             preparedStatement.setInt(1, customer.getIdCus());
             preparedStatement.setInt(2, Integer.parseInt(customer.getTypeOfCus()));
             preparedStatement.setString(3, customer.getNameCus());

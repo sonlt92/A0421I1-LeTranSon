@@ -13,9 +13,6 @@ public class Employee {
     private String workPosition;
     private String workingParts;
 
-    public Employee() {
-    }
-
     public Employee(int idEmployee, String nameOfEmployee, String dateOfBirth, String email, String id, String phone, String level, String address, int salary, String workPosition, String workingParts) {
         this.idEmployee = idEmployee;
         this.nameOfEmployee = nameOfEmployee;
@@ -30,12 +27,8 @@ public class Employee {
         this.workingParts = workingParts;
     }
 
-    public int getIdEmployee() {
-        return idEmployee;
-    }
+    public Employee() {
 
-    public void setIdEmployee(int idEmployee) {
-        this.idEmployee = idEmployee;
     }
 
     public String getNameOfEmployee() {
@@ -46,20 +39,21 @@ public class Employee {
         this.nameOfEmployee = nameOfEmployee;
     }
 
+
+    public String getWorkingParts() {
+        return workingParts;
+    }
+
+    public void setWorkingParts(String workingParts) {
+        this.workingParts = workingParts;
+    }
+
     public String getDateOfBirth() {
         return dateOfBirth;
     }
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getId() {
@@ -86,6 +80,30 @@ public class Employee {
         this.level = level;
     }
 
+    public String getWorkPosition() {
+        return workPosition;
+    }
+
+    public void setWorkPosition(String workPosition) {
+        this.workPosition = workPosition;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(int idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -100,21 +118,5 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
-    }
-
-    public String getWorkPosition() {
-        return workPosition;
-    }
-
-    public void setWorkPosition(String workPosition) {
-        this.workPosition = workPosition;
-    }
-
-    public String getWorkingParts() {
-        return workingParts;
-    }
-
-    public void setWorkingParts(String workingParts) {
-        this.workingParts = workingParts;
     }
 }

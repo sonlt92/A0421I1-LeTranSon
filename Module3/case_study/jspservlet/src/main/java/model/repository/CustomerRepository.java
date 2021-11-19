@@ -12,10 +12,9 @@ public interface CustomerRepository {
 
     Customer showCusEdit(int id);
 
-    boolean edit(Customer customer) throws SQLException ;
+    boolean edit(Customer customer) throws SQLException;
 
-    Customer showCus(int id) ;
+    Customer showCus(int id);
 
-    boolean delete(int id) throws SQLException ;
-
+    boolean delete(int id) throws SQLException;
 }

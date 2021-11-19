@@ -8,13 +8,13 @@ import java.util.List;
 public interface EmployeeService {
     void addNewEmployee(Employee employee) throws SQLException;
 
-    public List<Employee> showAll();
+    List<Employee> showAll();
 
-    public Employee showEmployee(int id);
+    Employee showEmployee(int id);
 
-    public boolean edit(Employee employee) throws SQLException;
+    boolean edit(Employee employee) throws SQLException;
 
-    public Employee showEmployeeEdit(int id);
+    Employee showEmployeeEdit(int id);
 
-    public boolean delete(int id) throws SQLException;
+    boolean delete(int id) throws SQLException;
 }
