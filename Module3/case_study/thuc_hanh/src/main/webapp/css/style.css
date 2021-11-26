@@ -1,0 +1,28 @@
+html,
+body,
+header,
+#intro{
+    height: 100%;
+}
+
+#intro{
+    background:url(https://q-cf.bstatic.com/images/hotel/max1024x768/642/64261840.jpg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.icon-play{
+    position: absolute;
+    padding: 0;
+    bottom: 45%;
+    left: 42%;
+    color: #cccccc;
+    transition: transform .2s;
+    margin: 0 auto;
+}
+.icon-play:hover{
+    color: white;
+    transform: scale(1.3);
+}
