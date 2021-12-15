@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<form th:object="${product}" action="/create" method="post">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>
+                <input type="number" th:field="*{id}">
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" th:field="*{name}">
+            </td>
+        </tr>
+        <tr>
+            <td>Manufacturer</td>
+            <td>
+                <input type="radio" th:field="*{manufacturer}" value="0" />SamSung
+                <input type="radio" th:field="*{manufacturer}" value="1" />iPhone
+                <input type="radio" th:field="*{manufacturer}" value="2" />Sony
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Create</button>
+</form>
+
+<div th:insert="~{layout::footer}">
+
+</div>
+</body>
+</html>

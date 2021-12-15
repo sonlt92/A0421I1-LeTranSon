@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<h3 th:if="${successMsg}" th:text="${successMsg}" style="color: red"></h3>
+<a th:href="@{/create}">Create</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Manufacturer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product:${productList}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:switch="${product.manufacturer}">
+            <span th:case="0">SamSung</span>
+            <span th:case="1">iPhone</span>
+            <span th:case="*">Sony</span>
+        </td>
+        <td>
+            <span th:each="lang:${product.manufacturer}"></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:insert="~{layout::footer}">
+
+</div>
+
+</body>
+</html>
