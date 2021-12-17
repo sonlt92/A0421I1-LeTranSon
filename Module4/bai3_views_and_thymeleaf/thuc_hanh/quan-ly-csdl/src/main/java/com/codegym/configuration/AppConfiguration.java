@@ -12,8 +12,6 @@ import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
-import java.nio.file.Watchable;
-
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.codegym.controller")

@@ -16,6 +16,6 @@
     <input type="number" id="input" name="money"><br><br>
     <input type="submit" value="Chuyen doi">
   </form>
-  <label>Ket qua: ${result}</label>
+  <h1>Ket qua: ${result}</h1>
   </body>
 </html>

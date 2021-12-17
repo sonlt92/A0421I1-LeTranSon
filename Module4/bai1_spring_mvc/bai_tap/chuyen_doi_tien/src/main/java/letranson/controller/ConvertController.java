@@ -21,9 +21,9 @@ public class ConvertController {
     public ModelAndView convertMoney(@RequestParam double money) {
         ModelAndView  convertPage = new ModelAndView("index");
         double  result = money * 23000;
-        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-        String  resultString = numberFormat.format(result);
-        convertPage.addObject("result", resultString);
+//        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
+//        String  resultString = numberFormat.format(result);
+        convertPage.addObject("result", result);
         return convertPage;
     }
 }
