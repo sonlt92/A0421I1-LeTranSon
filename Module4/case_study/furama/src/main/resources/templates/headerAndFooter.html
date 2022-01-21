@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama</title>
+</head>
+<body>
+<header th:fragment="header">
+    <div class="nav-wrap start-header" style="margin-bottom: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav>
+                        <img src="/img/logo.png" alt="..." class="logo">
+                        <ul style="margin: 0" class="nav-links float-right">
+                            <li class="nav-links-item"><a class="active text-dark" href="/home" th:text="#{home.header}"></a></li>
+                            <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-links-item dropdown-custom">
+                                <a class="dropdown-wrap text-dark" href="" th:text="#{employee.header}"></a>
+                                <div class="dropdown-content bg-light">
+                                    <a class="dropdown-item-custom text-dark" th:href="@{/employee/create}" th:text="#{create}"></a>
+                                    <a class="dropdown-item-custom text-dark" th:href="@{/employee/show}" th:text="#{show}"></a>
+                                </div>
+                            </li>
+                            <li class="nav-links-item dropdown-custom">
+                                <a class="dropdown-wrap text-dark" href="" th:text="#{customer.header}">CUSTOMER</a>
+                                <div class="dropdown-content bg-light">
+                                    <a class="dropdown-item-custom text-dark" th:href="@{/customer/create}" th:text="#{create}"></a>
+                                    <a class="dropdown-item-custom text-dark" th:href="@{/customer/show}" th:text="#{show}"></a>
+                                </div>
+                            </li>
+                            <li class="nav-links-item dropdown-custom">
+                                <a class="dropdown-wrap text-dark" href="" th:text="#{service.header}"></a>
+                                <div class="dropdown-content bg-light">
+                                    <a class="dropdown-item-custom text-dark" th:href="@{/service/create}" th:text="#{create}"></a>
+                                    <a class="dropdown-item-custom text-dark" th:href="@{/service/showAll}" th:text="#{show}"></a>
+                                </div>
+                            </li>
+                            <li class="nav-links-item dropdown-custom">
+                                <a class="dropdown-wrap text-dark" href="" th:text="#{contract.header}"></a>
+                                <div class="dropdown-content bg-light">
+                                    <a th:href="@{/contract/createContract}" class="dropdown-item-custom text-dark" th:text="#{contract.create}">
+                                        CONTRACT</a>
+                                    <a th:href="@{/contract/createContractDetail}" class="dropdown-item-custom text-dark" th:text="#{contractDetail.create}">CREATE</a>
+                                    <a th:href="@{/contract/show}" class="dropdown-item-custom text-dark" th:text="#{contract.show}"></a>
+                                </div>
+                            </li>
+                            <li class="nav-links-item" style="margin-right:0">
+                                <a class="dropdown-wrap text-dark" th:href="@{'?lang=vi'}">VI</a>
+                            </li>
+                            <li style="margin-left: 0; margin-right: 0">
+                                |
+                            </li>
+                            <li class="nav-links-item" style="margin-left: 0">
+                                <a class="dropdown-wrap text-dark" th:href="@{'?lang=en'}">EN</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-decoration-none">
+                                    <i class="bi bi-person-circle icon-user"></i>
+                                    <span th:if="${cookieValue.value}" id="userName" class="text-dark text-decoration-none"
+                                          th:value="${cookieValue.value}" th:text="${cookieValue.value}"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a style="margin-bottom: 10%" class="btn btn-primary" href="/logout" th:text="#{logout.header}"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<footer th:fragment="footer">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <p>© 2022 Furama Resort Danang.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

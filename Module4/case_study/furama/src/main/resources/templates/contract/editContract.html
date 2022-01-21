@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center" th:text="#{update.contract}"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form th:action="@{/contract/editContract}" th:object="${contract}" method="post">
+                <input type="text" th:field="*{contractId}" hidden="hidden">
+                <div class="form-group">
+                    <label for="contractStartDate" th:text="#{startDate}"></label>
+                    <input th:field="*{contractStartDate}" type="datetime-local" class="form-control" id="contractStartDate">
+                    <label for="contractStartDate" style="color: palevioletred" th:if="${#fields.hasErrors('contractStartDate')}" th:errors="*{contractStartDate}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="contractEndDate" th:text="#{endDate}"></label>
+                    <input th:field="*{contractEndDate}" type="datetime-local" class="form-control" id="contractEndDate">
+                    <label for="contractEndDate" style="color: palevioletred" th:if="${#fields.hasErrors('contractEndDate')}" th:errors="*{contractEndDate}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="contractDeposit" th:text="#{deposit}">Deposit:</label>
+                    <input th:field="*{contractDeposit}" type="text" class="form-control" id="contractDeposit">
+                    <label for="contractDeposit" style="color: palevioletred" th:if="${#fields.hasErrors('contractDeposit')}" th:errors="*{contractDeposit}"></label>
+                </div>
+                <div class="form-group">
+                    <input type="text" th:field="*{employee}" hidden="hidden">
+                </div>
+                <div class="form-group">
+                    <input type="text" th:field="*{customer}" hidden="hidden">
+                </div>
+                <div class="form-group">
+                    <label for="service" th:text="#{service}"></label>
+                    <select th:field="*{service}" id="service" class="form-control w-25">
+                        <option th:each="s:${services}" th:value="${s.serviceId}" th:text="${s.serviceName}"></option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" th:text="#{submit}"></button>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

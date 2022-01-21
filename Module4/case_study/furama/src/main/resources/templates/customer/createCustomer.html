@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center" th:text="#{create.customer}"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form th:action="@{/customer/create}" th:object="${customer}" method="post">
+                <div class="form-group">
+                    <label for="inputNameCus" th:text="#{fullName}">Full name:</label>
+                    <input th:field="*{customerName}" type="text" class="form-control" id="inputNameCus">
+                    <label for="inputNameCus" style="color: palevioletred" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputBirthCus" th:text="#{dateOfBirth}">Date of birth:</label>
+                    <input th:field="*{customerBirthday}" type="date" class="form-control" id="inputBirthCus">
+                    <label for="inputNameCus" style="color: palevioletred" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputGenderCus" th:text="#{gender}">Gender:</label>
+                    <select th:field="*{customerGender}" id="inputGenderCus" class="form-control w-25">
+                        <option value="1">Male</option>
+                        <option value="2" >Female</option>
+                        <option value="0" >Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputIdCardCus" th:text="#{idCard}">ID card:</label>
+                    <input th:field="*{customerIdCard}" type="text" class="form-control" id="inputIdCardCus">
+                    <label for="inputIdCardCus" style="color: palevioletred" th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputPhoneCus" th:text="#{phone}">Phone:</label>
+                    <input th:field="*{customerPhone}" type="text" class="form-control" id="inputPhoneCus">
+                    <label for="inputPhoneCus" style="color: palevioletred" th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" th:text="#{employee}">Email address</label>
+                    <input th:field="*{customerEmail}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" style="color: palevioletred" th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></label>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddressCus" th:text="#{address}">Address:</label>
+                    <input th:field="*{customerAddress}" type="text" class="form-control" id="inputAddressCus">
+                    <label for="inputAddressCus" style="color: palevioletred" th:if="${#fields.hasErrors('customerAddress')}" th:errors="*{customerAddress}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputTypeOfCus" th:text="#{cus.type}">Type of customer:</label>
+                    <select th:field="*{customerType}" id="inputTypeOfCus" class="form-control w-25">
+                        <option th:each="t:${typeCus}" th:text="${t.customerTypeName}" th:value="${t.customerTypeId}" ></option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" th:text="#{submit}">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

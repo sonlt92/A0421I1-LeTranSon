@@ -1,0 +1,150 @@
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col" th:text="#{fullName}">Full name</th>
+                <th scope="col" th:text="#{dateOfBirth}">Birth day</th>
+                <th scope="col" th:text="#{gender}">Gender</th>
+                <th scope="col" th:text="#{idCard}">Id card</th>
+                <th scope="col" th:text="#{phone}">Phone</th>
+                <th scope="col" th:text="#{employee}">Email</th>
+                <th scope="col" th:text="#{address}">Address</th>
+                <th scope="col" th:text="#{cus.type}">Type customer</th>
+                <th scope="col" th:text="#{action}">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${customers}" th:each="c:${customers}" th:id="${c.customerId}">
+                <td th:text="${c.customerId}"></td>
+                <td th:text="${c.customerName}"></td>
+                <td th:text="${c.customerBirthday}"></td>
+                <td th:switch="${c.customerGender}">
+                    <span th:case="1">Male</span>
+                    <span th:case="2">Female</span>
+                    <span th:case="*">Other</span>
+                </td>
+                <td th:text="${c.customerIdCard}"></td>
+                <td th:text="${c.customerPhone}"></td>
+                <td th:text="${c.customerEmail}"></td>
+                <td th:text="${c.customerAddress}"></td>
+                <td th:text="${c.customerType.customerTypeName}"></td>
+                <td>
+                    <a th:href="@{/customer/edit/__${c.customerId}__ }" class="btn btn-primary float-left" th:text="#{update}">Edit</a>
+                    <button type="button" class="btn btn-warning float-right" data-toggle="modal"
+                            th:data-target="'#exampleModal'+${c.customerId}" th:text="#{deleted}">
+                        Delete
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" th:id="'exampleModal'+${c.customerId}" tabindex="-1"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Confirm deleted</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 th:text="'Do you agree to delete '+${c.customerName}+' customer ?'"></h5>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                    </button>
+                                    <button class="btn btn-warning btnDelete" type="button" th:text="#{deleted}" >Xóa</button>
+                                    <input type="text" hidden="hidden" th:value="${c.customerId}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <input type="text" id="page" hidden="hidden" th:value="${customers.number}">
+                <li class="page-item">
+                    <button class="page-link btnPrevious"
+                       th:if="${customers.hasPrevious()}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </button>
+                </li>
+                <li class="page-item active">
+                    <button class="page-link btnPageNow" th:text="${customers.number + 1}"></button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link btnNext"
+                       th:if="${customers.hasNext()}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#searchValue').keyup(function () {
+            console.log($(this).val());
+            $.ajax({
+                url: "/customer/search/"+$(this).val(),
+                type: "GET",
+                success: function (result) {
+                    console.log(result);
+                    $('#contentTable').html(result)
+                }
+            })
+        })
+
+        $('.btnDelete').click(function (event) {
+            let id = $(this).next().val();
+            $('#exampleModal' + id).modal('hide')
+            $.ajax({
+                url: "/customer/delete/" + id,
+                type: "GET",
+                success: function () {
+                    $('#' + id).remove();
+                }
+            })
+            event.preventDefault();
+        })
+
+        $('.btnNext').click(function (event) {
+            let page = parseInt($("#page").val()) + 1;
+            console.log(page);
+            $.ajax({
+                url: "/customer/tableCustomer?page=" + page,
+                type: "GET",
+                success: function (result) {
+                    $("#contentTable").html(result)
+                    console.log(result);
+                }
+            })
+            event.preventDefault();
+        })
+
+        $('.btnPrevious').click(function (event) {
+            let page = parseInt($("#page").val()) - 1;
+            console.log(page);
+            $.ajax({
+                url: "/customer/tableCustomer?page=" + page,
+                type: "GET",
+                success: function (result) {
+                    $("#contentTable").html(result)
+                }
+            })
+            event.preventDefault();
+        })
+    })
+</script>

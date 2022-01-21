@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 text-center">
+            <h1 class="text-center text-warning" th:text="#{update.employee}">UPDATE EMPLOYEE</h1>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form th:action="@{/employee/update}" th:object="${employee}" method="post">
+                <input type="text" hidden="hidden" th:field="*{employeeId}">
+                <input type="text" hidden="hidden" th:field="*{user}">
+                <div class="form-group">
+                    <label for="inputName" th:text="#{fullName}">Full name:</label>
+                    <input th:field="*{name}" type="text" class="form-control" id="inputName">
+                    <label for="inputName" style="color: palevioletred" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputBirth" th:text="#{dateOfBirth}">Date of birth:</label>
+                    <input th:field="*{birthday}" type="date" class="form-control" id="inputBirth">
+                    <label for="inputBirth" style="color: palevioletred" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputIdCard" th:text="#{idCard}">ID card:</label>
+                    <input th:field="*{idCard}" type="text" class="form-control" id="inputIdCard">
+                    <label for="inputIdCard" style="color: palevioletred" th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputPhone" th:text="#{phone}">Phone:</label>
+                    <input th:field="*{phone}" type="text" class="form-control" id="inputPhone">
+                    <label for="inputPhone" style="color: palevioletred" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" th:text="#{email}">Email address</label>
+                    <input th:field="*{email}" type="email" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" style="color: palevioletred" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></label>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputSalary" th:text="#{salary}">Salary:</label>
+                    <input th:field="*{salary}" type="text" class="form-control" id="inputSalary">
+                    <label for="inputSalary" style="color: palevioletred" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress" th:text="#{address}">Address:</label>
+                    <input th:field="*{address}" type="text" class="form-control" id="inputAddress">
+                    <label for="inputAddress" style="color: palevioletred" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="position" th:text="#{position}">Position :</label>
+                    <select th:field="*{position}" id="position" class="form-control w-25">
+                        <option th:each="p:${position}" th:text="${p.name}" th:value="${p.positionId}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="educationDegree" th:text="#{educationDegree}">Education degree :</label>
+                    <select th:field="*{educationDegree}" id="educationDegree" class="form-control w-25">
+                        <option th:each="e:${education}" th:text="${e.educationDegreeName}"
+                                th:value="${e.educationDegreeId}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="division" th:text="#{division}">Division :</label>
+                    <select th:field="*{division}" id="division" class="form-control w-25">
+                        <option th:each="d:${division}" th:text="${d.divisionName}"
+                                th:value="${d.divisionId}"></option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" th:text="#{submit}">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center" th:text="#{list.usedService}"></h1>
+        </div>
+    </div>
+    <div id="contentTable">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div th:if="${msg}" class="alert alert-primary" role="alert" th:text="${msg}">
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" th:text="#{customer}"></th>
+                        <th scope="col" th:text="#{service}"></th>
+                        <th scope="col" th:text="#{employee}"></th>
+                        <th scope="col" th:text="#{attach.service}"></th>
+                        <th scope="col" th:text="#{action}"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${contracts}" th:each="c:${contracts}" th:id="${c.contractId}">
+                        <td th:text="${c.customer.customerName}"></td>
+                        <td th:text="${c.service.serviceName}"></td>
+                        <td th:text="${c.employee.name}"></td>
+                        <td>
+                            <span th:each="d:${c.contractDetails}" th:text="${d.getAttachService().attachServiceName}+' '"></span>
+                        </td>
+                        <td>
+                            <a th:href="@{/contract/edit/__${c.contractId}__}" class="btn btn-primary float-left">Edit</a>
+                            <button type="button" class="btn btn-warning float-right" data-toggle="modal"
+                                    th:data-target="'#exampleModal'+${c.contractId}">
+                                Delete
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" th:id="'exampleModal'+${c.contractId}" tabindex="-1"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Confirm deleted</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h5 th:text="'Do you agree to delete '+${c.customer.customerName}+' customer ?'"></h5>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                            </button>
+                                            <button class="btn btn-warning btnDelete" type="button" th:text="#{deleted}"></button>
+                                            <input type="text" hidden="hidden" th:value="${c.contractId}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link btnPrevious"
+                               th:if="${contracts.hasPrevious()}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" th:text="${contracts.number + 1}"></a></li>
+                        <li class="page-item">
+                            <a class="page-link btnNext" th:if="${contracts.hasNext()}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#searchValue').keyup(function () {
+            console.log($(this).val());
+            $.ajax({
+                url: "/contract/search/"+$(this).val(),
+                type: "GET",
+                success: function (result) {
+                    $('#contentTable').html(result)
+                }
+            })
+        })
+
+        $('.btnDelete').click(function (event) {
+            let id = $(this).next().val();
+            $('#exampleModal' + id).modal('hide')
+            $.ajax({
+                url: "/contract/delete/" + id,
+                type: "GET",
+                success: function () {
+                    $('#' + id).remove();
+                }
+            })
+            event.preventDefault();
+        })
+
+        $('.btnNext').click(function (event) {
+            let page = parseInt($("#page").val()) + 1;
+            $.ajax({
+                url: "/contract/tableContract?page=" + page,
+                type: "GET",
+                success: function (result) {
+                    $("#contentTable").html(result)
+                }
+            })
+            event.preventDefault();
+        })
+
+        $('.btnPrevious').click(function (event) {
+            let page = parseInt($("#page").val()) - 1;
+            console.log(page);
+            $.ajax({
+                url: "/contract/tableContract?page=" + page,
+                type: "GET",
+                success: function (result) {
+                    $("#contentTable").html(result)
+                }
+            })
+            event.preventDefault();
+        })
+    })
+</script>
+</body>
+</html>

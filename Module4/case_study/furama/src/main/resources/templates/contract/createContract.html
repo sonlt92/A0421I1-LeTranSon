@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center" th:text="#{create.contract}"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form th:action="@{/contract/createContract}" th:object="${contract}" method="post">
+                <div class="form-group">
+                    <label for="contractStartDate" th:text="#{startDate}"></label>
+                    <input th:field="*{contractStartDate}" type="datetime-local" class="form-control" id="contractStartDate">
+                    <label for="contractStartDate" style="color: palevioletred" th:if="${#fields.hasErrors('contractStartDate')}" th:errors="*{contractStartDate}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="contractEndDate" th:text="#{endDate}"></label>
+                    <input th:field="*{contractEndDate}" type="datetime-local" class="form-control" id="contractEndDate">
+                    <label for="contractEndDate" style="color: palevioletred" th:if="${#fields.hasErrors('contractEndDate')}" th:errors="*{contractEndDate}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="contractDeposit" th:text="#{deposit}"></label>
+                    <input th:field="*{contractDeposit}" type="text" class="form-control" id="contractDeposit">
+                    <label for="contractDeposit" style="color: palevioletred" id="errosDeposit"></label>
+                    <label for="contractDeposit" style="color: palevioletred" th:if="${#fields.hasErrors('contractDeposit')}" th:errors="*{contractDeposit}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="employee" th:text="#{employee}"></label>
+                    <select th:field="*{employee}" id="employee" class="form-control w-25">
+                        <option th:each="e:${employees}" th:value="${e.employeeId}" th:text="${e.name}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="customer" th:text="#{customer}"></label>
+                    <select th:field="*{customer}" id="customer" class="form-control w-25">
+                        <option th:each="c:${customers}" th:value="${c.customerId}" th:text="${c.customerName}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="service" th:text="#{service}"></label>
+                    <select th:field="*{service}" id="service" class="form-control w-25">
+                        <option th:each="s:${services}" th:value="${s.serviceId}" th:text="${s.serviceName}"></option>
+                    </select>
+                </div>
+                <input th:each="s:${services}" th:id="${s.serviceId}" th:value="${s.serviceCost}" hidden="hidden">
+                <div class="form-group">
+                    <p>TOTAL: <span id="total"></span> $</p>
+                    <input type="text" th:field="*{contractTotalMoney}" id="contractTotalMoney" hidden="hidden">
+                </div>
+
+                <button type="submit" class="btn btn-primary" th:text="#{submit}"></button>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#contractDeposit').keyup(function () {
+            let deposit = $(this).val();
+            let regExp = new RegExp("^[0-9]+$");
+            if (!regExp.test(deposit)){
+                $('#errosDeposit').text("You are not allowed to enter characters in this box.");
+            }else {
+                $('#errosDeposit').text("");
+            }
+        })
+        let total = 0;
+        let id;
+        let cost;
+        let deposit = $('#contractDeposit').val();
+        id = $('#service').val();
+        cost = $('#'+id).val();
+        total = cost - deposit;
+        $('#total').text(total);
+        $('#contractTotalMoney').val(total);
+        $('#contractDeposit').change(function () {
+            deposit = $('#contractDeposit').val();
+            total = cost - deposit;
+            $('#total').text(total);
+            $('#contractTotalMoney').val(total);
+        })
+        $('#service').change(function () {
+            id = $('#service').val();
+            cost = $('#'+id).val();
+            total = cost - deposit;
+            $('#total').text(total);
+            $('#contractTotalMoney').val(total);
+        })
+    })
+</script>
+</body>
+</html>
