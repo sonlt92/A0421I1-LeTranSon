@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center" th:text="#{service.detail}">SERVICE DETAIL</h1>
+        </div>
+    </div>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{service.name}">Name service:</dt>
+        <dd class="col-xl-4" th:text="${service.serviceName}"></dd>
+    </dl>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{area}">Area:</dt>
+        <dd class="col-xl-4" th:text="${service.serviceArea}"></dd>
+    </dl>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{maxPeople}">Max people:</dt>
+        <dd class="col-xl-4" th:text="${service.serviceMaxPeople}"></dd>
+    </dl>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{standardRoom}">Standard room:</dt>
+        <dd class="col-xl-4" th:text="${service.standardRoom}"></dd>
+    </dl>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{other}">Description other convenience:</dt>
+        <dd class="col-xl-4" th:text="${service.descriptionOtherConvenience}"></dd>
+    </dl>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{pool}">Pool area:</dt>
+        <dd class="col-xl-4" th:text="${service.poolArea}"></dd>
+    </dl>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{floor}">Number of floors:</dt>
+        <dd class="col-xl-4" th:text="${service.numberOfFloors}"></dd>
+    </dl>
+    <dl class="row">
+        <div class="col-xl-3"></div>
+        <dt class="col-xl-2" th:text="#{service.type}">Service type:</dt>
+        <dd class="col-xl-4" th:text="${service.serviceType.serviceTypeName}"></dd>
+    </dl>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <a th:href="@{/service/update/__${service.serviceId}__}" class="btn btn-primary" th:text="#{update}">UPDATE</a>
+            <span><button type="button" class="btn btn-warning float-right" data-toggle="modal"
+                          data-target="#exampleModal" th:text="#{deleted}">
+                    Delete
+                </button>
+                </span>
+
+            <!-- Modal -->
+            <div class="modal fade" th:id="exampleModal" tabindex="-1"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Confirm deleted</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 th:text="'Do you agree to delete '+${service.serviceName}+' service ?'"></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <a th:href="@{/service/delete/__${service.serviceId}__}"
+                               class="btn btn-warning" th:text="#{deleted}">DELETE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

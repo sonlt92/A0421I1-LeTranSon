@@ -15,7 +15,7 @@
                         <img src="/img/logo.png" alt="..." class="logo">
                         <ul style="margin: 0" class="nav-links float-right">
                             <li class="nav-links-item"><a href="/home" th:text="#{home.header}"></a></li>
-                            <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-links-item dropdown-custom">
+                            <li sec:authorize="hasRole('ADMIN')" class="nav-links-item dropdown-custom">
                                 <a class="dropdown-wrap" th:text="#{employee.header}" href=""></a>
                                 <div class="dropdown-content">
                                     <a class="dropdown-item-custom" th:href="@{/employee/create}" th:text="#{create}"></a>

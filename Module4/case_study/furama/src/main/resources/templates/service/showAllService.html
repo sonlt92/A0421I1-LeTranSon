@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <form class="form-inline my-2 my-lg-0">
+                <div class="searchbar">
+                    <input class="search_input" id="searchValue" type="text" name="search" placeholder="Search...">
+                    <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-8"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center" th:text="#{list.service}">LIST SERVICE</h1>
+        </div>
+    </div>
+    <div id="contentTable">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div th:if="${msg}" class="alert alert-primary" role="alert" th:text="${msg}">
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row m-5">
+            <div class="col-lg-4" th:each="service,s:${services}" th:if="${s.index < 3}">
+                <div class="card" style="width: 18rem; height: 334px">
+                    <img th:src="@{'/getImg/'+${service.linkImg}}" height="180px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${service.serviceName}"></h5>
+                        <p class="card-text" th:text="${service.descriptionOtherConvenience}"></p>
+                        <a class="btn btn-primary" style="position: absolute; bottom: 4%" th:href="@{/service/showDetail/__${service.serviceId}__}" th:text="#{detail}">Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-lg-4" th:each="service,s:${services}" th:if="${s.index < 6 && s.index > 2}">
+                <div class="card" style="width: 18rem; height: 334px">
+                    <img th:src="@{'/getImg/'+${service.linkImg}}" height="180px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${service.serviceName}"></h5>
+                        <p class="card-text" th:text="${service.descriptionOtherConvenience}"></p>
+                        <a class="btn btn-primary" style="position: absolute; bottom: 4%" th:href="@{/service/showDetail/__${service.serviceId}__}" th:text="#{detail}">Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-lg-4" th:each="service,s:${services}" th:if="${s.index < 9 && s.index > 5}">
+                <div class="card" style="width: 18rem; height: 334px">
+                    <img th:src="@{'/getImg/'+${service.linkImg}}" height="180px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${service.serviceName}"></h5>
+                        <p class="card-text" th:text="${service.descriptionOtherConvenience}"></p>
+                        <a class="btn btn-primary" style="position: absolute; bottom: 4%" th:href="@{/service/showDetail/__${service.serviceId}__}" th:text="#{detail}">Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3" th:if="${services}">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <input type="text" id="page" hidden="hidden" th:value="${services.number}">
+                        <li class="page-item">
+                            <button class="page-link btnPrevious"
+                               th:if="${services.hasPrevious()}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </button>
+                        </li>
+                        <li class="page-item active"><button class="page-link" th:text="${services.number + 1}"></button></li>
+                        <li class="page-item">
+                            <button class="page-link btnNext"
+                               th:if="${services.hasNext()}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#searchValue').keyup(function () {
+            console.log(1);
+            console.log($(this).val());
+            $.ajax({
+                url: "/service/search/"+$(this).val(),
+                type: "GET",
+                success: function (result) {
+                    $('#contentTable').html(result)
+                }
+            })
+        })
+
+        $('.btnNext').click(function (event) {
+            let page = parseInt($("#page").val()) + 1;
+            $.ajax({
+                url: "/service/pageService?page=" + page,
+                type: "GET",
+                success: function (result) {
+                    $("#contentTable").html(result)
+                }
+            })
+            event.preventDefault();
+        })
+
+        $('.btnPrevious').click(function (event) {
+            let page = parseInt($("#page").val()) - 1;
+            console.log(page);
+            $.ajax({
+                url: "/service/pageService?page=" + page,
+                type: "GET",
+                success: function (result) {
+                    $("#contentTable").html(result)
+                }
+            })
+            event.preventDefault();
+        })
+    })
+</script>
+</body>
+</html>

@@ -47,9 +47,7 @@ public class LoginLogoutController {
         User user = userService.findById(userName);
         Employee employee = employeeService.findByUser(user);
         attributes.addFlashAttribute("employee", employee);
-
         model.addAttribute("employee", employee);
-
         Cookie cookie = new Cookie("employeeUser", employee.getName());
         cookie.setMaxAge(24 * 60 * 60);
         response.addCookie(cookie);

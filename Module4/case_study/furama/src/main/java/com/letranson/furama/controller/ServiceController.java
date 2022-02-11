@@ -3,6 +3,7 @@ package com.letranson.furama.controller;
 import com.letranson.furama.bean.RentType;
 import com.letranson.furama.bean.Service;
 import com.letranson.furama.bean.ServiceType;
+import com.letranson.furama.service.RentTypeService;
 import com.letranson.furama.service.ServiceService;
 import com.letranson.furama.service.ServiceTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +36,16 @@ public class ServiceController {
     @Autowired
     private ServiceService serviceService;
 
-//    @Autowired
-//    private RentTypeService rentTypeService;
+    @Autowired
+    private RentTypeService rentTypeService;
 
     @Autowired
     private ServiceTypeService serviceTypeService;
 
-//    @ModelAttribute("rentType")
-//    public Iterable<RentType> rentTypes() {
-//        return rentTypeService.findAll();
-//    }
+    @ModelAttribute("rentType")
+    public Iterable<RentType> rentTypes() {
+        return rentTypeService.findAll();
+    }
 
     @ModelAttribute("serviceType")
     public Iterable<ServiceType> serviceTypes() {

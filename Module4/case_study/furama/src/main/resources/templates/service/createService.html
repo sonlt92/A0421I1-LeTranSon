@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+<div th:insert="~{/headerAndFooter::header}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-warning text-center" th:text="#{create.service}">CREATE SERVICE</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form th:action="@{/service/create}" th:object="${service}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="inputName" th:text="#{service.name}">Name service:</label>
+                    <input th:field="*{serviceName}" type="text" class="form-control" id="inputName">
+                    <label for="inputName" style="color: palevioletred" th:if="${#fields.hasErrors('serviceName')}" th:errors="*{serviceName}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="serviceType" th:text="#{service.type}">Service type:</label>
+                    <select th:field="*{serviceType}" onchange="displayInput()" id="serviceType" class="form-control w-25">
+                        <option th:each="t:${serviceType}" th:text="${t.serviceTypeName}" th:value="${t.serviceTypeId}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="area" th:text="#{area}">Area:</label>
+                    <input th:field="*{serviceArea}" type="text" class="form-control" id="area">
+                    <label for="area" style="color: palevioletred" th:if="${#fields.hasErrors('serviceArea')}" th:errors="*{serviceArea}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="cost" th:text="#{cost}">Cost:</label>
+                    <input th:field="*{serviceCost}" type="text" class="form-control" id="cost">
+                    <label for="cost" style="color: palevioletred" th:if="${#fields.hasErrors('serviceCost')}" th:errors="*{serviceCost}"></label>
+                </div>
+                <div class="form-group">
+                    <label for="maxPeople" th:text="#{maxPeople}">Max people:</label>
+                    <input th:field="*{serviceMaxPeople}" type="text" class="form-control" id="maxPeople">
+                    <label for="maxPeople" style="color: palevioletred" th:if="${#fields.hasErrors('serviceMaxPeople')}" th:errors="*{serviceMaxPeople}"></label>
+                </div>
+                <div id="wrapVillaHouse">
+                    <div class="form-group">
+                        <label for="standardRoom" th:text="#{standardRoom}">Standard room:</label>
+                        <input th:field="*{standardRoom}" type="text" class="form-control" id="standardRoom">
+                    </div>
+                    <div class="form-group">
+                        <label for="descriptionOtherConvenience" th:text="#{other}">Description other convenience:</label>
+                        <input th:field="*{descriptionOtherConvenience}" type="text" class="form-control" id="descriptionOtherConvenience">
+                    </div>
+                    <div class="form-group">
+                        <label for="numberOfFloors" th:text="#{floor}">Number of floors:</label>
+                        <input th:field="*{numberOfFloors}" type="text" class="form-control" id="numberOfFloors">
+                    </div>
+                </div>
+                <div class="form-group" th:id="villa">
+                    <label for="poolArea" th:text="#{pool}">Pool area:</label>
+                    <input th:field="*{poolArea}" type="text" class="form-control" id="poolArea">
+                </div>
+                <div class="form-group">
+                    <label for="rentType" th:text="#{rent}">Rent type:</label>
+                    <select th:field="*{rentType}" id="rentType" class="form-control w-25">
+                        <option th:each="r:${rentType}" th:text="${r.rentTypeName}" th:value="${r.rentTypeId}" ></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="img" th:text="#{postImg}">Đăng ảnh</label>
+                    <input type="file" name="img" class="form-control-file" accept="image/x-png,image/gif,image/jpeg" id="img">
+                    <label for="img" style="color: palevioletred" th:text="${msg}"></label>
+                </div>
+                <button type="submit" class="btn btn-primary" th:text="#{submit}">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+<div th:insert="~{/headerAndFooter::footer}"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    function displayInput() {
+        let serviceType = document.getElementById("serviceType").value;
+        if (serviceType == 1 || serviceType == 2){
+            document.getElementById("wrapVillaHouse").style.display="block";
+        }else {
+            document.getElementById("wrapVillaHouse").style.display="none";
+        }
+        if (serviceType ==1){
+            document.getElementById("villa").style.display="block"
+        }else {
+            document.getElementById("villa").style.display="none"
+        }
+    }
+    displayInput();
+</script>
+</body>
+</html>
