@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "target": "ES6",
+    "watch": false
+  }
+}
