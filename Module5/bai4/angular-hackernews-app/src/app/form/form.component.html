@@ -1,0 +1,18 @@
+<h1>Form</h1>
+<form [formGroup]="contractForm" (ngSubmit)="onsubmit()">
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Title</label>
+    <input
+      formControlName="title"
+      name="title"
+      type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter title">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Url</label>
+    <input
+      formControlName="url"
+      name="url"
+      type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter url" >
+  </div>
+  <button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>
