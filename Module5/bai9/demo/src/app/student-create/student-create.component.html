@@ -1,0 +1,30 @@
+<form [formGroup]="formCreateStudent" (ngSubmit)="createStudent()">
+  <div class="form-group">
+    <label>ID: <i class="text-danger">(*)</i></label>
+    <input type="text" class="form-control" formControlName = "id">
+  </div>
+
+  <div class="text-danger"
+  *ngIf="formCreateStudent.get('id')?.invalid && formCreateStudent.get('id')?.touched">
+    ID is required
+  </div>
+
+  <div class="form-group">
+    <label>Name <i class="text-danger">(*)</i></label>
+    <input class="form-control" type="text" formControlName="name">
+  </div>
+
+  <div class="form-group">
+    <label>Age</label>
+  </div>
+
+  <div class="form-group">
+    <label>Mark</label>
+  </div>
+
+  <div class="form-group">
+    <label>Avata</label>
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Create" [disabled]="formCreateStudent.invalid" ]>
+</form>
