@@ -1,0 +1,6 @@
+<h2>English-Vietnamese Dictionary</h2>
+<input type="text"
+       (change)="search($any($event).target.value)">
+<p *ngIf="word">
+  Nghĩa của từ {{word.word}}: {{word.mean}}
+</p>
