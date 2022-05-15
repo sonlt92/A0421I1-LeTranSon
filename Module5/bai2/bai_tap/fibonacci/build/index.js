@@ -6,7 +6,9 @@ function SumFibonacci(endPoint) {
     if (endPoint < 1) {
         return 0;
     }
+    console.log(a);
     while (b < endPoint) {
+        console.log(b);
         tmp = b;
         b = a + b;
         a = tmp;

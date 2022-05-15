@@ -1,0 +1,24 @@
+<h1 style="text-align: center">Student List</h1>
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Mark</th>
+    <th>Status</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let student of students">
+    <td>{{student.id}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.age}}</td>
+    <td>{{student.mark}}</td>
+    <td class="text-success" *ngIf="student.mark >= 5">PASS</td>
+    <td class="text-success" *ngIf="student.mark < 5">FAIL</td>
+    <td>
+      <a class="btn btn-info m-2">Detail</a>
+      <a class="btn btn-warning m-2">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
