@@ -2,39 +2,48 @@
   "students": [
     {
       "id": 1003,
-      "ten_sinh_vien": "Lương Mạnh Quân",
-      "ten_nhom": "nhóm 3",
-      "ten_de_tai": "Sử dụng Azure Microsoft để xây dựng webservice ",
-      "giao_vien_huong_dan": "Hoàng Thanh Sơn",
-      "email": "manhquan@gmail.com",
-      "so_dien_thoai": "0122343453"
+      "ten_sinh_vien": "Lê Trần Sơn",
+      "ten_nhom": "Nhóm 1",
+      "ten_de_tai": "Angular",
+      "chu_de": "Shop Quần Áo",
+      "email": "letranson@droidvn.net",
+      "so_dien_thoai": "0583276518"
     },
     {
       "id": 1004,
-      "ten_sinh_vien": "Nguyễn Phi Sơn",
-      "ten_nhom": "nhóm 2",
-      "ten_de_tai": "bảo mật website bằng Laravel",
-      "giao_vien_huong_dan": "Doãn Bá Hùng",
-      "email": "phison@gmail.com",
+      "ten_sinh_vien": "Nguyễn Cửu Quốc Huy",
+      "ten_nhom": "Nhóm 2",
+      "ten_de_tai": "HTML, CSS, Javascript",
+      "chu_de": "Vé Máy Bay",
+      "email": "quochuy@gmail.com",
       "so_dien_thoai": "0903994332"
     },
     {
       "id": 1005,
       "ten_sinh_vien": "Lê Hoàng Quốc Anh",
-      "ten_nhom": "nhóm 3",
-      "ten_de_tai": "Sử dụng Azure Microsoft để xây dựng webservice ",
-      "giao_vien_huong_dan": "Hoàng Thanh Sơn",
+      "ten_nhom": "Nhóm 3",
+      "ten_de_tai": "NodeJS",
+      "chu_de": "Quán Cafe",
       "email": "quocanh@gmail.com",
       "so_dien_thoai": "0934456024"
     },
     {
       "id": 1006,
       "ten_sinh_vien": "Nguyễn Lê Trần Nam",
-      "ten_nhom": "nhóm 1",
-      "ten_de_tai": "xây dựng website bằng spring mvc",
-      "giao_vien_huong_dan": "Trần Hoàng Nam",
+      "ten_nhom": "Nhóm 4",
+      "ten_de_tai": "Spring",
+      "chu_de": "Vé Máy Bay",
       "email": "trannam@gmail.com",
       "so_dien_thoai": "0977893022"
+    },
+    {
+      "id": "1007",
+      "ten_sinh_vien": "Hải",
+      "ten_nhom": "Nhóm 1",
+      "ten_de_tai": "PHP",
+      "chu_de": "Vé Máy Bay",
+      "email": "hai@vip.com",
+      "so_dien_thoai": "0583222888"
     }
   ]
 }

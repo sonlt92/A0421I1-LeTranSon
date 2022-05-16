@@ -1,40 +1,44 @@
 <div class="row align-items-center mt-3">
   <div class="col-2"></div>
   <div class="col-8 card border-warning">
-    <form (submit)="onSubmit()" [formGroup]="editForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="createForm">
       <div class="form-group mt-2">
         <label for="exampleFormControlInput1">Mã Sinh Viên</label>
-        <input formControlName="id" readonly type="text" class="form-control" id="exampleFormControlInput1">
+        <input formControlName="id" type="text" class="form-control" id="exampleFormControlInput1">
+        <p class="error"
+           *ngIf="(createForm.get('id').hasError('required') && createForm.get('id').touched)">
+          ID Không Được Để Trống
+        </p>
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">Họ Tên Sinh Viên</label>
         <input formControlName="ten_sinh_vien" type="text" class="form-control">
-        <p class="error" *ngIf="(editForm.get('ten_sinh_vien').hasError('pattern') && editForm.get('ten_sinh_vien').dirty)
-          || (editForm.get('ten_sinh_vien').hasError('required') && editForm.get('ten_sinh_vien').touched)">
+        <p class="error" *ngIf="(createForm.get('ten_sinh_vien').hasError('pattern') && createForm.get('ten_sinh_vien').dirty)
+          || (createForm.get('ten_sinh_vien').hasError('required') && createForm.get('ten_sinh_vien').touched)">
           Tên Sinh Viên Không Được Để Trống, Không Chứa Số Và Ký Tự Đặc Biệt
         </p>
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">Email</label>
         <input formControlName="email" type="text" class="form-control">
-        <p class="error" *ngIf="(editForm.get('email').hasError('pattern') && editForm.get('email').dirty)
-          || (editForm.get('email').hasError('required') && editForm.get('email').touched)">
+        <p class="error" *ngIf="(createForm.get('email').hasError('pattern') && createForm.get('email').dirty)
+          || (createForm.get('email').hasError('required') && createForm.get('email').touched)">
           Email Không Được Để Trống Và Phải Theo Định Dạng: abc@def.com
         </p>
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">Số Điện Thoại</label>
         <input formControlName="so_dien_thoai" type="text" class="form-control">
-        <p class="error" *ngIf="(editForm.get('so_dien_thoai').hasError('pattern') && editForm.get('so_dien_thoai').dirty)
-          || (editForm.get('so_dien_thoai').hasError('required') && editForm.get('so_dien_thoai').touched)">
+        <p class="error" *ngIf="(createForm.get('so_dien_thoai').hasError('pattern') && createForm.get('so_dien_thoai').dirty)
+          || (createForm.get('so_dien_thoai').hasError('required') && createForm.get('so_dien_thoai').touched)">
           Sô Điện Thoại Không Được Để Trống Và Phải Chứa 10 - 12 Số.
         </p>
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">Tên Nhóm</label>
         <input formControlName="ten_nhom" type="text" class="form-control">
-        <p class="error" *ngIf="(editForm.get('ten_nhom').hasError('pattern') && editForm.get('ten_nhom').dirty)
-                  || (editForm.get('ten_nhom').hasError('required') && editForm.get('ten_nhom').touched)">
+        <p class="error" *ngIf="(createForm.get('ten_nhom').hasError('pattern') && createForm.get('ten_nhom').dirty)
+                  || (createForm.get('ten_nhom').hasError('required') && createForm.get('ten_nhom').touched)">
           Tên Nhóm Không Được Để Trống
         </p>
       </div>
@@ -42,7 +46,7 @@
         <label for="exampleFormControlInput1">Tên Đề Tài</label>
         <input formControlName="ten_de_tai" type="text" class="form-control">
         <p class="error"
-           *ngIf="(editForm.get('ten_de_tai').hasError('required') && editForm.get('ten_de_tai').touched)">
+           *ngIf="(createForm.get('ten_de_tai').hasError('required') && createForm.get('ten_de_tai').touched)">
           Tên Đề Tài Không Được Để Trống
         </p>
       </div>
@@ -54,18 +58,18 @@
           <option [ngValue]="'Quán Cafe'">Quán Cafe</option>
         </select>
         <p class="error"
-           *ngIf="(editForm.get('chu_de').hasError('required') && editForm.get('chu_de').touched)">
+           *ngIf="(createForm.get('chu_de').hasError('required') && createForm.get('chu_de').touched)">
           Chọn Chủ Đề
         </p>
       </div>
       <div class="text-center m-3">
         <button class="btn btn-danger mr-5" [routerLink]="'/list'">
-          <i class="fa fa-paper-plane"></i>
-          Huỷ
+            <i class="fa fa-paper-plane"></i>
+            Huỷ
         </button>
         <button type="submit" class="btn btn-primary">
           <i class="fa fa-paper-plane"></i>
-          <span class="ml-1">Cập Nhật</span>
+          <span class="ml-1">Tạo</span>
         </button>
       </div>
     </form>

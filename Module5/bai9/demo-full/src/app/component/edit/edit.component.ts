@@ -27,7 +27,7 @@ export class EditComponent implements OnInit {
           email: this.sinhVien.email,
           ten_de_tai: this.sinhVien.ten_de_tai,
           so_dien_thoai: this.sinhVien.so_dien_thoai,
-          giao_vien_huong_dan: this.sinhVien.giao_vien_huong_dan,
+          chu_de: this.sinhVien.chu_de,
           ten_nhom: this.sinhVien.ten_nhom
         });
       });
@@ -38,8 +38,8 @@ export class EditComponent implements OnInit {
       email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/)]],
       ten_de_tai: ['', Validators.required],
       so_dien_thoai: ['', [Validators.required, Validators.pattern(/^([0-9]{10}|[0-9]{12})$/)]],
-      giao_vien_huong_dan: ['', Validators.required],
-      ten_nhom: ['', [Validators.required, Validators.pattern(/^(nhom)\s[123]$/)]]
+      chu_de: ['', Validators.required],
+      ten_nhom: ['', [Validators.required]]
     });
   }
 

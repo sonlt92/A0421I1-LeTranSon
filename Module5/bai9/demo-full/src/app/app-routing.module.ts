@@ -3,13 +3,15 @@ import {Routes, RouterModule} from '@angular/router';
 import {EditComponent} from './component/edit/edit.component';
 import {DeleteComponent} from './component/delete/delete.component';
 import {ListComponent} from './component/list/list.component';
+import {CreateComponent} from './component/create/create.component';
 
 const routes: Routes = [
   {
     path: '', children: [
       {path: 'edit/:id', component: EditComponent},
       {path: 'delete/:id', component: DeleteComponent},
-      {path: 'list', component: ListComponent}
+      {path: 'list', component: ListComponent},
+      {path: 'create', component: CreateComponent}
     ]
   }
 ];

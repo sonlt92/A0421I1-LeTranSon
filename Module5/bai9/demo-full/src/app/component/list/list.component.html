@@ -7,7 +7,7 @@
         <th scope="col">Họ Tên</th>
         <th scope="col">Tên Nhóm</th>
         <th scope="col">Tên Đề Tài</th>
-        <th scope="col">Tên Giáo Viên</th>
+        <th scope="col">Chủ Đề</th>
         <th scope="col">Email</th>
         <th scope="col">Số Điện Thoại</th>
         <th colspan="2" scope="col">Thao Tác</th>
@@ -21,9 +21,17 @@
                 <td>{{sinhVien.ten_sinh_vien}}</td>
                 <td>{{sinhVien.ten_nhom}}</td>
                 <td>{{sinhVien.ten_de_tai}}</td>
-                <td>{{sinhVien.giao_vien_huong_dan}}</td>
+                <td>{{sinhVien.chu_de}}</td>
                 <td>{{sinhVien.email}}</td>
                 <td>{{sinhVien.so_dien_thoai}}</td>
+
+<!--                <td class="table-primary">{{sinhVien.id}}</td>-->
+<!--                <td class="table-success">{{sinhVien.ten_sinh_vien}}</td>-->
+<!--                <td class="table-danger">{{sinhVien.ten_nhom}}</td>-->
+<!--                <td class="table-info">{{sinhVien.ten_de_tai}}</td>-->
+<!--                <td class="table-warning">{{sinhVien.chu_de}}</td>-->
+<!--                <td class="table-active">{{sinhVien.email}}</td>-->
+<!--                <td class="table-light">{{sinhVien.so_dien_thoai}}</td>-->
                 <td><a [routerLink]="'/edit/' + sinhVien.id">
                   <i class="fa fa-pencil-square-o"></i>
                 </a></td>
@@ -38,7 +46,7 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                          <h5 class="modal-title" id="exampleModalLongTitle">Warring</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>

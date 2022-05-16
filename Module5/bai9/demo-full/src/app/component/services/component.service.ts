@@ -29,4 +29,9 @@ export class ComponentService {
     return this.httpClient.delete<void>(this.API_URL + '/' + id);
   }
 
+  createStudent(nhanVienModel: SinhVienModel): Observable<SinhVienModel>{
+    console.log(nhanVienModel);
+    return this.httpClient.post<SinhVienModel>(this.API_URL, nhanVienModel);
+  }
+
 }

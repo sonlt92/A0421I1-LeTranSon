@@ -9,10 +9,11 @@ import {ComponentService} from './services/component.service';
 import {MaterialModule} from '../material/material.module';
 import {APP_DATE_FORMATS, AppDateAdapter} from '../format-datepicker';
 import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
+import {CreateComponent} from './create/create.component';
 
 
 @NgModule({
-  declarations: [DeleteComponent, EditComponent, ListComponent],
+  declarations: [DeleteComponent, EditComponent, ListComponent, CreateComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
