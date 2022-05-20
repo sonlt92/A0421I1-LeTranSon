@@ -1,0 +1,76 @@
+<div class="row align-items-center mt-3">
+  <div class="col-2"></div>
+  <div class="col-8 card border-warning">
+    <form (submit)="onSubmit()" [formGroup]="editForm">
+<!--      <div class="form-group mt-2">-->
+<!--        <label for="exampleFormControlInput1">STT</label>-->
+<!--        <input formControlName="stt" readonly type="text" class="form-control" id="exampleFormControlInput1">-->
+<!--      </div>-->
+      <div class="form-group mt-2">
+        <label for="exampleFormControlInput1">Mã Bệnh Án</label>
+        <input formControlName="ma_benh_an" readonly type="text" class="form-control"id="exampleFormControlInput1">
+      </div>
+      <div class="form-group mt-2">
+        <label for="exampleFormControlInput1">Mã Bệnh Nhân</label>
+        <input formControlName="ma_benh_nhan" readonly type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Tên Bệnh Nhân</label>
+        <input formControlName="ten_benh_nhan" type="text" class="form-control">
+        <p class="error" *ngIf="(editForm.get('ten_benh_nhan').hasError('pattern') && editForm.get('ten_benh_nhan').dirty)
+          || (editForm.get('ten_benh_nhan').hasError('required') && editForm.get('ten_benh_nhan').touched)">
+          Tên Bệnh Nhân Không Được Để Trống, Không Chứa Số Và Ký Tự Đặc Biệt.
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Ngày Nhập Viện</label>
+        <input formControlName="ngay_nhap_vien" type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Ngày Ra Viện</label>
+        <input formControlName="ngay_ra_vien" type="date" class="form-control">
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Lý Do Nhập Viện</label>
+        <input formControlName="ly_do" type="text" class="form-control">
+      </div>
+      <p class="error" *ngIf="(editForm.get('ly_do').hasError('pattern') && editForm.get('ly_do').dirty)
+          || (editForm.get('ly_do').hasError('required') && editForm.get('ly_do').touched)">
+        Lý Do Nhập Viện Không Được Để Trống.
+      </p>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Phương Pháp Điều Trị</label>
+        <input formControlName="phuong_phap" type="text" class="form-control">
+      </div>
+      <p class="error" *ngIf="(editForm.get('phuong_phap').hasError('pattern') && editForm.get('phuong_phap').dirty)
+          || (editForm.get('phuong_phap').hasError('required') && editForm.get('phuong_phap').touched)">
+        Phương Pháp Điều Trị Không Được Để Trống.
+      </p>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Bác Sĩ Điều Trị</label>
+        <input formControlName="bac_si" type="text" class="form-control">
+      </div>
+      <p class="error" *ngIf="(editForm.get('bac_si').hasError('pattern') && editForm.get('bac_si').dirty)
+          || (editForm.get('bac_si').hasError('required') && editForm.get('bac_si').touched)">
+        Bác Sĩ Điều Trị Không Được Để Trống.
+      </p>
+
+      <div class="text-center m-3">
+        <button class="btn btn-danger mr-5" [routerLink]="'/list'">
+<!--          <i class="fa fa-paper-plane"></i>-->
+          Huỷ
+        </button>
+        <button type="submit" class="btn btn-primary">
+<!--          <i class="fa fa-paper-plane"></i>-->
+          <span class="ml-1">Cập Nhật</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-2"></div>
+

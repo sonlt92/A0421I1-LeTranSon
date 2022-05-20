@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import {SinhVienModel} from '../models/sinhVienModel';
-import {ComponentService} from '../services/component.service';
+import {BenhAnModel} from '../../../../../../thithuchanh/src/app/component/models/benhAnModel';
+import {ComponentService} from '../../../../../../thithuchanh/src/app/component/services/component.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class CreateComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/)]),
       so_dien_thoai: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]{10}|[0-9]{12})$/)]),
   });
-  sinhVien: SinhVienModel;
+  sinhVien: BenhAnModel;
 
   constructor(private fb: FormBuilder, private service: ComponentService,
               private router: Router) {

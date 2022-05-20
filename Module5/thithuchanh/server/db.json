@@ -1,0 +1,37 @@
+{
+  "benhvien": [
+    {
+      "id": 1,
+      "ma_benh_an": "BA-001",
+      "ma_benh_nhan": "BN-001",
+      "ten_benh_nhan": "Lê Trần Sơn",
+      "ngay_nhap_vien": "2022-05-18",
+      "ngay_ra_vien": "2022-05-20",
+      "ly_do": "Đau bụng",
+      "phuong_phap": "Uống thuốc",
+      "bac_si": "Lê Văn A"
+    },
+    {
+      "id": 2,
+      "ma_benh_an": "BA-002",
+      "ma_benh_nhan": "BN-002",
+      "ten_benh_nhan": "Sơn3",
+      "ngay_nhap_vien": "2022-05-20",
+      "ngay_ra_vien": "2022-05-28",
+      "ly_do": "Đau",
+      "phuong_phap": "Uống thuốc",
+      "bac_si": "Lê Văn A"
+    },
+    {
+      "id": 3,
+      "ma_benh_an": "BA-003",
+      "ma_benh_nhan": "BN-003",
+      "ten_benh_nhan": "Lê Văn C",
+      "ngay_nhap_vien": "2022-05-05",
+      "ngay_ra_vien": "2022-05-20",
+      "ly_do": "Đau bụng",
+      "phuong_phap": "Uống thuốc",
+      "bac_si": "Lê Văn A"
+    }
+  ]
+}
