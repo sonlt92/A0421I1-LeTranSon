@@ -1,0 +1,176 @@
+<div class="container-fluid" style="padding: 0">
+  <div class="banner">
+    <div class="banner-wrap">
+      <div class="banner-img"></div>
+      <div class="banner-text">
+        <div class="banner-slogan" data-aos="fade-up"
+             data-aos-anchor-placement="top-center">An Inimitable Legend of Hospitality
+        </div>
+        <div class="banner-title">ADD NEW EMPLOYEE</div>
+        <div class="banner-subtitle">
+        </div>
+      </div>
+    </div>
+  </div>
+  <body style="margin-bottom: 5%">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <form class="row g-3" [formGroup]="employeeForm" (ngSubmit)="onsubmit()" novalidate>
+          <div class="col-md-6">
+            <label class="form-label required" for="inputName">Full name:</label>
+            <input formControlName="fullName" type="text" class="form-control" id="inputName"
+                   placeholder="Nguyen Van A">
+            <div *ngIf="!employeeForm.controls.fullName.valid && (employeeForm.controls.fullName.dirty || employeeForm.controls.fullName.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.fullName.errors?.required">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Enter full name.
+              </label>
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.fullName.errors?.pattern">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Sorry, your full name must be in the correct format "Nguyen Van A".
+              </label>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-3">
+            <label class="form-label required" for="birthday">Birthday</label>
+            <input formControlName="birthday" id="birthday" class="date-picker form-control" type="date"
+                   style="height: 38px">
+            <div *ngIf="!employeeForm.controls.birthday.valid && (employeeForm.controls.birthday.dirty || employeeForm.controls.birthday.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.birthday.errors?.required">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Enter your birthday.
+              </label>
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.birthday.errors?.invalidAge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Sorry, your age must be between 18 and 70 years old.
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label required" for="inputIdCard">ID card:</label>
+            <input formControlName="idCard" type="text" class="form-control" id="inputIdCard" placeholder="123456789">
+            <div *ngIf="!employeeForm.controls.idCard.valid && (employeeForm.controls.idCard.dirty || employeeForm.controls.idCard.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.idCard.errors?.required">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Enter your id card.
+              </label>
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.idCard.errors?.pattern">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Sorry, your id card must be in the correct format XXXXXXXXX or XXXXXXXXXXXX (X is 0-9).
+              </label>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+            <label class="form-label required" for="inputPhone">Phone:</label>
+            <input formControlName="phone" type="text" class="form-control" id="inputPhone" placeholder="0912345678">
+            <div *ngIf="!employeeForm.controls.phone.valid && (employeeForm.controls.phone.dirty || employeeForm.controls.phone.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.phone.errors?.required">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Enter your phone.
+              </label>
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.phone.errors?.pattern">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Sorry, your phone must be in the correct format 090xxxxxxx hoặc 091xxxxxxx (x is 0-9).
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label required" for="exampleInputEmail1">Email address</label>
+            <input formControlName="email" type="text" class="form-control" id="exampleInputEmail1"
+                   aria-describedby="emailHelp" placeholder="abc@xyz.com">
+            <div *ngIf="!employeeForm.controls.email.valid && (employeeForm.controls.email.dirty || employeeForm.controls.email.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.email.errors?.required">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Enter your email.
+              </label>
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.email.errors?.email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Sorry, your email must be in the correct format abc@xyz.com.
+              </label>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-3">
+            <label class="form-label required" for="inputSalary">Salary:</label>
+            <input formControlName="salary" type="text" class="form-control" id="inputSalary" placeholder="123456789">
+            <div *ngIf="!employeeForm.controls.salary.valid && (employeeForm.controls.salary.dirty || employeeForm.controls.salary.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.salary.errors?.required">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Enter your salary.
+              </label>
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.salary.errors?.pattern">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Sorry, your salary must be a positive integer.
+              </label>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-3">
+            <label class="form-label required" for="position">Position :</label>
+            <select formControlName="position" [(ngModel)]="employee.position.id" id="position"
+                    class="form-control w-75 form-select">
+              <option [value]=0>Choose...</option>
+              <option *ngFor="let p of positions" [ngValue]="p.id">{{p.name}}</option>
+            </select>
+            <div *ngIf="!employeeForm.controls.position.valid && (employeeForm.controls.position.dirty || employeeForm.controls.position.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.position.errors?.notNull">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Choose your position.
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label required" for="educationDegree">Education degree :</label>
+            <select formControlName="educationDegree" [(ngModel)]="employee.educationDegree.id" id="educationDegree" class="form-control w-75 form-select">
+              <option [value]=0>Choose...</option>
+              <option *ngFor="let e of educationDegrees" [ngValue]="e.id">{{e.name}}</option>
+            </select>
+            <div *ngIf="!employeeForm.controls.educationDegree.valid && (employeeForm.controls.educationDegree.dirty || employeeForm.controls.educationDegree.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.educationDegree.errors?.notNull">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Choose your education degree.
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label required" for="division">Division :</label>
+            <select formControlName="division" [(ngModel)]="employee.division.id" id="division" class="form-control w-75 form-select">
+              <option [value]=0>Choose...</option>
+              <option *ngFor="let d of divisions" [ngValue]="d.id">{{d.name}}</option>
+            </select>
+            <div *ngIf="!employeeForm.controls.division.valid && (employeeForm.controls.division.dirty || employeeForm.controls.division.touched)">
+              <label class="" for="inputName" style="color: #f32020;" *ngIf="employeeForm.controls.division.errors?.notNull">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg> Choose your division.
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>
+

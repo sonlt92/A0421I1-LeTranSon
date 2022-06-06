@@ -1,0 +1,67 @@
+<div class="container-fluid" style="padding: 0">
+  <div class="banner">
+    <div class="banner-wrap">
+      <div class="banner-img"></div>
+      <div class="banner-text">
+        <div class="banner-slogan" data-aos="fade-up"
+             data-aos-anchor-placement="top-center">An Inimitable Legend of Hospitality
+        </div>
+        <div class="banner-title">ADD NEW SERVICE</div>
+        <div class="banner-subtitle">
+        </div>
+      </div>
+    </div>
+  </div>
+  <body style="margin-bottom: 5%">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <form class="row g-3" [formGroup]="serviceForm" (ngSubmit)="onsubmit()">
+          <div class="col-md-6">
+            <label class="form-label" for="inputName">Full name:</label>
+            <input formControlName="fullName" type="text" class="form-control" id="inputName"
+                   placeholder="Vila - view biển">
+            <label class="form-label" for="inputName" style="color: palevioletred"></label>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-3">
+            <label class="form-label" for="area">Area:</label>
+            <input formControlName="area" type="text" class="form-control" id="area"
+                   placeholder="5000">
+            <label class="form-label" for="area" style="color: palevioletred"></label>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="cost">Cost:</label>
+            <input formControlName="cost" type="text" class="form-control" id="cost" placeholder="5000">
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+            <label class="form-label" for="maxPeople">Max people:</label>
+            <input formControlName="maxPeople" type="text" class="form-control" id="maxPeople" placeholder="5000">
+          </div>
+          <div class="col-md-3">
+            <label for="rentType" class="form-label">Rent type:</label>
+            <select name="idRentType" formControlName="idRentType" [(ngModel)]="service.idRentType.id" id="rentType" class="form-control form-select">
+              <option>Choose...</option>
+              <option *ngFor="let r of rentTypes" [ngValue]="r.id">{{r.name}}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="numberOfFloors">Number of floors:</label>
+            <input formControlName="numberOfFloors" type="text" class="form-control" id="numberOfFloors" placeholder="5">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="status">Status:</label>
+            <input formControlName="status" type="text" class="form-control" id="status" placeholder="......">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>
+

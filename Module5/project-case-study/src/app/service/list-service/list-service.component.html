@@ -1,0 +1,164 @@
+<div class="container-fluid" style="padding: 0">
+  <div class="banner">
+    <div class="banner-wrap">
+      <div class="banner-img"></div>
+      <div class="banner-text">
+        <div class="banner-slogan" data-aos="fade-up"
+             data-aos-anchor-placement="top-center">An Inimitable Legend of Hospitality
+        </div>
+        <div class="banner-title">LIST SERVICE</div>
+        <div class="banner-subtitle">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row px-2 banner-search-booking">
+        <div class="col-xl-6 search-booking-left">
+          <div class="row">
+            <div class="col-sm-6 px-2 date-picker-wrap">
+              <mat-form-field appearance="fill">
+                <mat-label>Check In</mat-label>
+                <input matInput [matDatepicker]="pickerCheckIn">
+                <mat-datepicker-toggle matSuffix [for]="pickerCheckIn"></mat-datepicker-toggle>
+                <mat-datepicker #pickerCheckIn></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6 px-2 date-picker-wrap">
+              <mat-form-field appearance="fill">
+                <mat-label>Check Out</mat-label>
+                <input matInput [matDatepicker]="pickerCheckOut">
+                <mat-datepicker-toggle matSuffix [for]="pickerCheckOut"></mat-datepicker-toggle>
+                <mat-datepicker #pickerCheckOut></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 search-booking-right">
+          <div class="row">
+            <div class="col-sm-4 px-2">
+              <mat-form-field appearance="fill" style="max-width: 170px">
+                <mat-label>Select service</mat-label>
+                <mat-select>
+                  <mat-option value="option">Villa</mat-option>
+                  <mat-option value="option">Room</mat-option>
+                  <mat-option value="option">House</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-4 px-2 ">
+              <mat-form-field appearance="fill" style="max-width: 170px">
+                <mat-label>Max people</mat-label>
+                <mat-select>
+                  <mat-option value="option">1</mat-option>
+                  <mat-option value="option">2</mat-option>
+                  <mat-option value="option">3</mat-option>
+                  <mat-option value="option">5</mat-option>
+                  <mat-option value="option">more</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-4 px-2">
+              <button class="btn btn-outline-primary" style="height: 51px; width: 100%">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <div *ngIf="msg!=''" class="alert alert-info" role="alert">
+          {{msg}}
+        </div>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Area</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Max people</th>
+            <th scope="col">Rent type</th>
+            <th scope="col">number of floor</th>
+            <th scope="col">Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr [id]="'row'+s.id" *ngFor="let s of service">
+            <td>{{s.id}}</td>
+            <td>{{s.fullName}}</td>
+            <td>{{s.area}}</td>
+            <td>{{s.cost}}</td>
+            <td>{{s.maxPeople}}</td>
+            <td>{{s.idRentType.name}}</td>
+            <td>{{s.numberOfFloors}}</td>
+            <td>{{s.status}}</td>
+            <td><a class="btn btn-primary" [routerLink]="['/service/edit/',s.id]">EDIT</a></td>
+            <td>
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                      [attr.data-bs-target]="['#'+s.id]">
+                DELETE
+              </button>
+            </td>
+            <div class="modal fade" [id]="s.id" tabindex="-1"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm delete employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Do you want to delete {{s.fullName}} service?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal"
+                            (click)="delete(s.id,s.fullName)">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tr>
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <button class="page-link" (click)="prevPage(pageNow-1)" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" *ngIf="(pageNow-1)!=0" (click)="prevPage(pageNow-1)">{{pageNow - 1}}</button>
+            </li>
+            <li class="page-item active">
+              <button class="page-link">{{pageNow}}</button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" *ngIf="(pageNow+1) <= maxPage"
+                      (click)="nextPage(pageNow+1)">{{pageNow + 1}}</button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" (click)="nextPage(pageNow+1)" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>
+

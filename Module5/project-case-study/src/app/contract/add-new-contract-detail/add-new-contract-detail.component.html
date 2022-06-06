@@ -1,0 +1,50 @@
+<div class="container-fluid" style="padding: 0">
+  <div class="banner">
+    <div class="banner-wrap">
+      <div class="banner-img"></div>
+      <div class="banner-text">
+        <div class="banner-slogan" data-aos="fade-up"
+             data-aos-anchor-placement="top-center">An Inimitable Legend of Hospitality
+        </div>
+        <div class="banner-title">ADD NEW CONTRACT DETAIL</div>
+        <div class="banner-subtitle">
+        </div>
+      </div>
+    </div>
+  </div>
+  <body style="margin-bottom: 5%">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <form class="row g-3" [formGroup]="contractDetailForm" (ngSubmit)="onsubmit()">
+          <div class="col-md-6">
+            <label class="form-label" for="contract">Contract :</label>
+            <select formControlName="contract" [value]=null id="contract" class="form-control w-75 form-select">
+              <option [value]=null>Choose...</option>
+              <option *ngFor="let c of contracts" [ngValue]="c">{{c.employee.fullName}}-{{c.id}}</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="attachService">Attach service :</label>
+            <select formControlName="attachService" [value]=null id="attachService"
+                    class="form-control w-75 form-select">
+              <option [value]=null>Choose...</option>
+              <option *ngFor="let a of attachService" [ngValue]="a">{{a.name}}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="quantity">Quantity:</label>
+            <input formControlName="quantity" type="number" class="form-control" id="quantity" placeholder="">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>
+
+

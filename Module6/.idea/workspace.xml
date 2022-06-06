@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b92cfe47-83f3-48d9-a278-6747b4f46a47" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/component.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/component.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/edit/edit.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/edit/edit.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/edit/edit.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/list/list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/list/list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/list/list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/models/benhAnModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/models/benhAnModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/services/component.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Module5/thithuchanh/src/app/component/services/component.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2ACceoVe6xhVlEWXvAy6AIry0M6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/A0421I1-LeTranSon/Module6",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b92cfe47-83f3-48d9-a278-6747b4f46a47" name="Changes" comment="" />
+      <created>1654517108023</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654517108023</updated>
+      <workItem from="1654517109567" duration="30000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

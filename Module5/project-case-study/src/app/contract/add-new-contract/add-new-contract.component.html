@@ -1,0 +1,75 @@
+<div class="container-fluid" style="padding: 0">
+  <div class="banner">
+    <div class="banner-wrap">
+      <div class="banner-img"></div>
+      <div class="banner-text">
+        <div class="banner-slogan" data-aos="fade-up"
+             data-aos-anchor-placement="top-center">An Inimitable Legend of Hospitality
+        </div>
+        <div class="banner-title">ADD NEW SERVICE</div>
+        <div class="banner-subtitle">
+        </div>
+      </div>
+    </div>
+  </div>
+  <body style="margin-bottom: 5%">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <form class="row g-3" [formGroup]="contractForm" (ngSubmit)="onsubmit()">
+          <div class="col-md-6">
+            <label class="form-label" for="startDate">Start date:</label>
+            <input formControlName="startDate" id="startDate" class="date-picker form-control" type="date"
+                   style="height: 38px">
+            <label class="form-label" for="startDate" style="color: palevioletred"></label>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="endDate">Start date:</label>
+            <input formControlName="endDate" id="endDate" class="date-picker form-control" type="date"
+                   style="height: 38px">
+            <label class="form-label" for="endDate" style="color: palevioletred"></label>
+          </div>
+          <div class="col-md-4">
+            <label for="employee" class="form-label">Employee:</label>
+            <select formControlName="employee" [value]=null id="employee" class="form-control form-select">
+              <option [value]=null>Choose...</option>
+              <option *ngFor="let e of employees" [ngValue]="e">{{e.fullName}}</option>
+            </select>
+            <label class="form-label" for="employee" style="color: palevioletred"></label>
+          </div>
+          <div class="col-md-4">
+            <label for="customer" class="form-label">Customer:</label>
+            <select formControlName="customer" [value]=null id="customer" class="form-control form-select">
+              <option [value]=null>Choose...</option>
+              <option *ngFor="let c of customers" [ngValue]="c">{{c.fullName}}</option>
+            </select>
+            <label class="form-label" for="customer" style="color: palevioletred"></label>
+          </div>
+          <div class="col-md-4">
+            <label for="service" class="form-label">Service:</label>
+            <select formControlName="service" [(ngModel)]="service" id="service" class="form-control form-select">
+              <option [value]=null>Choose...</option>
+              <option *ngFor="let s of services" [ngValue]="s">{{s.fullName}}</option>
+            </select>
+            <label class="form-label" for="service" style="color: palevioletred"></label>
+          </div>
+          <div class="col-md-4">
+            <label for="deposit">Deposit:</label>
+            <input type="text" name="deposit" class="form-control" formControlName="deposit" id="deposit"
+                   (input)="onchange()" [(ngModel)]="deposit">
+          </div>
+          <div class="col-md-12">
+            <input type="text" formControlName="total" [(ngModel)]="total" hidden="hidden">
+            <h3>Total: {{total}}</h3>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>
+

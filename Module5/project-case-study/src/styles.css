@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background:#fff url(https://lyonhotel.webhotel.vn/assets/image/bg.jpg) repeat }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Old Standard TT", serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.banner-wrap {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.banner-img {
+  background: #252525 url(https://furamavietnam.com/wp-content/uploads/2018/10/Danang-City-Dragon-Bridge.jpg?id=2365) no-repeat top center;
+  width: 100%;
+  height: 675px;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  color: white;
+}
+
+.banner-slogan {
+  font-family: "Old Standard TT", serif;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  color: white;
+}
+
+.banner-title {
+  color: #ffffff;
+  font-family: Old Standard TT;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 57.6px;
+  text-align: center;
+  text-transform: uppercase
+}
+
+.banner-subtitle {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0px 386px;
+  text-align: center
+}
+
+.banner-search-booking {
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+
+.date-picker-wrap {
+  display: flex;
+  position: relative;
+}
+
+.date-picker {
+  width: 100%;
+  font-size: 14px;
+  color: #252525;
+  height: 50px;
+  padding: 13.5px 25px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+}
+
+.body {
+  padding-top: 135px;
+  background-color: #f2f2f2;
+}
+.required:after {
+  content:"*";color:red;font-size: 20px;
+}

@@ -6,7 +6,6 @@ import {ComponentModule} from './component/component.module';
 import {HttpClientModule} from '@angular/common/http';
 import {MaterialModule} from './material/material.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import {EditComponent} from './component/edit/edit.component';
 import {DeleteComponent} from './component/delete/delete.component';
 import {ListComponent} from './component/list/list.component';
 
@@ -22,7 +21,7 @@ import {ListComponent} from './component/list/list.component';
         MaterialModule,
         ReactiveFormsModule,
     ],
-  providers: [EditComponent,ListComponent,DeleteComponent],
+  providers: [ListComponent,DeleteComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

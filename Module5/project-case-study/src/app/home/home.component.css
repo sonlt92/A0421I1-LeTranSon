@@ -1,0 +1,268 @@
+a{
+  text-decoration: none;
+}
+.title-bar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.main-title {
+  width: 100%;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  padding-bottom: 22px;
+  background: url(https://lyonhotel.webhotel.vn/assets/image/bg-title-bar.png) no-repeat bottom center;
+}
+
+.main-excerpt {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #636363;
+  padding-top: 33px;
+  padding-bottom: 74px;
+  text-transform: uppercase;
+}
+
+.body-blog {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin-bottom: 40px;
+  margin-left: 50px;
+  padding-bottom: 15px;
+}
+
+.blog-video-widget {
+  margin: 100px 0 133px -65px;
+}
+
+.blog-video-wrap {
+  position: relative;
+}
+
+.blog-video-wrap iframe {
+  width: 100%;
+  height: 320px;
+  border: none;
+}
+
+.body-blog-content {
+  padding: 80px 44px 36px 50px;
+}
+
+.blog-content-title {
+  color: #252525;
+  font-style: italic;
+  font-family: "Old Standard TT", serif;
+}
+
+.blog-content-excerpt {
+  line-height: 30px;
+  margin-top: 18px;
+  margin-bottom: 55px;
+}
+
+.body-gallery {
+  padding: 120px;
+}
+
+.gallery-title {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.gallery-main-title {
+  padding-top: 126px;
+}
+
+.main-title {
+  width: 100%;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  padding-bottom: 22px;
+  background: url(https://lyonhotel.webhotel.vn/assets/image/bg-title-bar.png) no-repeat bottom center;
+}
+
+.main-excerpt {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #636363;
+  padding-top: 33px;
+  padding-bottom: 74px;
+  text-transform: uppercase;
+}
+
+.gallery-content-item {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.gallery-content-item-widget {
+  position: relative;
+}
+
+.image {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("https://lyonhotel.webhotel.vn/assets/image/lightbox.png");
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.gallery-content-item:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gallery__item-price {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 24.5px;
+  font-family: "Old Standard TT", serif;
+  margin-bottom: 7px;
+}
+
+.gallery__item-name {
+  color: white;
+  margin-bottom: 24px;
+  display: inline;
+  font-family: Old Standard TT;
+}
+
+.gallery__item-read-more {
+  color: #cdaf87;
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 24.5px;
+  text-align: center;
+  text-transform: uppercase
+}
+
+.gallery__show-room-wrap {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.body__vip-services-wrap {
+  padding-bottom: 116px;
+  background: #fff url(https://lyonhotel.webhotel.vn/assets/image/bgpost.png) repeat;
+}
+
+.vip-services__main-title {
+  color: white;
+  margin-top: 86px;
+  margin-bottom: 60px;
+}
+
+.vip-services__item-img a img{
+  width: 350px;
+  height: 198.64px;
+}
+
+.vip-services__item-excerpt {
+  color: #cccccc;
+}
+
+.vip-services__item {
+  text-align: center;
+}
+
+.vip-services__item-title {
+  margin-top: 30px;
+}
+
+.vip-services__item-title h2 {
+  background: url(https://lyonhotel.webhotel.vn/assets/image/line-title.jpg) no-repeat bottom center;
+  padding-bottom: 11px;
+}
+
+.vip-services__item-title a {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Old Standard TT", serif;
+}
+
+.body__offers {
+  padding-bottom: 120px;
+}
+
+.title-bar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.offers__item {
+  text-align: center;
+}
+
+.offers__item-img img {
+  width: 546px;
+  height: 364px;
+}
+
+.offers__item-title a {
+  display: inline-block;
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Old Standard TT", serif;
+  margin-top: 30px;
+}
+
+.offers__item-excerpt {
+  font-style: italic;
+  font-size: 18px;
+  font-family: "Old Standard TT", serif;
+  padding-bottom: 30px;
+}
+
+.offers__item-link-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offers__item-link-more a {
+  font-size: 14px;
+  color: #636363;
+  text-transform: uppercase;
+}
+
+.body-search-booking{
+  background-color: #283c5a;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}

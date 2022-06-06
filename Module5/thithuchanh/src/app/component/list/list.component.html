@@ -20,14 +20,14 @@
               *ngFor="let benhVien of listBenhAn; let i = index">
               <tr>
                 <td>{{benhVien.id}}</td>
-                <td>{{benhVien.ma_benh_an}}</td>
-                <td>{{benhVien.ma_benh_nhan}}</td>
-                <td>{{benhVien.ten_benh_nhan}}</td>
-                <td>{{benhVien.ngay_nhap_vien | date:"dd-MM-yyyy"}}</td>
-                <td>{{benhVien.ngay_ra_vien | date:"dd-MM-yyyy"}}</td>
-                <td>{{benhVien.ly_do}}</td>
-                <td>{{benhVien.phuong_phap}}</td>
-                <td>{{benhVien.bac_si}}</td>
+                <td>{{benhVien.maBenhAn}}</td>
+                <td>{{benhVien.benhNhan.maBenhNhan}}</td>
+                <td>{{benhVien.benhNhan.tenBenhNhan}}</td>
+                <td>{{benhVien.ngayNhapVien | date:"dd-MM-yyyy"}}</td>
+                <td>{{benhVien.ngayRaVien | date:"dd-MM-yyyy"}}</td>
+                <td>{{benhVien.lyDo}}</td>
+                <td>{{benhVien.phuongPhap}}</td>
+                <td>{{benhVien.bacSi}}</td>
 
 
                 <td><a [routerLink]="'/edit/' + benhVien.id">
@@ -50,7 +50,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          <span>Bạn Có Muốn Xoá Thông Tin Bệnh Án {{benhVien.ma_benh_an}} Hay Không?</span>
+                          <span>Bạn Có Muốn Xoá Thông Tin Bệnh Án {{benhVien.maBenhAn}} Hay Không?</span>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-primary" data-dismiss="modal">Không</button>

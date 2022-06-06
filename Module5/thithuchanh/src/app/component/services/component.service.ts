@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ComponentService {
-  API_URL = 'http://localhost:3000/benhvien';
+  API_URL = 'http://localhost:8080/benhan';
 
   constructor(private httpClient: HttpClient) {
   }

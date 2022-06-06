@@ -1,0 +1,165 @@
+<div class="container-fluid" style="padding: 0">
+  <div class="banner">
+    <div class="banner-wrap">
+      <div class="banner-img"></div>
+      <div class="banner-text">
+        <div class="banner-slogan" data-aos="fade-up"
+             data-aos-anchor-placement="top-center">An Inimitable Legend of Hospitality
+        </div>
+        <div class="banner-title">LIST EMPLOYEE</div>
+        <div class="banner-subtitle">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <form class="row px-2 banner-search-booking" [formGroup]="searchEmployeeForm" (submit)="onSubmit()">
+        <div class="col-xl-6 search-booking-left">
+          <div class="row">
+            <div class="col-sm-8 px-2">
+              <mat-form-field class="example-full-width" appearance="fill" style="width: 100%">
+                <mat-label>Full name</mat-label>
+                <input formControlname="name" type="text" matInput placeholder="Ex. Nguyen Van A">
+              </mat-form-field>
+            </div>
+            <div class="col-sm-4 px-2 ">
+              <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Select Education Degree</mat-label>
+                <mat-select formControlName="education">
+                  <mat-option value="0">Choose...</mat-option>
+                  <mat-option *ngFor="let e of educationDegrees" [value]="e.id" >{{e.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 search-booking-right">
+          <div class="row">
+            <div class="col-sm-4 px-2">
+              <mat-form-field appearance="fill" style="max-width: 170px">
+                <mat-label>Select Division</mat-label>
+                <mat-select formControlName="division">
+                  <mat-option value="0">Choose...</mat-option>
+                  <mat-option *ngFor="let d of divisions" [value]="d.id" >{{d.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-4 px-2 ">
+              <mat-form-field appearance="fill" style="max-width: 170px">
+                <mat-label>Select Position</mat-label>
+                <mat-select formControlName="position">
+                  <mat-option value="0">Choose...</mat-option>
+                  <mat-option *ngFor="let p of positions" [value]="p.id" >{{p.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-4 px-2">
+              <button type="submit" class="btn btn-outline-primary" style="height: 51px; width: 100%">SEARCH</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <div *ngIf="msg!=''" class="alert alert-info" role="alert">
+          {{msg}}
+        </div>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Birth day</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Id card</th>
+            <th scope="col">Email</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Position</th>
+            <th scope="col">Division</th>
+            <th scope="col">Education Degree</th>
+            <th scope="col">Action</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr [id]="'row'+employee.id" *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.fullName}}</td>
+            <td>{{employee.birthday}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.idCard}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.position.name}}</td>
+            <td>{{employee.division.name}}</td>
+            <td>{{employee.educationDegree.name}}</td>
+            <td><a class="btn btn-primary" [routerLink]="['/employee/edit/',employee.id]">EDIT</a></td>
+            <td>
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                      [attr.data-bs-target]="['#'+employee.id]">
+                DELETE
+              </button>
+            </td>
+            <div class="modal fade" [id]="employee.id" tabindex="-1"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm delete employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Do you want to delete {{employee.fullName}} employee?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal"
+                            (click)="delete(employee.id,employee.fullName)">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tr>
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <button class="page-link" (click)="prevPage(pageNow-1)" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" *ngIf="(pageNow-1)!=0" (click)="prevPage(pageNow-1)">{{pageNow - 1}}</button>
+            </li>
+            <li class="page-item active">
+              <button class="page-link">{{pageNow}}</button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" *ngIf="(pageNow+1) <= maxPage"
+                      (click)="nextPage(pageNow+1)">{{pageNow + 1}}</button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" (click)="nextPage(pageNow+1)" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>
+

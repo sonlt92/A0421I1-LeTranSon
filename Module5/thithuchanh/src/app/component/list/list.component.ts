@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ComponentService} from '../services/component.service';
 import {BenhAnModel} from '../models/benhAnModel';
+import {BenhNhanModel} from "../models/benhNhanModel";
 
 @Component({
   selector: 'app-list',
@@ -10,10 +11,12 @@ import {BenhAnModel} from '../models/benhAnModel';
 export class ListComponent implements OnInit {
   listBenhAn: BenhAnModel[];
 
+
   constructor(private service: ComponentService) {
   }
 
   ngOnInit(): void {
     this.service.getList().subscribe(next => this.listBenhAn = next);
+
   }
 }

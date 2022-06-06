@@ -1,0 +1,740 @@
+{
+  "employees": [
+    {
+      "id": "NV-656",
+      "position": {
+        "id": "6",
+        "name": "Giám đốc"
+      },
+      "division": {
+        "id": "1",
+        "name": "Sale-Marketing"
+      },
+      "educationDegree": {
+        "id": "1",
+        "name": "Trung cấp"
+      },
+      "fullName": "Ngo Hien Nhan",
+      "birthday": "1999-06-11",
+      "idCard": "123456789",
+      "phone": "0916309250",
+      "email": "n@gmail.com",
+      "salary": "50000"
+    },
+    {
+      "id": "NV-266",
+      "position": {
+        "id": "5",
+        "name": "Quản lý"
+      },
+      "division": {
+        "id": "3",
+        "name": "Phục vụ"
+      },
+      "educationDegree": {
+        "id": "2",
+        "name": "Cao đẳng"
+      },
+      "fullName": "a",
+      "birthday": "1999-06-11",
+      "idCard": "1",
+      "phone": "1",
+      "email": "1",
+      "salary": "1"
+    },
+    {
+      "id": "NV-405",
+      "position": {
+        "id": "6",
+        "name": "Giám đốc"
+      },
+      "division": {
+        "id": "3",
+        "name": "Phục vụ"
+      },
+      "educationDegree": {
+        "id": "2",
+        "name": "Cao đẳng"
+      },
+      "fullName": "aa",
+      "birthday": "1999-06-11",
+      "idCard": "1",
+      "phone": "1",
+      "email": "1",
+      "salary": "1"
+    },
+    {
+      "id": "NV-992",
+      "position": {
+        "id": "3",
+        "name": "Chuyên viên"
+      },
+      "division": {
+        "id": "3",
+        "name": "Phục vụ"
+      },
+      "educationDegree": {
+        "id": "3",
+        "name": "Đại học"
+      },
+      "fullName": "b",
+      "birthday": "1111-11-11",
+      "idCard": "1",
+      "phone": "1",
+      "email": "1",
+      "salary": "1"
+    },
+    {
+      "id": "NV-108",
+      "position": {
+        "id": "1",
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": "1",
+        "name": "Sale-Marketing"
+      },
+      "educationDegree": {
+        "id": "1",
+        "name": "Trung cấp"
+      },
+      "fullName": "Ngo Hien",
+      "birthday": "1999-06-11",
+      "idCard": "123456789",
+      "phone": "0916309250",
+      "email": "a@gmail.com",
+      "salary": "5000"
+    },
+    {
+      "id": "NV-136",
+      "position": {
+        "id": "3",
+        "name": "Chuyên viên"
+      },
+      "division": {
+        "id": "2",
+        "name": "Hành chính"
+      },
+      "educationDegree": {
+        "id": "2",
+        "name": "Cao đẳng"
+      },
+      "fullName": "Ngo Hien Nhan",
+      "birthday": "1999-06-11",
+      "idCard": "123456789",
+      "phone": "0916309250",
+      "email": "nhan@gmail.com",
+      "salary": "50000"
+    },
+    {
+      "id": "NV-119",
+      "position": {
+        "id": "4",
+        "name": "Giám sát"
+      },
+      "division": {
+        "id": "3",
+        "name": "Phục vụ"
+      },
+      "educationDegree": {
+        "id": "3",
+        "name": "Đại học"
+      },
+      "fullName": "Nguyen Van An",
+      "birthday": "1999-06-11",
+      "idCard": "123456789",
+      "phone": "0916309250",
+      "email": "nhan@mg.s",
+      "salary": "5000"
+    }
+  ],
+  "customers": [
+    {
+      "id": "KH-47",
+      "idTypeCus": {
+        "id": "3",
+        "name": "Gold"
+      },
+      "fullName": "a",
+      "gender": {
+        "id": "2",
+        "name": "Female"
+      },
+      "dateOfBirth": "2021-09-06",
+      "idCard": "1",
+      "phone": "1",
+      "email": "@gam",
+      "address": "a"
+    },
+    {
+      "id": "KH-127",
+      "idTypeCus": {
+        "id": "1",
+        "name": "Diamond"
+      },
+      "fullName": "Ngo Nhan",
+      "gender": {
+        "id": "1",
+        "name": "Male"
+      },
+      "dateOfBirth": "1999-06-11",
+      "idCard": "123456789",
+      "phone": "0916309250",
+      "email": "nhan@gmai.com",
+      "address": "nhan"
+    }
+  ],
+  "services": [
+    {
+      "id": "DV-993",
+      "fullName": "sadsa",
+      "area": "6000",
+      "cost": "6000",
+      "maxPeople": "600",
+      "idRentType": {
+        "id": "3",
+        "name": "Day"
+      },
+      "numberOfFloors": "5",
+      "status": "a"
+    }
+  ],
+  "contract": [
+    {
+      "id": "HD-780",
+      "employee": {
+        "id": "NV-656",
+        "position": {
+          "id": "2",
+          "name": "Phục vụ"
+        },
+        "division": {
+          "id": "2",
+          "name": "Hành chính"
+        },
+        "educationDegree": {
+          "id": "2",
+          "name": "Cao đẳng"
+        },
+        "fullName": "Ngô Hiền Nhân",
+        "birthday": "1999-06-11",
+        "idCard": "0916309250",
+        "phone": "091632952",
+        "email": "n@gmail.com",
+        "salary": "50000"
+      },
+      "customer": {
+        "id": "KH-90",
+        "idTypeCus": {
+          "id": "2",
+          "name": "Platinum"
+        },
+        "fullName": "aaaaaaa",
+        "gender": {
+          "id": "2",
+          "name": "Female"
+        },
+        "dateOfBirth": "2021-09-10",
+        "idCard": "020202",
+        "phone": "020202",
+        "email": "asa",
+        "address": "asas"
+      },
+      "service": {
+        "id": "DV-993",
+        "fullName": "sadsa",
+        "area": "6000",
+        "cost": "6000",
+        "maxPeople": "600",
+        "idRentType": {
+          "id": "3",
+          "name": "Day"
+        },
+        "numberOfFloors": "5",
+        "status": "a"
+      },
+      "startDate": "2021-09-08",
+      "endDate": "2021-09-07",
+      "deposit": "011",
+      "total": 5989
+    },
+    {
+      "id": "HD-150",
+      "employee": {
+        "id": "NV-378",
+        "position": {
+          "id": "3",
+          "name": "Chuyên viên"
+        },
+        "division": {
+          "id": "2",
+          "name": "Hành chính"
+        },
+        "educationDegree": {
+          "id": "3",
+          "name": "Đại học"
+        },
+        "fullName": "a",
+        "birthday": null,
+        "idCard": null,
+        "phone": null,
+        "email": null,
+        "salary": null
+      },
+      "customer": {
+        "id": "KH-90",
+        "idTypeCus": {
+          "id": "2",
+          "name": "Platinum"
+        },
+        "fullName": "aaaaaaa",
+        "gender": {
+          "id": "2",
+          "name": "Female"
+        },
+        "dateOfBirth": "2021-09-10",
+        "idCard": "020202",
+        "phone": "020202",
+        "email": "asa",
+        "address": "asas"
+      },
+      "service": {
+        "id": "DV-993",
+        "fullName": "sadsa",
+        "area": "6000",
+        "cost": "6000",
+        "maxPeople": "600",
+        "idRentType": {
+          "id": "3",
+          "name": "Day"
+        },
+        "numberOfFloors": "5",
+        "status": "a"
+      },
+      "startDate": "2021-09-10",
+      "endDate": "2021-09-01",
+      "deposit": "0111",
+      "total": 5889
+    },
+    {
+      "id": "HD-393",
+      "employee": {
+        "id": "NV-266",
+        "position": {
+          "id": "5",
+          "name": "Quản lý"
+        },
+        "division": {
+          "id": "3",
+          "name": "Phục vụ"
+        },
+        "educationDegree": {
+          "id": "2",
+          "name": "Cao đẳng"
+        },
+        "fullName": "a",
+        "birthday": "1999-06-11",
+        "idCard": "1",
+        "phone": "1",
+        "email": "1",
+        "salary": "1"
+      },
+      "customer": {
+        "id": "KH-47",
+        "idTypeCus": {
+          "id": "3",
+          "name": "Gold"
+        },
+        "fullName": "a",
+        "gender": {
+          "id": "2",
+          "name": "Female"
+        },
+        "dateOfBirth": "2021-09-06",
+        "idCard": "1",
+        "phone": "1",
+        "email": "@gam",
+        "address": "a"
+      },
+      "service": {
+        "id": "DV-993",
+        "fullName": "sadsa",
+        "area": "6000",
+        "cost": "6000",
+        "maxPeople": "600",
+        "idRentType": {
+          "id": "3",
+          "name": "Day"
+        },
+        "numberOfFloors": "5",
+        "status": "a"
+      },
+      "startDate": "2021-09-17",
+      "endDate": "2021-09-16",
+      "deposit": "0123",
+      "total": 5877
+    }
+  ],
+  "contractDetails": [
+    {
+      "id": 1,
+      "contract": {
+        "id": "HD-780",
+        "employee": {
+          "id": "NV-656",
+          "position": {
+            "id": "2",
+            "name": "Phục vụ"
+          },
+          "division": {
+            "id": "2",
+            "name": "Hành chính"
+          },
+          "educationDegree": {
+            "id": "2",
+            "name": "Cao đẳng"
+          },
+          "fullName": "Ngô Hiền Nhân",
+          "birthday": "1999-06-11",
+          "idCard": "0916309250",
+          "phone": "091632952",
+          "email": "n@gmail.com",
+          "salary": "50000"
+        },
+        "customer": {
+          "id": "KH-90",
+          "idTypeCus": {
+            "id": "2",
+            "name": "Platinum"
+          },
+          "fullName": "aaaaaaa",
+          "gender": {
+            "id": "2",
+            "name": "Female"
+          },
+          "dateOfBirth": "2021-09-10",
+          "idCard": "020202",
+          "phone": "020202",
+          "email": "asa",
+          "address": "asas"
+        },
+        "service": {
+          "id": "DV-993",
+          "fullName": "sadsa",
+          "area": "6000",
+          "cost": "6000",
+          "maxPeople": "600",
+          "idRentType": {
+            "id": "3",
+            "name": "Day"
+          },
+          "numberOfFloors": "5",
+          "status": "a"
+        },
+        "startDate": "2021-09-08",
+        "endDate": "2021-09-07",
+        "deposit": "011",
+        "total": 5989
+      },
+      "attachService": {
+        "id": "2",
+        "name": "Karaoke",
+        "cost": "5000",
+        "unit": "Hour",
+        "status": ""
+      },
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "contract": {
+        "id": "HD-780",
+        "employee": {
+          "id": "NV-656",
+          "position": {
+            "id": "2",
+            "name": "Phục vụ"
+          },
+          "division": {
+            "id": "2",
+            "name": "Hành chính"
+          },
+          "educationDegree": {
+            "id": "2",
+            "name": "Cao đẳng"
+          },
+          "fullName": "Ngô Hiền Nhân",
+          "birthday": "1999-06-11",
+          "idCard": "0916309250",
+          "phone": "091632952",
+          "email": "n@gmail.com",
+          "salary": "50000"
+        },
+        "customer": {
+          "id": "KH-90",
+          "idTypeCus": {
+            "id": "2",
+            "name": "Platinum"
+          },
+          "fullName": "aaaaaaa",
+          "gender": {
+            "id": "2",
+            "name": "Female"
+          },
+          "dateOfBirth": "2021-09-10",
+          "idCard": "020202",
+          "phone": "020202",
+          "email": "asa",
+          "address": "asas"
+        },
+        "service": {
+          "id": "DV-993",
+          "fullName": "sadsa",
+          "area": "6000",
+          "cost": "6000",
+          "maxPeople": "600",
+          "idRentType": {
+            "id": "3",
+            "name": "Day"
+          },
+          "numberOfFloors": "5",
+          "status": "a"
+        },
+        "startDate": "2021-09-08",
+        "endDate": "2021-09-07",
+        "deposit": "011",
+        "total": 5989
+      },
+      "attachService": {
+        "id": "1",
+        "name": "Massage",
+        "cost": "5000",
+        "unit": "person",
+        "status": ""
+      },
+      "quantity": 2
+    },
+    {
+      "id": 3,
+      "contract": {
+        "id": "HD-150",
+        "employee": {
+          "id": "NV-378",
+          "position": {
+            "id": "3",
+            "name": "Chuyên viên"
+          },
+          "division": {
+            "id": "2",
+            "name": "Hành chính"
+          },
+          "educationDegree": {
+            "id": "3",
+            "name": "Đại học"
+          },
+          "fullName": "a",
+          "birthday": null,
+          "idCard": null,
+          "phone": null,
+          "email": null,
+          "salary": null
+        },
+        "customer": {
+          "id": "KH-90",
+          "idTypeCus": {
+            "id": "2",
+            "name": "Platinum"
+          },
+          "fullName": "aaaaaaa",
+          "gender": {
+            "id": "2",
+            "name": "Female"
+          },
+          "dateOfBirth": "2021-09-10",
+          "idCard": "020202",
+          "phone": "020202",
+          "email": "asa",
+          "address": "asas"
+        },
+        "service": {
+          "id": "DV-993",
+          "fullName": "sadsa",
+          "area": "6000",
+          "cost": "6000",
+          "maxPeople": "600",
+          "idRentType": {
+            "id": "3",
+            "name": "Day"
+          },
+          "numberOfFloors": "5",
+          "status": "a"
+        },
+        "startDate": "2021-09-10",
+        "endDate": "2021-09-01",
+        "deposit": "0111",
+        "total": 5889
+      },
+      "attachService": {
+        "id": "4",
+        "name": "Drinks",
+        "cost": "5000",
+        "unit": "bottle",
+        "status": ""
+      },
+      "quantity": 2
+    }
+  ],
+  "divisions": [
+    {
+      "id": "1",
+      "name": "Sale-Marketing"
+    },
+    {
+      "id": "2",
+      "name": "Hành chính"
+    },
+    {
+      "id": "3",
+      "name": "Phục vụ"
+    },
+    {
+      "id": "4",
+      "name": "Quản lý"
+    }
+  ],
+  "positions": [
+    {
+      "id": "1",
+      "name": "Lễ tân"
+    },
+    {
+      "id": "2",
+      "name": "Phục vụ"
+    },
+    {
+      "id": "3",
+      "name": "Chuyên viên"
+    },
+    {
+      "id": "4",
+      "name": "Giám sát"
+    },
+    {
+      "id": "5",
+      "name": "Quản lý"
+    },
+    {
+      "id": "6",
+      "name": "Giám đốc"
+    }
+  ],
+  "educationDegrees": [
+    {
+      "id": "1",
+      "name": "Trung cấp"
+    },
+    {
+      "id": "2",
+      "name": "Cao đẳng"
+    },
+    {
+      "id": "3",
+      "name": "Đại học"
+    },
+    {
+      "id": "4",
+      "name": "Sau đại học"
+    }
+  ],
+  "attachService": [
+    {
+      "id": "1",
+      "name": "Massage",
+      "cost": "5000",
+      "unit": "person",
+      "status": ""
+    },
+    {
+      "id": "2",
+      "name": "Karaoke",
+      "cost": "5000",
+      "unit": "Hour",
+      "status": ""
+    },
+    {
+      "id": "3",
+      "name": "Food",
+      "cost": "5000",
+      "unit": "person",
+      "status": ""
+    },
+    {
+      "id": "4",
+      "name": "Drinks",
+      "cost": "5000",
+      "unit": "bottle",
+      "status": ""
+    },
+    {
+      "id": "5",
+      "name": "Sightseeing car",
+      "cost": "5000",
+      "unit": "Hour",
+      "status": ""
+    }
+  ],
+  "genders": [
+    {
+      "id": "1",
+      "name": "Male"
+    },
+    {
+      "id": "2",
+      "name": "Female"
+    },
+    {
+      "id": "3",
+      "name": "LGBT"
+    }
+  ],
+  "rentTypes": [
+    {
+      "id": "1",
+      "name": "Year"
+    },
+    {
+      "id": "2",
+      "name": "Month"
+    },
+    {
+      "id": "3",
+      "name": "Day"
+    },
+    {
+      "id": "4",
+      "name": "Hour"
+    }
+  ],
+  "typeCus": [
+    {
+      "id": "1",
+      "name": "Diamond"
+    },
+    {
+      "id": "2",
+      "name": "Platinum"
+    },
+    {
+      "id": "3",
+      "name": "Gold"
+    },
+    {
+      "id": "4",
+      "name": "Silver"
+    },
+    {
+      "id": "5",
+      "name": "Member"
+    }
+  ]
+}

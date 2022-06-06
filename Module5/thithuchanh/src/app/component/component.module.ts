@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeleteComponent } from './delete/delete.component';
-import { EditComponent } from './edit/edit.component';
 import { ListComponent } from './list/list.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
@@ -12,7 +11,7 @@ import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
 
 
 @NgModule({
-  declarations: [DeleteComponent, EditComponent, ListComponent],
+  declarations: [DeleteComponent, ListComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
